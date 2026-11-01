@@ -4,21 +4,53 @@
 
 @layer base {
   html { -webkit-tap-highlight-color: transparent; }
-  body { @apply bg-slate-50 text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200; }
+  body {
+    @apply bg-paper text-ink antialiased dark:bg-paper-dark dark:text-slate-200;
+    /* faint notebook lines */
+    background-image: repeating-linear-gradient(to bottom, transparent 0 39px, rgb(124 108 200 / 0.07) 39px 40px);
+  }
+  .dark body { background-image: repeating-linear-gradient(to bottom, transparent 0 39px, rgb(255 255 255 / 0.025) 39px 40px); }
+  h1, h2, h3, .font-display { font-family: theme('fontFamily.display'); }
 }
 
 @layer components {
-  .card { @apply rounded-2xl border border-slate-200/70 bg-white shadow-card dark:border-slate-800 dark:bg-slate-900; }
+  /* Widgets */
+  .card, .widget { @apply relative rounded-[22px] bg-white shadow-card ring-1 ring-[#e8e3f8] dark:bg-[#1f1c38] dark:ring-white/5; }
+  .widget-head { @apply flex items-center justify-between gap-2 rounded-t-[22px] px-4 py-2.5 text-sm font-bold text-ink dark:text-white; }
+  .paper-grid {
+    background-image: radial-gradient(rgb(124 108 200 / 0.18) 1px, transparent 1.2px);
+    background-size: 16px 16px;
+  }
+  .dark .paper-grid { background-image: radial-gradient(rgb(255 255 255 / 0.07) 1px, transparent 1.2px); }
+  .row-line { @apply border-b border-dashed border-[#e3ddf5] last:border-b-0 dark:border-white/10; }
+
+  .sticky-note {
+    @apply relative rounded-md text-[#5b4a12] shadow-note;
+    background: linear-gradient(180deg, #fff7c2 0%, #fff1a6 100%);
+  }
+  .dark .sticky-note { background: linear-gradient(180deg, #4a4220 0%, #3d3618 100%); color: #fdf3c4; }
+  .tape {
+    @apply pointer-events-none absolute -top-3 left-1/2 h-6 w-24 -translate-x-1/2 -rotate-3 rounded-sm;
+    background: repeating-linear-gradient(45deg, rgb(249 168 212 / 0.75) 0 6px, rgb(251 207 232 / 0.75) 6px 12px);
+  }
+  .dash-frame::after {
+    content: '';
+    @apply pointer-events-none absolute inset-2.5 rounded-[16px] border-2 border-dashed border-white/50;
+  }
+  .sticker { @apply pointer-events-none absolute select-none drop-shadow-md; }
+
+  /* Buttons & inputs */
   .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/50 disabled:cursor-not-allowed disabled:opacity-50; }
-  .btn-primary { @apply btn bg-brand-700 text-white hover:bg-brand-800 active:bg-brand-900; }
-  .btn-ghost { @apply btn text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800; }
-  .btn-outline { @apply btn border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800; }
+  .btn-primary { @apply btn bg-ink text-white shadow-[0_6px_14px_-6px_rgb(43_44_107/0.6)] hover:bg-brand-800 active:translate-y-px dark:bg-brand-600 dark:hover:bg-brand-500; }
+  .btn-ghost { @apply btn text-ink-soft hover:bg-brand-50 dark:text-slate-300 dark:hover:bg-white/5; }
+  .btn-outline { @apply btn bg-white text-ink ring-1 ring-[#e3ddf5] hover:bg-brand-50 dark:bg-white/5 dark:text-slate-200 dark:ring-white/10 dark:hover:bg-white/10; }
   .btn-danger { @apply btn text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/40; }
-  .input { @apply w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 transition focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100; }
-  .label { @apply mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300; }
+  .input { @apply w-full rounded-xl border border-[#e3ddf5] bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-slate-400 transition focus:border-brand-400 focus:outline-none focus:ring-4 focus:ring-brand-400/15 dark:border-white/10 dark:bg-white/5 dark:text-slate-100; }
+  .label { @apply mb-1.5 block text-sm font-semibold text-ink dark:text-slate-300; }
   .chip { @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium; }
 }
 
 @keyframes fade { from { opacity: 0 } to { opacity: 1 } }
 @keyframes rise { from { opacity: 0; transform: translateY(16px) } to { opacity: 1; transform: none } }
 @keyframes pop { 0% { transform: scale(1) } 40% { transform: scale(1.18) } 100% { transform: scale(1) } }
+@keyframes wiggle { 0%, 100% { transform: rotate(-6deg) } 50% { transform: rotate(6deg) } }

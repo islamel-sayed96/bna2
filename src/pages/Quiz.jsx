@@ -103,13 +103,13 @@ function Runner({ title, questions, onFinish, onRetry }) {
     const msg = pct === 1 ? 'علامة كاملة! 🏆' : pct >= 0.8 ? 'ممتاز جدًا 👏' : pct >= 0.5 ? 'كويس — كمّل كده 💪' : 'بداية، والمراجعة هتفرق 🌱'
     return (
       <div className="mx-auto max-w-2xl">
-        <div className="card p-8 text-center">
+        <div className="widget paper-grid p-8 text-center">
           <ProgressRing value={pct} size={128} stroke={10} color={pct >= 0.8 ? '#10b981' : pct >= 0.5 ? '#f59e0b' : '#f43f5e'}>
             <div>
-              <div className="text-3xl font-bold text-slate-900 dark:text-white">{correct}/{questions.length}</div>
+              <div className="text-3xl font-bold text-ink dark:text-white">{correct}/{questions.length}</div>
             </div>
           </ProgressRing>
-          <h2 className="mt-5 text-2xl font-bold text-slate-900 dark:text-white">{msg}</h2>
+          <h2 className="mt-5 text-3xl font-extrabold text-ink dark:text-white">{msg}</h2>
           <p className="mt-1 text-sm text-slate-500">{title} · {Math.round(pct * 100)}%</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <button className="btn-outline" onClick={onRetry}><RotateCcw size={16} /> جولة جديدة</button>
@@ -119,11 +119,11 @@ function Runner({ title, questions, onFinish, onRetry }) {
 
         {wrong.length > 0 && (
           <>
-            <h3 className="mb-3 mt-8 font-semibold text-slate-900 dark:text-white">راجع الإجابات الغلط</h3>
+            <h3 className="mb-3 mt-8 font-semibold text-ink dark:text-white">راجع الإجابات الغلط</h3>
             <div className="space-y-3">
               {wrong.map(({ q: qq, chosen: ch }) => (
                 <div key={qq.id} className="card p-5">
-                  <p className="font-medium text-slate-800 dark:text-slate-100" dir="auto">{qq.text}</p>
+                  <p className="font-medium text-ink dark:text-slate-100" dir="auto">{qq.text}</p>
                   {ch !== undefined && <p className="mt-2 flex items-start gap-2 text-sm text-rose-600 dark:text-rose-400"><X size={16} className="mt-0.5 shrink-0" /> <span dir="auto">{qq.options[ch]}</span></p>}
                   <p className="mt-1 flex items-start gap-2 text-sm text-emerald-700 dark:text-emerald-400"><Check size={16} className="mt-0.5 shrink-0" /> <span dir="auto">{qq.options[qq.answer]}</span></p>
                   {qq.explanation && <p className="mt-3 rounded-xl bg-slate-50 p-3 text-sm leading-relaxed text-slate-600 dark:bg-slate-800/60 dark:text-slate-300">{qq.explanation}</p>}
@@ -143,7 +143,7 @@ function Runner({ title, questions, onFinish, onRetry }) {
         <Link to="/skills" className="btn-ghost p-2" aria-label="خروج"><ArrowRight size={20} /></Link>
         <div className="flex-1">
           <div className="mb-2 flex justify-between text-xs text-slate-500">
-            <span className="font-medium text-slate-700 dark:text-slate-200">{title}</span>
+            <span className="font-medium text-ink dark:text-slate-200">{title}</span>
             <span>{i + 1} / {questions.length}</span>
           </div>
           <div className="flex gap-1">
@@ -151,7 +151,7 @@ function Runner({ title, questions, onFinish, onRetry }) {
               <div
                 key={qq.id}
                 className={`h-1.5 flex-1 rounded-full transition ${
-                  answers[k] === undefined ? (k === i ? 'bg-brand-300 dark:bg-brand-800' : 'bg-slate-200 dark:bg-slate-800') : answers[k] === qq.answer ? 'bg-emerald-500' : 'bg-rose-500'
+                  answers[k] === undefined ? (k === i ? 'bg-brand-300 dark:bg-brand-700' : 'bg-[#e6e1f6] dark:bg-white/10') : answers[k] === qq.answer ? 'bg-emerald-400' : 'bg-rose-400'
                 }`}
               />
             ))}
@@ -159,21 +159,21 @@ function Runner({ title, questions, onFinish, onRetry }) {
         </div>
       </div>
 
-      <div className="card p-6 sm:p-8" key={i} style={{ animation: 'rise .25s ease-out' }}>
-        <div className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+      <div className="widget paper-grid p-6 sm:p-8" key={i} style={{ animation: 'rise .25s ease-out' }}>
+        <div className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-ink-soft dark:bg-white/10 dark:text-slate-300">
           {cat.icon} {cat.name}
         </div>
-        <h2 className="text-lg font-semibold leading-relaxed text-slate-900 dark:text-white sm:text-xl" dir="auto">{q.text}</h2>
+        <h2 className="text-xl font-bold leading-relaxed text-ink dark:text-white sm:text-2xl" dir="auto">{q.text}</h2>
 
         <div className="mt-6 space-y-2.5">
           {q.order.map((optIdx, pos) => {
             const isCorrect = optIdx === q.answer
             const isChosen = optIdx === chosen
-            let cls = 'border-slate-200 hover:border-brand-400 hover:bg-brand-50/50 dark:border-slate-700 dark:hover:border-brand-600 dark:hover:bg-brand-500/5'
+            let cls = 'border-[#e3ddf5] bg-white hover:border-brand-300 hover:bg-brand-50 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-500'
             if (revealed) {
               if (isCorrect) cls = 'border-emerald-500 bg-emerald-50 text-emerald-900 dark:bg-emerald-500/10 dark:text-emerald-200'
               else if (isChosen) cls = 'border-rose-500 bg-rose-50 text-rose-900 dark:bg-rose-500/10 dark:text-rose-200'
-              else cls = 'border-slate-200 opacity-50 dark:border-slate-800'
+              else cls = 'border-[#e3ddf5] bg-white opacity-50 dark:border-white/10 dark:bg-transparent'
             }
             return (
               <button
@@ -194,7 +194,7 @@ function Runner({ title, questions, onFinish, onRetry }) {
         {revealed && (
           <div style={{ animation: 'rise .2s ease-out' }}>
             {q.explanation && (
-              <div className="mt-5 flex gap-3 rounded-2xl bg-amber-50 p-4 text-sm leading-relaxed text-amber-900 dark:bg-amber-500/10 dark:text-amber-200">
+              <div className="sticky-note mt-6 flex rotate-[-0.6deg] gap-3 p-4 text-sm leading-relaxed">
                 <Lightbulb size={18} className="mt-0.5 shrink-0" />
                 <p>{q.explanation}</p>
               </div>

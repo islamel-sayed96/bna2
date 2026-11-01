@@ -12,6 +12,7 @@ export const EVENT_CATEGORIES = {
   personal: { name: 'شخصي', color: 'teal' },
   health: { name: 'صحة ورياضة', color: 'emerald' },
   family: { name: 'عائلة', color: 'rose' },
+  occasion: { name: 'مناسبة 🎉', color: 'orange' },
   other: { name: 'أخرى', color: 'slate' },
 }
 const PRIORITIES = {
@@ -41,18 +42,19 @@ export default function Schedule() {
   return (
     <>
       <PageHeader
+        icon="🗓️"
         title="الجدول والالتزامات"
-        subtitle="مواعيدك ومهامك، مرتبة يوم بيوم."
+        subtitle="مواعيدك ومهامك ومناسباتك، مرتبة يوم بيوم."
         action={<button className="btn-primary" onClick={() => setEditing('new')}><Plus size={18} /> موعد / مهمة</button>}
       />
 
       {/* Week navigator */}
-      <div className="card mb-6 p-4 sm:p-5">
+      <div className="widget mb-6 p-4 sm:p-5">
         <div className="mb-4 flex items-center justify-between">
           <div className="flex items-center gap-1">
             <button className="btn-ghost p-2" onClick={() => setSelected(addDaysKey(selected, -7))} aria-label="الأسبوع السابق"><ChevronRight size={18} /></button>
             <button className="btn-ghost p-2" onClick={() => setSelected(addDaysKey(selected, 7))} aria-label="الأسبوع التالي"><ChevronLeft size={18} /></button>
-            <h2 className="ms-2 font-semibold text-slate-900 dark:text-white">{formatMonth(fromKey(selected))}</h2>
+            <h2 className="ms-2 text-lg font-bold text-ink dark:text-white">{formatMonth(fromKey(selected))}</h2>
           </div>
           {selected !== today && <button className="btn-outline px-3 py-1.5 text-xs" onClick={() => setSelected(today)}>النهارده</button>}
         </div>
@@ -67,11 +69,11 @@ export default function Schedule() {
                 key={d}
                 onClick={() => setSelected(d)}
                 className={`flex flex-col items-center rounded-2xl px-1 py-2.5 transition sm:py-3 ${
-                  isSel ? 'bg-brand-700 text-white shadow-md shadow-brand-700/20' : 'hover:bg-slate-100 dark:hover:bg-slate-800'
+                  isSel ? 'bg-ink text-white shadow-md shadow-ink/25 dark:bg-brand-600' : 'hover:bg-brand-50 dark:hover:bg-white/5'
                 }`}
               >
-                <span className={`text-[11px] ${isSel ? 'text-brand-100' : 'text-slate-500'}`}>{DAY_SHORT[fromKey(d).getDay()]}</span>
-                <span className={`mt-1 text-lg font-bold ${!isSel && isToday ? 'text-brand-700 dark:text-brand-400' : ''}`}>{fromKey(d).getDate()}</span>
+                <span className={`text-[11px] ${isSel ? 'text-white/70' : 'text-ink-soft'}`}>{DAY_SHORT[fromKey(d).getDay()]}</span>
+                <span className={`mt-1 text-lg font-bold ${!isSel && isToday ? 'text-brand-600 dark:text-brand-300' : ''}`}>{fromKey(d).getDate()}</span>
                 <span className="mt-1 flex h-1.5 gap-0.5">
                   {items.slice(0, 3).map((e) => (
                     <span key={e.id} className={`h-1.5 w-1.5 rounded-full ${isSel ? 'bg-white/80' : e.done ? 'bg-slate-300 dark:bg-slate-600' : color(EVENT_CATEGORIES[e.category]?.color).dot}`} />
@@ -86,36 +88,40 @@ export default function Schedule() {
 
       <div className="grid gap-6 lg:grid-cols-3">
         <div className="lg:col-span-2">
-          <div className="mb-3 flex items-baseline justify-between">
-            <h3 className="font-semibold text-slate-900 dark:text-white">
-              {selected === today ? 'النهارده' : DAY_NAMES[fromKey(selected).getDay()]} <span className="text-sm font-normal text-slate-500">· {formatLong(fromKey(selected))}</span>
-            </h3>
-            {dayEvents.length > 0 && <span className="text-xs text-slate-500">{dayEvents.filter((e) => e.done).length} من {dayEvents.length} خلصت</span>}
-          </div>
           {dayEvents.length === 0 ? (
-            <EmptyState icon="🗓️" title="يوم فاضي" text="مفيش مواعيد أو مهام في اليوم ده." action={<button className="btn-outline" onClick={() => setEditing('new')}><Plus size={16} /> أضف حاجة</button>} />
+            <EmptyState icon="🗓️" title={`${selected === today ? 'النهارده' : DAY_NAMES[fromKey(selected).getDay()]} فاضي`} text="مفيش مواعيد أو مهام في اليوم ده." action={<button className="btn-outline" onClick={() => setEditing('new')}><Plus size={16} /> أضف حاجة</button>} />
           ) : (
-            <div className="space-y-2.5">
-              {dayEvents.map((e) => (
-                <EventRow key={e.id} event={e} onToggle={() => events.update(e.id, { done: !e.done })} onEdit={() => setEditing(e)} />
-              ))}
+            <div className="widget overflow-hidden">
+              <div className="widget-head bg-[#eee8fc] dark:bg-white/5">
+                <span>{selected === today ? '📍 النهارده' : DAY_NAMES[fromKey(selected).getDay()]} <span className="text-xs font-medium text-ink-soft">· {formatLong(fromKey(selected))}</span></span>
+                <span className="flex items-center gap-2">
+                  <span className="text-xs font-medium text-ink-soft">{dayEvents.filter((e) => e.done).length}/{dayEvents.length}</span>
+                  <button onClick={() => setEditing('new')} className="rounded-lg p-1 hover:bg-white/70 dark:hover:bg-white/10" aria-label="إضافة"><Plus size={17} /></button>
+                </span>
+              </div>
+              <div>
+                {dayEvents.map((e) => (
+                  <EventRow key={e.id} event={e} onToggle={() => events.update(e.id, { done: !e.done })} onEdit={() => setEditing(e)} />
+                ))}
+              </div>
             </div>
           )}
         </div>
 
         <div className="space-y-6">
           {overdue.length > 0 && (
-            <div className="card border-rose-200/70 p-5 dark:border-rose-900/50">
-              <h3 className="mb-3 flex items-center gap-2 font-semibold text-rose-700 dark:text-rose-400"><AlertCircle size={18} /> متأخرة ({overdue.length})</h3>
+            <div className="sticky-note -rotate-1 px-5 pb-4 pt-6">
+              <span className="tape" />
+              <h3 className="mb-3 flex items-center gap-2 text-lg font-bold"><AlertCircle size={18} /> متأخرة ({overdue.length})</h3>
               <div className="space-y-2">
                 {overdue.slice(0, 6).map((e) => (
                   <div key={e.id} className="flex items-center gap-3">
-                    <button onClick={() => events.update(e.id, { done: true })} className="h-5 w-5 shrink-0 rounded-md border-2 border-slate-300 hover:border-brand-600 dark:border-slate-600" aria-label="تم" />
+                    <button onClick={() => events.update(e.id, { done: true })} className="h-5 w-5 shrink-0 rounded border-2 border-current opacity-60 hover:opacity-100" aria-label="تم" />
                     <button onClick={() => setSelected(e.date)} className="min-w-0 flex-1 text-start">
-                      <div className="truncate text-sm text-slate-700 dark:text-slate-200">{e.title}</div>
-                      <div className="text-[11px] text-slate-500">{formatShort(fromKey(e.date))}</div>
+                      <div className="truncate text-sm font-medium">{e.title}</div>
+                      <div className="text-[11px] opacity-70">{formatShort(fromKey(e.date))}</div>
                     </button>
-                    <button onClick={() => events.update(e.id, { date: today })} className="text-[11px] font-medium text-brand-700 hover:underline dark:text-brand-400">للنهارده</button>
+                    <button onClick={() => events.update(e.id, { date: today })} className="rounded-full bg-black/5 px-2 py-0.5 text-[11px] font-semibold hover:bg-black/10 dark:bg-white/10">للنهارده</button>
                   </div>
                 ))}
               </div>
@@ -148,34 +154,34 @@ export default function Schedule() {
   )
 }
 
-export function EventRow({ event: e, onToggle, onEdit, compact = false }) {
+// One pastel row, tinted by category (like a colourful to-do widget).
+export function EventRow({ event: e, onToggle, onEdit }) {
   const cat = EVENT_CATEGORIES[e.category] ?? EVENT_CATEGORIES.other
   const c = color(cat.color)
   return (
-    <div className={`card group flex items-center gap-3 ${compact ? 'p-3' : 'p-4'} ${e.done ? 'opacity-60' : ''}`}>
-      <span className={`w-1 self-stretch rounded-full ${c.bar}`} />
+    <div className={`group flex items-center gap-3 border-b border-white/70 px-4 py-3.5 last:border-0 dark:border-black/20 ${e.done ? 'opacity-55' : ''}`} style={{ background: c.row }}>
       <button
         onClick={onToggle}
-        className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border-2 transition ${e.done ? 'border-brand-600 bg-brand-600 text-white' : 'border-slate-300 hover:border-brand-600 dark:border-slate-600'}`}
+        className={`flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-md border-2 transition ${e.done ? 'border-ink bg-ink text-white' : 'border-ink/35 bg-white/80 hover:border-ink'}`}
         aria-label={e.done ? 'إلغاء الإنجاز' : 'تم'}
       >
-        {e.done && <Check size={14} strokeWidth={3} />}
+        {e.done && <Check size={14} strokeWidth={3.5} />}
       </button>
       <div className="min-w-0 flex-1">
-        <div className={`truncate font-medium text-slate-800 dark:text-slate-100 ${e.done ? 'line-through' : ''}`}>{e.title}</div>
-        <div className="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-slate-500">
-          {e.start_time && (
-            <span className="inline-flex items-center gap-1">
-              <Clock size={12} /> {formatTime(e.start_time)}{e.end_time ? ` – ${formatTime(e.end_time)}` : ''}
-            </span>
-          )}
-          <span className={`chip ${c.soft}`}>{cat.name}</span>
+        <div className={`truncate text-[15px] font-semibold text-ink ${e.done ? 'line-through' : ''}`}>{e.title}</div>
+        <div className="mt-0.5 flex flex-wrap items-center gap-1.5 text-xs text-ink-soft">
+          <span>{cat.name}</span>
           {e.priority !== 'normal' && PRIORITIES[e.priority] && <span className={`chip ${PRIORITIES[e.priority].cls}`}>أولوية {PRIORITIES[e.priority].name}</span>}
+          {e.notes && <span className="truncate opacity-80">· {e.notes}</span>}
         </div>
-        {!compact && e.notes && <p className="mt-1.5 line-clamp-2 text-xs text-slate-500 dark:text-slate-400">{e.notes}</p>}
       </div>
+      {e.start_time && (
+        <span className="flex shrink-0 items-center gap-1 text-xs font-medium tabular-nums text-ink-soft">
+          <Clock size={12} /> {formatTime(e.start_time)}{e.end_time ? ` – ${formatTime(e.end_time)}` : ''}
+        </span>
+      )}
       {onEdit && (
-        <button onClick={onEdit} className="rounded-lg p-1.5 text-slate-400 opacity-0 transition hover:bg-slate-100 hover:text-slate-600 group-hover:opacity-100 focus:opacity-100 dark:hover:bg-slate-800 max-lg:opacity-100" aria-label="تعديل">
+        <button onClick={onEdit} className="rounded-lg p-1.5 text-ink-soft opacity-0 transition hover:bg-white/70 group-hover:opacity-100 focus:opacity-100 max-lg:opacity-100" aria-label="تعديل">
           <Pencil size={15} />
         </button>
       )}
@@ -190,21 +196,21 @@ function WeekSummary({ events, week }) {
     .map(([k, v]) => ({ ...v, key: k, count: inWeek.filter((e) => e.category === k).length }))
     .filter((x) => x.count)
   return (
-    <div className="card p-5">
-      <h3 className="font-semibold text-slate-900 dark:text-white">ملخص الأسبوع</h3>
+    <div className="widget p-5">
+      <h3 className="text-lg font-bold text-ink dark:text-white">📊 ملخص الأسبوع</h3>
       <div className="mt-4 flex items-end gap-2">
-        <span className="text-3xl font-bold text-slate-900 dark:text-white">{done}</span>
+        <span className="font-display text-4xl font-extrabold text-ink dark:text-white">{done}</span>
         <span className="pb-1 text-sm text-slate-500">من {inWeek.length} خلصت</span>
       </div>
       <div className="mt-3 h-2 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
-        <div className="h-full rounded-full bg-brand-600 transition-all" style={{ width: `${inWeek.length ? (done / inWeek.length) * 100 : 0}%` }} />
+        <div className="h-full rounded-full bg-brand-400 transition-all" style={{ width: `${inWeek.length ? (done / inWeek.length) * 100 : 0}%` }} />
       </div>
       {byCat.length > 0 && (
         <div className="mt-5 space-y-2">
           {byCat.map((c) => (
             <div key={c.key} className="flex items-center justify-between text-sm">
               <span className="flex items-center gap-2 text-slate-600 dark:text-slate-300"><span className={`h-2.5 w-2.5 rounded-full ${color(c.color).dot}`} />{c.name}</span>
-              <span className="font-medium text-slate-900 dark:text-white">{c.count}</span>
+              <span className="font-medium text-ink dark:text-white">{c.count}</span>
             </div>
           ))}
         </div>

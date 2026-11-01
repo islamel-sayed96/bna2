@@ -44,11 +44,11 @@ export default function Login() {
 
   return (
     <div className="grid min-h-screen lg:grid-cols-2">
-      <div className="flex items-center justify-center px-6 py-12">
+      <div className="flex items-center justify-center bg-white/60 px-6 py-12 dark:bg-transparent">
         <div className="w-full max-w-sm">
           <Logo />
-          <h1 className="mt-10 text-2xl font-bold text-slate-900 dark:text-white">{signup ? 'إنشاء حسابك' : 'أهلًا بعودتك 👋'}</h1>
-          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+          <h1 className="mt-10 text-3xl font-extrabold text-ink dark:text-white">{signup ? 'إنشاء حسابك' : 'أهلًا بعودتك 👋'}</h1>
+          <p className="mt-2 text-sm text-ink-soft dark:text-slate-400">
             {signup ? 'حساب واحد خاص بيك، محدش غيرك يقدر يشوف بياناتك.' : 'سجّل دخولك لمتابعة عاداتك وجدولك.'}
           </p>
 
@@ -78,7 +78,7 @@ export default function Login() {
             )}
 
             {error && <div className="rounded-xl bg-rose-50 px-3.5 py-2.5 text-sm text-rose-700 dark:bg-rose-500/10 dark:text-rose-300">{error}</div>}
-            {info && <div className="rounded-xl bg-brand-50 px-3.5 py-2.5 text-sm text-brand-800 dark:bg-brand-500/10 dark:text-brand-300">{info}</div>}
+            {info && <div className="rounded-xl bg-brand-50 px-3.5 py-2.5 text-sm text-ink dark:bg-brand-500/10 dark:text-brand-300">{info}</div>}
 
             <button type="submit" disabled={busy} className="btn-primary w-full py-3">
               {busy && <Spinner />}
@@ -87,35 +87,59 @@ export default function Login() {
           </form>
 
           {allowSignup && (
-            <p className="mt-6 text-center text-sm text-slate-500 dark:text-slate-400">
+            <p className="mt-6 text-center text-sm text-ink-soft dark:text-slate-400">
               {signup ? 'عندك حساب؟ ' : 'أول مرة؟ '}
-              <button onClick={() => { setMode(signup ? 'login' : 'signup'); setError('') }} className="font-semibold text-brand-700 hover:underline dark:text-brand-400">
+              <button onClick={() => { setMode(signup ? 'login' : 'signup'); setError('') }} className="font-semibold text-brand-600 hover:underline dark:text-brand-300">
                 {signup ? 'سجّل دخول' : 'أنشئ حسابك'}
               </button>
             </p>
           )}
 
           {!isCloud && (
-            <p className="mt-8 rounded-xl bg-amber-50 p-3 text-xs leading-relaxed text-amber-800 dark:bg-amber-500/10 dark:text-amber-300">
+            <p className="sticky-note mt-8 rotate-[-1deg] p-3 text-xs leading-relaxed">
               <b>وضع تجريبي:</b> الحساب والبيانات محفوظة في المتصفح ده بس. اربط Supabase (شوف README) عشان تبقى محمية على السيرفر وتفتحها من أي جهاز.
             </p>
           )}
         </div>
       </div>
 
-      <div className="relative hidden overflow-hidden bg-gradient-to-br from-brand-700 via-brand-800 to-brand-950 lg:block">
-        <div className="absolute -start-24 -top-24 h-96 w-96 rounded-full bg-brand-500/30 blur-3xl" />
-        <div className="absolute -bottom-32 -end-16 h-[28rem] w-[28rem] rounded-full bg-emerald-400/20 blur-3xl" />
-        <div className="relative flex h-full flex-col justify-center px-16 text-white">
-          <h2 className="text-4xl font-bold leading-tight">كل يوم خطوة صغيرة،<br />وكل شهر نسخة أفضل منك.</h2>
-          <p className="mt-5 max-w-md text-brand-100/90">عاداتك، مواعيدك، وتحديات يومية تطوّر مهاراتك — في مكان واحد هادي وخاص بيك.</p>
-          <div className="mt-12 grid max-w-md grid-cols-3 gap-3">
-            {[['🔥', 'سلسلة عادات'], ['🗓️', 'جدول أسبوعي'], ['🧠', 'تحدي يومي']].map(([i, t]) => (
-              <div key={t} className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
-                <div className="text-2xl">{i}</div>
-                <div className="mt-2 text-sm font-medium">{t}</div>
-              </div>
-            ))}
+      <div className="relative hidden overflow-hidden bg-[#e9e4f8] dark:bg-[#1a1830] lg:block">
+        <div className="absolute inset-0 paper-grid opacity-70" />
+        <div className="relative flex h-full flex-col items-center justify-center px-12">
+          <h2 className="text-center font-display text-5xl font-extrabold leading-tight text-ink dark:text-white">
+            كل يوم <span style={{ backgroundImage: 'linear-gradient(transparent 60%, #ffe08a 60%)' }}>خطوة صغيرة</span>
+          </h2>
+          <p className="mt-3 text-center text-ink-soft">عاداتك، مواعيدك، وتحديات يومية — في مكان واحد خاص بيك.</p>
+
+          <div className="relative mt-12 grid w-full max-w-lg grid-cols-2 gap-5">
+            <span className="sticker -top-8 end-[46%] z-10 text-5xl" style={{ animation: 'wiggle 4s ease-in-out infinite' }}>🌸</span>
+            {/* mini checklist widget */}
+            <div className="widget -rotate-2 overflow-hidden">
+              <div className="widget-head bg-[#dacffa]">النهارده <span>＋</span></div>
+              <ul className="paper-grid px-3 py-1 text-[13px]">
+                {[['شرب مية 💧', '#9fe3d3', true], ['قراءة 📖', '#f9b4c4', true], ['تمرين 💪', '#ffe08a', false], ['ورد يومي 🕌', '#a9d8f5', false]].map(([t, hl, d]) => (
+                  <li key={t} className="row-line flex items-center gap-2 py-2">
+                    <span className={`flex h-4 w-4 items-center justify-center rounded border-2 border-ink/60 text-[9px] ${d ? 'bg-ink text-white' : 'bg-white'}`}>{d && '✓'}</span>
+                    <span className={`font-semibold text-ink ${d ? 'line-through opacity-40' : ''}`} style={d ? undefined : { backgroundImage: `linear-gradient(transparent 58%, ${hl} 58%)` }}>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* sticky note */}
+            <div className="sticky-note rotate-2 px-4 pb-3 pt-5 text-[13px]">
+              <span className="tape" />
+              {[['اجتماع الفريق', '10:00'], ['تسليم التقرير', '2:00'], ['جيم', '7:00'], ['عيد ميلاد ماما', '9:00']].map(([t, h]) => (
+                <div key={t} className="flex justify-between border-b border-dashed border-[#d9c66a] py-1.5 last:border-0">
+                  <span className="font-medium">{t}</span><span className="opacity-60">{h}</span>
+                </div>
+              ))}
+            </div>
+            {/* countdown */}
+            <div className="widget col-span-2 flex rotate-1 items-center gap-4 p-4">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#ffeadc] text-3xl">🎂</div>
+              <div className="flex-1"><div className="font-display text-lg font-bold text-ink">عيد ميلادي</div><div className="text-xs text-ink-soft">15 أبريل</div></div>
+              <div className="text-center"><div dir="ltr" className="font-display text-4xl font-extrabold leading-none text-ink">-12</div><div className="text-xs font-semibold text-ink-soft">يوم</div></div>
+            </div>
           </div>
         </div>
       </div>

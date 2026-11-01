@@ -43,13 +43,13 @@ export default function Settings() {
 
   return (
     <div className="max-w-2xl">
-      <PageHeader title="الإعدادات" />
+      <PageHeader icon="⚙️" title="الإعدادات" />
 
       <div className={`card mb-6 flex gap-4 p-5 ${isCloud ? '' : 'border-amber-200 dark:border-amber-900/50'}`}>
         {isCloud ? <ShieldCheck className="shrink-0 text-emerald-600" /> : <ShieldAlert className="shrink-0 text-amber-600" />}
         <div className="text-sm leading-relaxed">
-          <div className="font-semibold text-slate-900 dark:text-white">{isCloud ? 'بياناتك محمية على السيرفر' : 'وضع تجريبي'}</div>
-          <p className="mt-1 text-slate-500 dark:text-slate-400">
+          <div className="font-semibold text-ink dark:text-white">{isCloud ? 'بياناتك محمية على السيرفر' : 'وضع تجريبي'}</div>
+          <p className="mt-1 text-ink-soft dark:text-slate-400">
             {isCloud
               ? 'كل بياناتك محفوظة في قاعدة بيانات Supabase ومقفولة بحسابك — محدش غيرك يقدر يقراها، وتقدر تفتحها من أي جهاز.'
               : 'البيانات محفوظة في المتصفح ده بس. لو مسحت بيانات المتصفح هتضيع، ومش هتظهر على جهاز تاني. اربط Supabase عشان حماية حقيقية.'}
@@ -59,7 +59,7 @@ export default function Settings() {
       </div>
 
       <form onSubmit={changePassword} className="card mb-6 space-y-4 p-5">
-        <h2 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white"><KeyRound size={18} /> تغيير كلمة المرور</h2>
+        <h2 className="flex items-center gap-2 font-semibold text-ink dark:text-white"><KeyRound size={18} /> تغيير كلمة المرور</h2>
         <div className="grid gap-3 sm:grid-cols-2">
           <input type="password" className="input" dir="ltr" placeholder="كلمة المرور الجديدة" value={pw} onChange={(e) => setPw(e.target.value)} autoComplete="new-password" />
           <input type="password" className="input" dir="ltr" placeholder="تأكيدها" value={pw2} onChange={(e) => setPw2(e.target.value)} autoComplete="new-password" />
@@ -70,8 +70,8 @@ export default function Settings() {
 
       <div className="card flex flex-wrap items-center justify-between gap-4 p-5">
         <div>
-          <h2 className="font-semibold text-slate-900 dark:text-white">نسخة احتياطية</h2>
-          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">نزّل كل بياناتك في ملف JSON.</p>
+          <h2 className="font-semibold text-ink dark:text-white">نسخة احتياطية</h2>
+          <p className="mt-1 text-sm text-ink-soft dark:text-slate-400">نزّل كل بياناتك في ملف JSON.</p>
         </div>
         <button className="btn-outline" onClick={exportData}><Download size={17} /> تنزيل</button>
       </div>

@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
-import { Check, Flame, ListTodo, Repeat2, Brain, ArrowLeft, Plus, Sparkles } from 'lucide-react'
+import { Check, ArrowLeft, Plus } from 'lucide-react'
 import { useCollection } from '../lib/useCollection'
 import { useAuth } from '../lib/auth'
-import { addDaysKey, DAY_SHORT, formatLong, fromKey, greeting, todayKey } from '../lib/dates'
+import { addDaysKey, DAY_SHORT, formatLong, formatShort, formatTime, fromKey, greeting, todayKey } from '../lib/dates'
 import { currentStreak, isScheduled, logKey } from '../lib/habits'
 import { dailyDoneToday, practiceStreak } from '../lib/quiz'
-import { color } from '../lib/colors'
-import { PageLoader, ProgressRing, StatCard } from '../components/ui'
+import { color, highlight, RAINBOW } from '../lib/colors'
+import { PageLoader, StatCard, Widget } from '../components/ui'
 import { useHabitToggle } from './Habits'
-import { EventRow, sortEvents } from './Schedule'
+import { EVENT_CATEGORIES, sortEvents } from './Schedule'
 
 const QUOTES = [
   'النجاح هو مجموع مجهودات صغيرة بتتكرر يوم ورا يوم.',
@@ -19,6 +19,22 @@ const QUOTES = [
   'الانضباط هو إنك تختار بين اللي عايزه دلوقتي واللي عايزه أكتر.',
   'خطوة صغيرة النهارده أحسن من خطة كبيرة بكرة.',
 ]
+
+const daysBetween = (a, b) => Math.round((fromKey(b) - fromKey(a)) / 86400000)
+
+// Nearest upcoming occasion / high-priority item, else the nearest future event.
+function nextCountdown(events, today) {
+  const future = events.filter((e) => e.date > today && !e.done).sort(sortEvents)
+  return future.find((e) => e.category === 'occasion' || e.priority === 'high') ?? future[0]
+}
+
+function countdownEmoji(e) {
+  if (/ميلاد|birthday/i.test(e.title)) return '🎂'
+  if (/سفر|رحلة|طيارة/.test(e.title)) return '✈️'
+  if (/امتحان|اختبار|exam/i.test(e.title)) return '📝'
+  if (/عيد|رمضان/.test(e.title)) return '🌙'
+  return { occasion: '🎉', meeting: '🤝', work: '💼', study: '📚', health: '💪', family: '👨‍👩‍👧', personal: '⭐' }[e.category] ?? '📌'
+}
 
 export default function Dashboard() {
   const { user } = useAuth()
@@ -41,6 +57,7 @@ export default function Dashboard() {
   const daily = dailyDoneToday(attempts.rows)
   const quote = QUOTES[fromKey(today).getDate() % QUOTES.length]
   const name = user?.email?.split('@')[0]
+  const countdown = nextCountdown(events.rows, today)
 
   const last7 = Array.from({ length: 7 }, (_, i) => addDaysKey(today, i - 6)).map((d) => {
     const sch = active.filter((h) => isScheduled(h, d) && (h.created_at ?? '').slice(0, 10) <= d)
@@ -50,118 +67,150 @@ export default function Dashboard() {
 
   return (
     <>
+      {/* Notion-style header */}
       <div className="mb-8">
-        <p className="text-sm text-slate-500 dark:text-slate-400">{formatLong(new Date())}</p>
-        <h1 className="mt-1 text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
-          {greeting()}، <span className="text-brand-700 dark:text-brand-400">{name}</span>
+        <div className="mb-2 text-5xl leading-none">{new Date().getHours() < 17 ? '☀️' : '🌙'}</div>
+        <h1 className="text-3xl font-extrabold tracking-tight text-ink dark:text-white sm:text-4xl">
+          {greeting()}، <span style={highlight('#dacffa')}>{name}</span>
         </h1>
-        <p className="mt-2 flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400"><Sparkles size={15} className="text-amber-500" /> {quote}</p>
+        <p className="mt-2 text-sm text-ink-soft dark:text-slate-400">{formatLong(new Date())} · {quote}</p>
       </div>
 
-      <div className="mb-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
-        <div className="card flex items-center gap-4 p-5">
-          <ProgressRing value={todayHabits.length ? doneHabits / todayHabits.length : 0} size={60}>
-            <span className="text-sm font-bold text-slate-900 dark:text-white">{doneHabits}/{todayHabits.length}</span>
-          </ProgressRing>
-          <div>
-            <div className="text-sm font-medium text-slate-500 dark:text-slate-400">عادات النهارده</div>
-            <div className="mt-1 text-xs text-slate-400">{todayHabits.length && doneHabits === todayHabits.length ? 'كلها خلصت 🎉' : `${todayHabits.length - doneHabits} فاضلين`}</div>
-          </div>
-        </div>
-        <StatCard icon={ListTodo} tone="violet" label="مهام فاضلة النهارده" value={pendingEvents} hint={`من ${todayEvents.length}`} />
-        <StatCard icon={Flame} tone="amber" label="أطول سلسلة حالية" value={bestStreak} hint="يوم متتالي" />
-        <StatCard icon={Brain} tone="rose" label="أيام التدريب" value={quizStreak} hint={daily ? 'خلصت تحدي النهارده ✓' : 'التحدي لسه مستنيك'} />
+      <div className="mb-7 grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <StatCard emoji="✅" tone="brand" label="عادات النهارده" value={`${doneHabits}/${todayHabits.length}`} hint={todayHabits.length && doneHabits === todayHabits.length ? 'كلها خلصت 🎉' : `${todayHabits.length - doneHabits} فاضلين`} />
+        <StatCard emoji="📋" tone="violet" label="مهام فاضلة" value={pendingEvents} hint={`من ${todayEvents.length} النهارده`} />
+        <StatCard emoji="🔥" tone="amber" label="أطول سلسلة" value={bestStreak} hint="يوم متتالي" />
+        <StatCard emoji="🧠" tone="rose" label="أيام التدريب" value={quizStreak} hint={daily ? 'خلصت تحدي النهارده ✓' : 'التحدي مستنيك'} />
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-5">
-        {/* Today's habits */}
-        <section className="card p-5 lg:col-span-3">
-          <div className="mb-4 flex items-center justify-between">
-            <h2 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white"><Repeat2 size={18} className="text-brand-600" /> عادات النهارده</h2>
-            <Link to="/habits" className="text-xs font-medium text-brand-700 hover:underline dark:text-brand-400">كل العادات</Link>
-          </div>
+      <div className="grid gap-6 lg:grid-cols-12">
+        {/* Habits checklist — grid paper widget */}
+        <Widget
+          className="lg:col-span-7"
+          title="عادات النهارده"
+          icon="🔁"
+          head="#eee8fc"
+          grid
+          bodyClass="px-4 py-2"
+          action={<Link to="/habits" className="rounded-lg p-1 text-ink-soft hover:bg-white/70" title="كل العادات"><Plus size={17} /></Link>}
+        >
           {todayHabits.length === 0 ? (
-            <div className="py-8 text-center text-sm text-slate-500">
+            <div className="py-10 text-center text-sm text-ink-soft">
               {active.length ? 'مفيش عادات مجدولة النهارده — استمتع بيومك 🌿' : 'لسه ماضفتش عادات.'}
               {!active.length && <div className="mt-3"><Link to="/habits" className="btn-outline"><Plus size={16} /> أضف عادة</Link></div>}
             </div>
           ) : (
-            <div className="grid gap-2.5 sm:grid-cols-2">
+            <ul>
               {todayHabits.map((h) => {
                 const done = logSet.has(logKey(h.id, today))
                 const c = color(h.color)
                 const streak = currentStreak(h, logSet, today)
                 return (
-                  <button
-                    key={h.id}
-                    onClick={() => toggle(h, today)}
-                    className={`flex items-center gap-3 rounded-2xl border-2 p-3 text-start transition ${done ? 'border-transparent bg-slate-50 dark:bg-slate-800/50' : 'border-slate-100 hover:border-slate-200 dark:border-slate-800 dark:hover:border-slate-700'}`}
-                  >
-                    <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-xl ${c.soft}`}>{h.icon}</span>
-                    <span className="min-w-0 flex-1">
-                      <span className={`block truncate text-sm font-medium ${done ? 'text-slate-400 line-through' : 'text-slate-800 dark:text-slate-100'}`}>{h.name}</span>
-                      <span className="mt-0.5 flex items-center gap-1 text-xs text-slate-400"><Flame size={12} className={streak ? 'text-orange-500' : ''} /> {streak} يوم</span>
-                    </span>
-                    <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition ${done ? `${c.fill}` : 'border-2 border-slate-200 dark:border-slate-700'}`} style={done ? { animation: 'pop .25s ease-out' } : undefined}>
-                      {done && <Check size={16} strokeWidth={3} />}
-                    </span>
-                  </button>
+                  <li key={h.id} className="row-line">
+                    <button onClick={() => toggle(h, today)} className="flex w-full items-center gap-3 py-3 text-start">
+                      <span
+                        className={`flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-md border-2 transition ${done ? 'border-ink bg-ink text-white dark:border-brand-400 dark:bg-brand-400' : 'border-ink/40 bg-white dark:border-white/30 dark:bg-transparent'}`}
+                        style={done ? { animation: 'pop .25s ease-out' } : undefined}
+                      >
+                        {done && <Check size={14} strokeWidth={3.5} />}
+                      </span>
+                      <span className="text-lg">{h.icon}</span>
+                      <span className="min-w-0 flex-1">
+                        <span className={`text-[15px] font-semibold ${done ? 'text-ink/40 line-through dark:text-white/40' : 'text-ink dark:text-white'}`} style={done ? undefined : highlight(c.hl)}>
+                          {h.name}
+                        </span>
+                      </span>
+                      <span className="text-xs font-medium text-ink-soft">🔥 {streak}</span>
+                    </button>
+                  </li>
                 )
               })}
-            </div>
+            </ul>
           )}
+        </Widget>
 
-          {active.length > 0 && (
-            <div className="mt-6 border-t border-slate-100 pt-5 dark:border-slate-800">
-              <div className="mb-3 text-xs font-medium text-slate-500">آخر 7 أيام</div>
-              <div className="flex items-end gap-2">
-                {last7.map(({ d, ratio, done, total }) => (
-                  <div key={d} className="flex flex-1 flex-col items-center gap-1.5" title={`${done}/${total}`}>
-                    <div className="relative flex h-20 w-full items-end overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800">
-                      <div className={`w-full rounded-lg ${d === today ? 'bg-brand-500' : 'bg-brand-300 dark:bg-brand-700'}`} style={{ height: `${Math.max(ratio * 100, ratio ? 8 : 0)}%`, transition: 'height .5s' }} />
-                    </div>
-                    <span className={`text-[10px] ${d === today ? 'font-semibold text-brand-700 dark:text-brand-400' : 'text-slate-400'}`}>{DAY_SHORT[fromKey(d).getDay()]}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </section>
-
-        <div className="space-y-6 lg:col-span-2">
-          {/* Agenda */}
-          <section className="card p-5">
-            <div className="mb-4 flex items-center justify-between">
-              <h2 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white"><ListTodo size={18} className="text-violet-600" /> جدول النهارده</h2>
-              <Link to="/schedule" className="text-xs font-medium text-brand-700 hover:underline dark:text-brand-400">الجدول</Link>
+        {/* Today's agenda — sticky note */}
+        <div className="lg:col-span-5">
+          <div className="sticky-note rotate-[1.2deg] px-5 pb-4 pt-6 transition hover:rotate-0">
+            <span className="tape" />
+            <div className="mb-2 flex items-center justify-between">
+              <h2 className="text-lg font-bold">📌 جدول النهارده</h2>
+              <Link to="/schedule" className="rounded-lg p-1 hover:bg-black/5" title="الجدول"><Plus size={17} /></Link>
             </div>
             {todayEvents.length === 0 ? (
-              <div className="py-6 text-center text-sm text-slate-500">
-                مفيش مواعيد النهارده.
-                <div className="mt-3"><Link to="/schedule" className="btn-outline"><Plus size={16} /> أضف موعد</Link></div>
-              </div>
+              <p className="py-8 text-center text-sm opacity-80">مفيش مواعيد النهارده ✨<br /><Link to="/schedule" className="mt-2 inline-block font-semibold underline underline-offset-4">أضف موعد</Link></p>
             ) : (
-              <div className="space-y-2">
-                {todayEvents.slice(0, 6).map((e) => (
-                  <EventRow key={e.id} event={e} compact onToggle={() => events.update(e.id, { done: !e.done })} />
+              <ul>
+                {todayEvents.slice(0, 7).map((e) => (
+                  <li key={e.id} className="flex items-center gap-3 border-b border-dashed border-[#d9c66a]/70 py-2.5 last:border-0 dark:border-white/15">
+                    <button
+                      onClick={() => events.update(e.id, { done: !e.done })}
+                      className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-current transition ${e.done ? 'bg-[#5b4a12] text-note dark:bg-note dark:text-[#3d3618]' : 'opacity-60'}`}
+                      aria-label="تم"
+                    >
+                      {e.done && <Check size={12} strokeWidth={3.5} />}
+                    </button>
+                    <span className={`min-w-0 flex-1 truncate text-sm font-medium ${e.done ? 'line-through opacity-50' : ''}`}>{e.title}</span>
+                    {e.start_time && <span className="text-xs tabular-nums opacity-70">{formatTime(e.start_time)}</span>}
+                  </li>
                 ))}
-                {todayEvents.length > 6 && <Link to="/schedule" className="block pt-1 text-center text-xs text-brand-700 hover:underline">+{todayEvents.length - 6} كمان</Link>}
-              </div>
+              </ul>
             )}
-          </section>
-
-          {/* Quiz CTA */}
-          <Link to="/skills/quiz?mode=daily" className="group relative block overflow-hidden rounded-2xl bg-gradient-to-br from-brand-700 to-brand-900 p-5 text-white shadow-card">
-            <div className="absolute -end-6 -top-6 h-28 w-28 rounded-full bg-white/10 blur-2xl" />
-            <div className="relative flex items-center justify-between gap-4">
-              <div>
-                <div className="text-xs font-medium text-brand-200">🧠 التحدي اليومي</div>
-                <div className="mt-1 font-semibold">{daily ? `نتيجتك ${daily.correct}/${daily.total} — تعيده؟` : '10 أسئلة · 5 دقائق'}</div>
-              </div>
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/15 transition group-hover:-translate-x-1"><ArrowLeft size={18} /></span>
-            </div>
-          </Link>
+            {todayEvents.length > 7 && <Link to="/schedule" className="mt-1 block text-center text-xs font-semibold underline">+{todayEvents.length - 7} كمان</Link>}
+          </div>
         </div>
+
+        {/* Countdown widget */}
+        <div className="widget flex items-center gap-4 p-5 lg:col-span-5">
+          {countdown ? (
+            <>
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl text-4xl" style={{ background: color(EVENT_CATEGORIES[countdown.category]?.color).row }}>{countdownEmoji(countdown)}</div>
+              <div className="min-w-0 flex-1">
+                <div className="truncate font-display text-xl font-bold text-ink dark:text-white">{countdown.title}</div>
+                <div className="mt-0.5 text-sm text-ink-soft">{formatShort(fromKey(countdown.date))}</div>
+              </div>
+              <div className="text-center">
+                <div dir="ltr" className="font-display text-4xl font-extrabold leading-none text-ink dark:text-white">-{daysBetween(today, countdown.date)}</div>
+                <div className="mt-1 text-xs font-semibold text-ink-soft">يوم</div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#ffeadc] text-4xl">🎉</div>
+              <div className="flex-1">
+                <div className="font-display text-lg font-bold text-ink dark:text-white">عدّاد المناسبات</div>
+                <div className="mt-0.5 text-sm text-ink-soft">أضف مناسبة أو موعد مهم وهيظهر هنا العد التنازلي.</div>
+              </div>
+              <Link to="/schedule" className="btn-outline px-3"><Plus size={16} /></Link>
+            </>
+          )}
+        </div>
+
+        {/* Last 7 days — pastel bars */}
+        <Widget className="lg:col-span-4" title="آخر 7 أيام" icon="📊" head="#e0f1fc" bodyClass="px-4 pb-4 pt-3">
+          <div className="flex items-end gap-1.5">
+            {last7.map(({ d, ratio, done, total }, i) => (
+              <div key={d} className="flex flex-1 flex-col items-center gap-1.5" title={`${done}/${total}`}>
+                <div className="relative flex h-20 w-full items-end overflow-hidden rounded-lg bg-[#f3f0fb] dark:bg-white/5">
+                  <div className="w-full rounded-lg" style={{ height: `${Math.max(ratio * 100, ratio ? 10 : 0)}%`, background: color(RAINBOW[i % RAINBOW.length]).hl, transition: 'height .5s' }} />
+                </div>
+                <span className={`text-[10px] ${d === today ? 'font-bold text-ink dark:text-white' : 'text-ink-soft'}`}>{DAY_SHORT[fromKey(d).getDay()]}</span>
+              </div>
+            ))}
+          </div>
+        </Widget>
+
+        {/* Daily challenge — dashed frame */}
+        <Link to="/skills/quiz?mode=daily" className="dash-frame group relative block overflow-hidden rounded-[22px] bg-gradient-to-br from-[#8f7ae6] to-[#6a4fcc] p-6 text-white shadow-card lg:col-span-3">
+          <span className="sticker -top-1 end-3 text-4xl" style={{ animation: 'wiggle 4s ease-in-out infinite' }}>☀️</span>
+          <div className="relative">
+            <div className="text-xs font-semibold text-white/80">🧠 التحدي اليومي</div>
+            <div className="mt-2 font-display text-xl font-bold leading-snug">{daily ? `${daily.correct}/${daily.total} — تعيده؟` : '10 أسئلة · 5 دقائق'}</div>
+            <span className="mt-4 inline-flex items-center gap-1 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold transition group-hover:bg-white/30">
+              {daily ? 'جولة تانية' : 'ابدأ'} <ArrowLeft size={14} />
+            </span>
+          </div>
+        </Link>
       </div>
     </>
   )

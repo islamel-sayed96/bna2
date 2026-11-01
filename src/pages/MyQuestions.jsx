@@ -19,6 +19,7 @@ export default function MyQuestions() {
     <>
       <Link to="/skills" className="mb-4 inline-flex items-center gap-1 text-sm text-slate-500 hover:text-slate-700"><ArrowRight size={16} /> المهارات</Link>
       <PageHeader
+        icon="✍️"
         title="أسئلتي"
         subtitle="ضيف أسئلة من اللي بتتعلمه (كورس، كتاب، شغل) وهتظهر لك في الاختبارات والتحدي اليومي."
         action={<button className="btn-primary" onClick={() => setEditing('new')}><Plus size={18} /> سؤال جديد</button>}
@@ -27,7 +28,7 @@ export default function MyQuestions() {
       {questions.rows.length > 0 && (
         <div className="mb-5 flex flex-wrap gap-2">
           {[{ id: 'all', name: 'الكل' }, ...CATEGORIES].map((c) => (
-            <button key={c.id} onClick={() => setFilter(c.id)} className={`chip px-3 py-1.5 text-sm ${filter === c.id ? 'bg-brand-700 text-white' : 'bg-white text-slate-600 ring-1 ring-slate-200 hover:bg-slate-50 dark:bg-slate-900 dark:text-slate-300 dark:ring-slate-700'}`}>
+            <button key={c.id} onClick={() => setFilter(c.id)} className={`chip px-3 py-1.5 text-sm ${filter === c.id ? 'bg-ink text-white' : 'bg-white text-slate-600 ring-1 ring-slate-200 hover:bg-slate-50 dark:bg-slate-900 dark:text-slate-300 dark:ring-slate-700'}`}>
               {c.icon} {c.name}
             </button>
           ))}
@@ -41,10 +42,10 @@ export default function MyQuestions() {
           {list.map((q) => {
             const cat = categoryById(q.category)
             return (
-              <div key={q.id} className="card flex items-start gap-4 p-5">
+              <div key={q.id} className="widget flex items-start gap-4 p-5">
                 <div className="min-w-0 flex-1">
                   <span className={`chip ${color(cat.color).soft}`}>{cat.icon} {cat.name}</span>
-                  <p className="mt-2 font-medium text-slate-800 dark:text-slate-100" dir="auto">{q.text}</p>
+                  <p className="mt-2 font-medium text-ink dark:text-slate-100" dir="auto">{q.text}</p>
                   <p className="mt-1.5 flex items-center gap-1.5 text-sm text-emerald-700 dark:text-emerald-400"><Check size={15} /> <span dir="auto">{q.options[q.answer]}</span></p>
                 </div>
                 <button onClick={() => setEditing(q)} className="rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-slate-800" aria-label="تعديل"><Pencil size={16} /></button>

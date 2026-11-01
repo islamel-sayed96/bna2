@@ -31,6 +31,7 @@ export default function Habits() {
   return (
     <>
       <PageHeader
+        icon="🔁"
         title="العادات"
         subtitle="ابني عاداتك يوم بيوم — المهم الاستمرار مش الكمال."
         action={
@@ -55,27 +56,28 @@ export default function Habits() {
             const best = bestStreak(h, logSet, today)
             const rate = completionRate(h, logSet, 30, today)
             return (
-              <div key={h.id} className="card p-5">
-                <div className="flex items-start gap-3">
-                  <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-2xl ${c.soft}`}>{h.icon}</div>
+              <div key={h.id} className="widget overflow-hidden">
+                <div className="flex items-start gap-3 px-5 pb-4 pt-5" style={{ background: c.row }}>
+                  <div className="flex h-12 w-12 shrink-0 rotate-[-4deg] items-center justify-center rounded-2xl bg-white text-2xl shadow-sm">{h.icon}</div>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2">
-                      <h3 className="truncate font-semibold text-slate-900 dark:text-white">{h.name}</h3>
-                      <button onClick={() => setEditing(h)} className="rounded-md p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-slate-800" aria-label="تعديل">
+                      <h3 className="truncate text-lg font-bold text-ink">{h.name}</h3>
+                      <button onClick={() => setEditing(h)} className="rounded-md p-1 text-ink-soft hover:bg-white/70" aria-label="تعديل">
                         <Pencil size={14} />
                       </button>
                     </div>
-                    <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
+                    <p className="mt-0.5 text-xs text-ink-soft">
                       {h.days?.length === 7 ? 'كل يوم' : WEEK_ORDER.filter((d) => h.days?.includes(d)).map((d) => DAY_SHORT[d]).join('، ')}
                       {h.note ? ` · ${h.note}` : ''}
                     </p>
                   </div>
-                  <div className="flex items-center gap-1 rounded-full bg-orange-50 px-2.5 py-1 text-sm font-bold text-orange-600 dark:bg-orange-500/10 dark:text-orange-300" title="السلسلة الحالية">
+                  <div className="flex items-center gap-1 rounded-full bg-white px-2.5 py-1 font-display text-base font-bold text-orange-500 shadow-sm" title="السلسلة الحالية">
                     <Flame size={15} /> {streak}
                   </div>
                 </div>
 
-                <div className="mt-5 grid grid-cols-7 gap-1.5">
+                <div className="paper-grid px-5 pb-5">
+                <div className="grid grid-cols-7 gap-1.5 pt-4">
                   {days.map((d) => {
                     const scheduled = isScheduled(h, d)
                     const done = logSet.has(logKey(h.id, d))
@@ -87,7 +89,7 @@ export default function Habits() {
                         className="group flex flex-col items-center gap-1.5"
                         title={formatShort(fromKey(d))}
                       >
-                        <span className={`text-[10px] font-medium ${isToday ? 'text-brand-700 dark:text-brand-400' : 'text-slate-400'}`}>
+                        <span className={`text-[10px] font-medium ${isToday ? 'font-bold text-ink dark:text-white' : 'text-ink-soft'}`}>
                           {isToday ? 'النهارده' : DAY_SHORT[fromKey(d).getDay()]}
                         </span>
                         <span
@@ -95,8 +97,8 @@ export default function Habits() {
                             done
                               ? `${c.fill} shadow-sm`
                               : scheduled
-                                ? `border-2 border-dashed border-slate-200 group-hover:border-slate-300 dark:border-slate-700 ${isToday ? `ring-2 ring-offset-2 ring-offset-white dark:ring-offset-slate-900 ${c.ring}` : ''}`
-                                : 'bg-slate-50 dark:bg-slate-800/50'
+                                ? `border-2 border-dashed border-ink/20 bg-white group-hover:border-ink/40 dark:border-white/20 dark:bg-transparent ${isToday ? `ring-2 ring-offset-2 ring-offset-white dark:ring-offset-[#1f1c38] ${c.ring}` : ''}`
+                                : 'bg-[#f3f0fb] dark:bg-white/5'
                           }`}
                           style={done ? { animation: 'pop .25s ease-out' } : undefined}
                         >
@@ -107,19 +109,20 @@ export default function Habits() {
                   })}
                 </div>
 
-                <div className="mt-5 flex items-center gap-4 border-t border-slate-100 pt-4 text-xs text-slate-500 dark:border-slate-800 dark:text-slate-400">
+                <div className="mt-5 flex items-center gap-4 border-t border-dashed border-[#e3ddf5] pt-4 text-xs text-ink-soft dark:border-white/10">
                   <div className="flex-1">
                     <div className="mb-1.5 flex justify-between">
                       <span>الالتزام آخر 30 يوم</span>
-                      <span className="font-semibold text-slate-700 dark:text-slate-200">{Math.round(rate * 100)}%</span>
+                      <span className="font-bold text-ink dark:text-white">{Math.round(rate * 100)}%</span>
                     </div>
-                    <div className="h-1.5 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
+                    <div className="h-2 overflow-hidden rounded-full bg-[#f3f0fb] dark:bg-white/5">
                       <div className={`h-full rounded-full ${c.bar}`} style={{ width: `${rate * 100}%`, transition: 'width .5s' }} />
                     </div>
                   </div>
                   <div className="flex items-center gap-1" title="أطول سلسلة">
                     <Trophy size={14} className="text-amber-500" /> {best}
                   </div>
+                </div>
                 </div>
               </div>
             )
@@ -133,6 +136,7 @@ export default function Habits() {
         key={editing?.id ?? editing}
         open={editing !== null}
         habit={editing === 'new' ? null : editing}
+        defaultColor={HABIT_COLORS[habits.rows.length % HABIT_COLORS.length]}
         onClose={() => setEditing(null)}
         onSave={async (data) => {
           if (editing === 'new') await habits.insert(data)
@@ -159,12 +163,12 @@ function HabitHeatmap({ habits, logSet }) {
   const first = addDaysKey(lastCol, -(weeks * 7 - 1))
   const cells = Array.from({ length: weeks * 7 }, (_, i) => addDaysKey(first, i))
 
-  const levels = ['bg-slate-100 dark:bg-slate-800', 'bg-brand-200 dark:bg-brand-900', 'bg-brand-400 dark:bg-brand-700', 'bg-brand-600 dark:bg-brand-500', 'bg-brand-800 dark:bg-brand-300']
+  const levels = ['bg-[#f0edf9] dark:bg-white/5', 'bg-brand-200 dark:bg-brand-900', 'bg-brand-300 dark:bg-brand-700', 'bg-brand-400 dark:bg-brand-500', 'bg-brand-600 dark:bg-brand-300']
 
   return (
-    <div className="card mt-6 p-5">
+    <div className="widget mt-6 p-5">
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="font-semibold text-slate-900 dark:text-white">خريطة الالتزام</h3>
+        <h3 className="text-lg font-bold text-ink dark:text-white">🗺️ خريطة الالتزام</h3>
         <span className="text-xs text-slate-500">آخر {weeks} أسبوع</span>
       </div>
       <div className="overflow-x-auto pb-1">
@@ -186,10 +190,10 @@ function HabitHeatmap({ habits, logSet }) {
   )
 }
 
-function HabitForm({ open, habit, onClose, onSave, onDelete }) {
+function HabitForm({ open, habit, defaultColor = 'violet', onClose, onSave, onDelete }) {
   const [name, setName] = useState(habit?.name ?? '')
   const [icon, setIcon] = useState(habit?.icon ?? '💧')
-  const [col, setCol] = useState(habit?.color ?? 'teal')
+  const [col, setCol] = useState(habit?.color ?? defaultColor)
   const [days, setDays] = useState(habit?.days ?? [0, 1, 2, 3, 4, 5, 6])
   const [note, setNote] = useState(habit?.note ?? '')
   const [busy, setBusy] = useState(false)
@@ -222,7 +226,7 @@ function HabitForm({ open, habit, onClose, onSave, onDelete }) {
           <label className="label">الأيقونة</label>
           <div className="grid grid-cols-8 gap-1.5">
             {HABIT_ICONS.map((i) => (
-              <button type="button" key={i} onClick={() => setIcon(i)} className={`flex h-10 items-center justify-center rounded-xl text-xl transition ${icon === i ? 'bg-brand-50 ring-2 ring-brand-500 dark:bg-brand-500/10' : 'hover:bg-slate-100 dark:hover:bg-slate-800'}`}>
+              <button type="button" key={i} onClick={() => setIcon(i)} className={`flex h-10 items-center justify-center rounded-xl text-xl transition ${icon === i ? 'bg-brand-50 ring-2 ring-brand-400 dark:bg-brand-500/10' : 'hover:bg-brand-50 dark:hover:bg-white/5'}`}>
                 {i}
               </button>
             ))}
@@ -240,13 +244,13 @@ function HabitForm({ open, habit, onClose, onSave, onDelete }) {
           <div className="mb-1.5 flex items-center justify-between">
             <label className="label mb-0">الأيام</label>
             <div className="flex gap-2 text-xs">
-              <button type="button" className="text-brand-700 hover:underline dark:text-brand-400" onClick={() => setDays([0, 1, 2, 3, 4, 5, 6])}>كل يوم</button>
-              <button type="button" className="text-brand-700 hover:underline dark:text-brand-400" onClick={() => setDays([0, 1, 2, 3, 4])}>أيام الشغل</button>
+              <button type="button" className="text-brand-600 hover:underline dark:text-brand-300" onClick={() => setDays([0, 1, 2, 3, 4, 5, 6])}>كل يوم</button>
+              <button type="button" className="text-brand-600 hover:underline dark:text-brand-300" onClick={() => setDays([0, 1, 2, 3, 4])}>أيام الشغل</button>
             </div>
           </div>
           <div className="grid grid-cols-7 gap-1.5">
             {WEEK_ORDER.map((d) => (
-              <button type="button" key={d} onClick={() => toggleDay(d)} className={`rounded-xl py-2 text-xs font-medium transition ${days.includes(d) ? 'bg-brand-700 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300'}`}>
+              <button type="button" key={d} onClick={() => toggleDay(d)} className={`rounded-xl py-2 text-xs font-medium transition ${days.includes(d) ? 'bg-ink text-white dark:bg-brand-600' : 'bg-[#f3f0fb] text-ink-soft hover:bg-brand-100 dark:bg-white/5 dark:text-slate-300'}`}>
                 {DAY_SHORT[d]}
               </button>
             ))}
