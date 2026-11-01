@@ -10,6 +10,7 @@ import Schedule from './pages/Schedule'
 import Skills from './pages/Skills'
 import Quiz from './pages/Quiz'
 import MyQuestions from './pages/MyQuestions'
+import CategoryPage from './pages/CategoryPage'
 import Settings from './pages/Settings'
 
 function Gate() {
@@ -26,6 +27,7 @@ function Gate() {
         <Route path="skills" element={<Skills />} />
         <Route path="skills/quiz" element={<Quiz />} />
         <Route path="skills/questions" element={<MyQuestions />} />
+        <Route path="skills/c/:id" element={<CategoryPage />} />
         <Route path="settings" element={<Settings />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>

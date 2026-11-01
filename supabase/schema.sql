@@ -74,3 +74,34 @@ begin
          using (user_id = auth.uid()) with check (user_id = auth.uid())', t);
   end loop;
 end $$;
+
+-- ───────────── v2: habit types, skill categories, richer questions ─────────────
+-- Safe to run again on an existing database.
+
+alter table public.habits add column if not exists kind text not null default 'build';   -- build | avoid | bonus
+alter table public.habits add column if not exists section text;                          -- group name, e.g. 'الصلاة'
+alter table public.habits add column if not exists sort int not null default 0;
+
+create table if not exists public.skill_categories (
+  id          uuid primary key default gen_random_uuid(),
+  user_id     uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  name        text not null,
+  icon        text not null default '📘',
+  color       text not null default 'violet',
+  parent_id   uuid references public.skill_categories(id) on delete cascade,
+  created_at  timestamptz not null default now()
+);
+
+alter table public.questions add column if not exists type text not null default 'mcq'; -- mcq | truefalse | text | writing | listening
+alter table public.questions add column if not exists answer_text text;
+alter table public.questions add column if not exists accepted jsonb not null default '[]';
+alter table public.questions add column if not exists keywords jsonb not null default '[]';
+alter table public.questions add column if not exists media jsonb;                        -- { youtube, start, end }
+alter table public.questions add column if not exists lang text not null default 'en';
+alter table public.questions alter column options set default '[]';
+alter table public.questions alter column answer drop not null;
+
+alter table public.skill_categories enable row level security;
+drop policy if exists "own rows" on public.skill_categories;
+create policy "own rows" on public.skill_categories for all to authenticated
+  using (user_id = auth.uid()) with check (user_id = auth.uid());

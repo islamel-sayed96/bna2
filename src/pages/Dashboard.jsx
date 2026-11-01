@@ -3,7 +3,7 @@ import { Check, ArrowLeft, Plus } from 'lucide-react'
 import { useCollection } from '../lib/useCollection'
 import { useAuth } from '../lib/auth'
 import { addDaysKey, DAY_SHORT, formatLong, formatShort, formatTime, fromKey, greeting, todayKey } from '../lib/dates'
-import { currentStreak, isScheduled, logKey } from '../lib/habits'
+import { currentStreak, dayScore, groupBySection, isActiveOn, isLogged, kindOf } from '../lib/habits'
 import { dailyDoneToday, practiceStreak } from '../lib/quiz'
 import { color, highlight, RAINBOW } from '../lib/colors'
 import { PageLoader, StatCard, Widget } from '../components/ui'
@@ -48,8 +48,8 @@ export default function Dashboard() {
 
   const today = todayKey()
   const active = habits.rows.filter((h) => !h.archived)
-  const todayHabits = active.filter((h) => isScheduled(h, today))
-  const doneHabits = todayHabits.filter((h) => logSet.has(logKey(h.id, today))).length
+  const todayHabits = active.filter((h) => isActiveOn(h, today))
+  const score = dayScore(active, logSet, today)
   const todayEvents = events.rows.filter((e) => e.date === today).sort(sortEvents)
   const pendingEvents = todayEvents.filter((e) => !e.done).length
   const bestStreak = active.reduce((m, h) => Math.max(m, currentStreak(h, logSet, today)), 0)
@@ -60,9 +60,8 @@ export default function Dashboard() {
   const countdown = nextCountdown(events.rows, today)
 
   const last7 = Array.from({ length: 7 }, (_, i) => addDaysKey(today, i - 6)).map((d) => {
-    const sch = active.filter((h) => isScheduled(h, d) && (h.created_at ?? '').slice(0, 10) <= d)
-    const done = sch.filter((h) => logSet.has(logKey(h.id, d))).length
-    return { d, ratio: sch.length ? done / sch.length : 0, done, total: sch.length }
+    const s = dayScore(active, logSet, d)
+    return { d, ratio: s.rate ?? 0 }
   })
 
   return (
@@ -77,7 +76,7 @@ export default function Dashboard() {
       </div>
 
       <div className="mb-7 grid grid-cols-2 gap-4 lg:grid-cols-4">
-        <StatCard emoji="✅" tone="brand" label="عادات النهارده" value={`${doneHabits}/${todayHabits.length}`} hint={todayHabits.length && doneHabits === todayHabits.length ? 'كلها خلصت 🎉' : `${todayHabits.length - doneHabits} فاضلين`} />
+        <StatCard emoji={score.rate > 1 ? '🌟' : '✅'} tone="brand" label="تقييم النهارده" value={score.rate == null ? '—' : `${Math.round(score.rate * 100)}%`} hint={`${score.done}/${score.required} أساسية${score.bonusTotal ? ` · ⭐ ${score.bonusDone}/${score.bonusTotal}` : ''}`} />
         <StatCard emoji="📋" tone="violet" label="مهام فاضلة" value={pendingEvents} hint={`من ${todayEvents.length} النهارده`} />
         <StatCard emoji="🔥" tone="amber" label="أطول سلسلة" value={bestStreak} hint="يوم متتالي" />
         <StatCard emoji="🧠" tone="rose" label="أيام التدريب" value={quizStreak} hint={daily ? 'خلصت تحدي النهارده ✓' : 'التحدي مستنيك'} />
@@ -100,32 +99,47 @@ export default function Dashboard() {
               {!active.length && <div className="mt-3"><Link to="/habits" className="btn-outline"><Plus size={16} /> أضف عادة</Link></div>}
             </div>
           ) : (
-            <ul>
-              {todayHabits.map((h) => {
-                const done = logSet.has(logKey(h.id, today))
-                const c = color(h.color)
-                const streak = currentStreak(h, logSet, today)
-                return (
-                  <li key={h.id} className="row-line">
-                    <button onClick={() => toggle(h, today)} className="flex w-full items-center gap-3 py-3 text-start">
-                      <span
-                        className={`flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-md border-2 transition ${done ? 'border-ink bg-ink text-white dark:border-brand-400 dark:bg-brand-400' : 'border-ink/40 bg-white dark:border-white/30 dark:bg-transparent'}`}
-                        style={done ? { animation: 'pop .25s ease-out' } : undefined}
-                      >
-                        {done && <Check size={14} strokeWidth={3.5} />}
-                      </span>
-                      <span className="text-lg">{h.icon}</span>
-                      <span className="min-w-0 flex-1">
-                        <span className={`text-[15px] font-semibold ${done ? 'text-ink/40 line-through dark:text-white/40' : 'text-ink dark:text-white'}`} style={done ? undefined : highlight(c.hl)}>
-                          {h.name}
-                        </span>
-                      </span>
-                      <span className="text-xs font-medium text-ink-soft">🔥 {streak}</span>
-                    </button>
-                  </li>
-                )
-              })}
-            </ul>
+            <div>
+              {groupBySection(todayHabits).map((g) => (
+                <div key={g.name}>
+                  <div className="pb-1 pt-3 text-[11px] font-bold text-ink-soft">{g.name}</div>
+                  <ul>
+                    {g.habits.map((h) => {
+                      const k = kindOf(h)
+                      const logged = isLogged(h, logSet, today)
+                      const done = k === 'avoid' ? false : logged
+                      const c = color(h.color)
+                      const streak = currentStreak(h, logSet, today)
+                      return (
+                        <li key={h.id} className="row-line">
+                          <button onClick={() => toggle(h, today)} className="flex w-full items-center gap-3 py-2.5 text-start">
+                            {k === 'avoid' ? (
+                              <span className={`flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-md border-2 text-xs font-bold transition ${logged ? 'border-rose-500 bg-rose-500 text-white' : 'border-rose-300 text-rose-300'}`}>✕</span>
+                            ) : (
+                              <span
+                                className={`flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-md border-2 transition ${done ? (k === 'bonus' ? 'border-amber-400 bg-amber-400 text-white' : 'border-ink bg-ink text-white dark:border-brand-400 dark:bg-brand-400') : 'border-ink/40 bg-white dark:border-white/30 dark:bg-transparent'}`}
+                                style={done ? { animation: 'pop .25s ease-out' } : undefined}
+                              >
+                                {done && (k === 'bonus' ? <span className="text-[11px]">★</span> : <Check size={14} strokeWidth={3.5} />)}
+                              </span>
+                            )}
+                            <span className="text-lg">{h.icon}</span>
+                            <span className="min-w-0 flex-1">
+                              <span className={`text-[15px] font-semibold ${done ? 'text-ink/40 line-through dark:text-white/40' : logged ? 'text-rose-500' : 'text-ink dark:text-white'}`} style={done || k === 'avoid' ? undefined : highlight(c.hl)}>
+                                {h.name}
+                              </span>
+                              {k === 'avoid' && <span className="ms-2 text-[11px] text-ink-soft">{logged ? 'وقعت فيها النهارده' : 'اضغط لو وقعت فيها'}</span>}
+                              {k === 'bonus' && <span className="ms-2 text-[11px] text-amber-600">إضافي</span>}
+                            </span>
+                            <span className="text-xs font-medium text-ink-soft">🔥 {streak}</span>
+                          </button>
+                        </li>
+                      )
+                    })}
+                  </ul>
+                </div>
+              ))}
+            </div>
           )}
         </Widget>
 
@@ -189,10 +203,10 @@ export default function Dashboard() {
         {/* Last 7 days — pastel bars */}
         <Widget className="lg:col-span-4" title="آخر 7 أيام" icon="📊" head="#e0f1fc" bodyClass="px-4 pb-4 pt-3">
           <div className="flex items-end gap-1.5">
-            {last7.map(({ d, ratio, done, total }, i) => (
-              <div key={d} className="flex flex-1 flex-col items-center gap-1.5" title={`${done}/${total}`}>
+            {last7.map(({ d, ratio }, i) => (
+              <div key={d} className="flex flex-1 flex-col items-center gap-1.5" title={`${Math.round(ratio * 100)}%`}>
                 <div className="relative flex h-20 w-full items-end overflow-hidden rounded-lg bg-[#f3f0fb] dark:bg-white/5">
-                  <div className="w-full rounded-lg" style={{ height: `${Math.max(ratio * 100, ratio ? 10 : 0)}%`, background: color(RAINBOW[i % RAINBOW.length]).hl, transition: 'height .5s' }} />
+                  <div className="w-full rounded-lg" style={{ height: `${Math.min(100, Math.max(ratio * 100, ratio ? 10 : 0))}%`, background: color(RAINBOW[i % RAINBOW.length]).hl, transition: 'height .5s' }} />
                 </div>
                 <span className={`text-[10px] ${d === today ? 'font-bold text-ink dark:text-white' : 'text-ink-soft'}`}>{DAY_SHORT[fromKey(d).getDay()]}</span>
               </div>

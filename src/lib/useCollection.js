@@ -31,6 +31,15 @@ export function useCollection(table) {
     [table],
   )
 
+  const insertMany = useCallback(
+    async (list) => {
+      const saved = await backend.insertMany(table, list)
+      setRows((r) => [...r, ...saved])
+      return saved
+    },
+    [table],
+  )
+
   const update = useCallback(
     async (id, patch) => {
       setRows((r) => r.map((x) => (x.id === id ? { ...x, ...patch } : x)))
@@ -57,5 +66,5 @@ export function useCollection(table) {
     [table, reload],
   )
 
-  return { rows, loading, error, insert, update, remove, reload }
+  return { rows, loading, error, insert, insertMany, update, remove, reload }
 }

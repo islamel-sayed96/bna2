@@ -26,3 +26,6 @@ dist-ssr
 .env
 .env.local
 .env.*.local
+
+# personal question packs — import from the site, never commit
+*-personal.json

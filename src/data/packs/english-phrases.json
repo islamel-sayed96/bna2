@@ -1,0 +1,3512 @@
+{
+ "name": "الإنجليزي — تعبيرات وجمل",
+ "categories": [
+  {
+   "key": "en",
+   "name": "الإنجليزي",
+   "icon": "🇬🇧",
+   "color": "sky",
+   "parent": null
+  },
+  {
+   "key": "combos",
+   "name": "تركيبات لغوية",
+   "icon": "🧱",
+   "color": "sky",
+   "parent": "en"
+  },
+  {
+   "key": "sentences",
+   "name": "جمل مختلفة",
+   "icon": "💬",
+   "color": "sky",
+   "parent": "en"
+  },
+  {
+   "key": "idioms",
+   "name": "مصطلحات (Idioms)",
+   "icon": "🎭",
+   "color": "sky",
+   "parent": "en"
+  },
+  {
+   "key": "saynot",
+   "name": "قل ولا تقل",
+   "icon": "⚖️",
+   "color": "sky",
+   "parent": "en"
+  },
+  {
+   "key": "daily",
+   "name": "تعبيرات يومية",
+   "icon": "☕",
+   "color": "sky",
+   "parent": "en"
+  },
+  {
+   "key": "work",
+   "name": "الشغل والنقاش",
+   "icon": "💼",
+   "color": "sky",
+   "parent": "en"
+  },
+  {
+   "key": "situations",
+   "name": "مواقف ومفردات",
+   "icon": "🗣️",
+   "color": "sky",
+   "parent": "en"
+  },
+  {
+   "key": "chat",
+   "name": "اختصارات الشات",
+   "icon": "📱",
+   "color": "sky",
+   "parent": "en"
+  },
+  {
+   "key": "over",
+   "name": "استخدامات over",
+   "icon": "🔁",
+   "color": "sky",
+   "parent": "en"
+  },
+  {
+   "key": "encourage",
+   "name": "عبارات تشجيعية",
+   "icon": "💪",
+   "color": "sky",
+   "parent": "en"
+  },
+  {
+   "key": "requests",
+   "name": "طلباتي بالإنجليزي",
+   "icon": "🙋",
+   "color": "sky",
+   "parent": "en"
+  }
+ ],
+ "questions": [
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا بستحمّى / أنا تحت الدش.»",
+   "answer_text": "I’m in the shower.",
+   "accepted": [],
+   "explanation": "Part 1: I’m in / at / on — in: داخل مساحة أو مكان. at: موقع أو وجهة. وقد يصح الاثنان مع نفس المكان حسب المقصود. on: في تعبيرات مثل on the phone وon my computer، ومع الحافلة on a bus. in the shower = أستحمّ، وليست مجرد وجودي في الحمّام. in a car = داخل سيارة."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا في الردهة / بهو الاستقبال.»",
+   "answer_text": "I’m in the lobby.",
+   "accepted": [],
+   "explanation": "Part 1: I’m in / at / on — in: داخل مساحة أو مكان. at: موقع أو وجهة. وقد يصح الاثنان مع نفس المكان حسب المقصود. on: في تعبيرات مثل on the phone وon my computer، ومع الحافلة on a bus. in the shower = أستحمّ، وليست مجرد وجودي في الحمّام. in a car = داخل سيارة."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I’m in a car.”؟",
+   "options": [
+    "أنا بواجه صعوبة في الإجابة على سؤالك.",
+    "أنا بتحسّن.",
+    "أنا داخل الحديقة.",
+    "أنا داخل سيارة."
+   ],
+   "answer": 3,
+   "explanation": "Part 1: I’m in / at / on — in: داخل مساحة أو مكان. at: موقع أو وجهة. وقد يصح الاثنان مع نفس المكان حسب المقصود. on: في تعبيرات مثل on the phone وon my computer، ومع الحافلة on a bus. in the shower = أستحمّ، وليست مجرد وجودي في الحمّام. in a car = داخل سيارة."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا داخل منزل.»",
+   "answer_text": "I’m in a house.",
+   "accepted": [],
+   "explanation": "Part 1: I’m in / at / on — in: داخل مساحة أو مكان. at: موقع أو وجهة. وقد يصح الاثنان مع نفس المكان حسب المقصود. on: في تعبيرات مثل on the phone وon my computer، ومع الحافلة on a bus. in the shower = أستحمّ، وليست مجرد وجودي في الحمّام. in a car = داخل سيارة."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا داخل مدرسة.»",
+   "answer_text": "I’m in a school.",
+   "accepted": [],
+   "explanation": "Part 1: I’m in / at / on — in: داخل مساحة أو مكان. at: موقع أو وجهة. وقد يصح الاثنان مع نفس المكان حسب المقصود. on: في تعبيرات مثل on the phone وon my computer، ومع الحافلة on a bus. in the shower = أستحمّ، وليست مجرد وجودي في الحمّام. in a car = داخل سيارة."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I’m at the mall.”؟",
+   "options": [
+    "أنا بحاول أفهم.",
+    "أنا في المركز التجاري.",
+    "كنت مشغول بالتفكير.",
+    "أنا داخل مدرسة."
+   ],
+   "answer": 1,
+   "explanation": "Part 1: I’m in / at / on — in: داخل مساحة أو مكان. at: موقع أو وجهة. وقد يصح الاثنان مع نفس المكان حسب المقصود. on: في تعبيرات مثل on the phone وon my computer، ومع الحافلة on a bus. in the shower = أستحمّ، وليست مجرد وجودي في الحمّام. in a car = داخل سيارة."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا في عيادة الطبيب.»",
+   "answer_text": "I’m at the doctor’s office.",
+   "accepted": [],
+   "explanation": "Part 1: I’m in / at / on — in: داخل مساحة أو مكان. at: موقع أو وجهة. وقد يصح الاثنان مع نفس المكان حسب المقصود. on: في تعبيرات مثل on the phone وon my computer، ومع الحافلة on a bus. in the shower = أستحمّ، وليست مجرد وجودي في الحمّام. in a car = داخل سيارة."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا في الحديقة.»",
+   "answer_text": "I’m at the park.",
+   "accepted": [],
+   "explanation": "Part 1: I’m in / at / on — in: داخل مساحة أو مكان. at: موقع أو وجهة. وقد يصح الاثنان مع نفس المكان حسب المقصود. on: في تعبيرات مثل on the phone وon my computer، ومع الحافلة on a bus. in the shower = أستحمّ، وليست مجرد وجودي في الحمّام. in a car = داخل سيارة."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I’m at the airport.”؟",
+   "options": [
+    "أنا كويس في ألعاب الفيديو.",
+    "أنا بجرّب أكل جديد.",
+    "أنا في المطار.",
+    "أنا بواجه صعوبة في الكتابة."
+   ],
+   "answer": 2,
+   "explanation": "Part 1: I’m in / at / on — in: داخل مساحة أو مكان. at: موقع أو وجهة. وقد يصح الاثنان مع نفس المكان حسب المقصود. on: في تعبيرات مثل on the phone وon my computer، ومع الحافلة on a bus. in the shower = أستحمّ، وليست مجرد وجودي في الحمّام. in a car = داخل سيارة."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا داخل المركز التجاري.»",
+   "answer_text": "I’m in the mall.",
+   "accepted": [],
+   "explanation": "Part 1: I’m in / at / on — in: داخل مساحة أو مكان. at: موقع أو وجهة. وقد يصح الاثنان مع نفس المكان حسب المقصود. on: في تعبيرات مثل on the phone وon my computer، ومع الحافلة on a bus. in the shower = أستحمّ، وليست مجرد وجودي في الحمّام. in a car = داخل سيارة."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا داخل الحديقة.»",
+   "answer_text": "I’m in the park.",
+   "accepted": [],
+   "explanation": "Part 1: I’m in / at / on — in: داخل مساحة أو مكان. at: موقع أو وجهة. وقد يصح الاثنان مع نفس المكان حسب المقصود. on: في تعبيرات مثل on the phone وon my computer، ومع الحافلة on a bus. in the shower = أستحمّ، وليست مجرد وجودي في الحمّام. in a car = داخل سيارة."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I’m on the phone.”؟",
+   "options": [
+    "أنا بتكلم في التليفون.",
+    "أنا داخل مدرسة.",
+    "أنا أجيد القيادة.",
+    "أنا هحصل على وظيفة."
+   ],
+   "answer": 0,
+   "explanation": "Part 1: I’m in / at / on — in: داخل مساحة أو مكان. at: موقع أو وجهة. وقد يصح الاثنان مع نفس المكان حسب المقصود. on: في تعبيرات مثل on the phone وon my computer، ومع الحافلة on a bus. in the shower = أستحمّ، وليست مجرد وجودي في الحمّام. in a car = داخل سيارة."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا بستخدم الكمبيوتر بتاعي.»",
+   "answer_text": "I’m on my computer.",
+   "accepted": [],
+   "explanation": "Part 1: I’m in / at / on — in: داخل مساحة أو مكان. at: موقع أو وجهة. وقد يصح الاثنان مع نفس المكان حسب المقصود. on: في تعبيرات مثل on the phone وon my computer، ومع الحافلة on a bus. in the shower = أستحمّ، وليست مجرد وجودي في الحمّام. in a car = داخل سيارة."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا على متن حافلة.»",
+   "answer_text": "I’m on a bus.",
+   "accepted": [],
+   "explanation": "Part 1: I’m in / at / on — in: داخل مساحة أو مكان. at: موقع أو وجهة. وقد يصح الاثنان مع نفس المكان حسب المقصود. on: في تعبيرات مثل on the phone وon my computer، ومع الحافلة on a bus. in the shower = أستحمّ، وليست مجرد وجودي في الحمّام. in a car = داخل سيارة."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I’m good at video games.”؟",
+   "options": [
+    "كنت مشغول بالتفكير.",
+    "أنا هروح الشغل.",
+    "أنا كويس في ألعاب الفيديو.",
+    "أنا داخل منزل."
+   ],
+   "answer": 2,
+   "explanation": "Part 2: I’m good at — أنا أجيد / جيد في. بعد at نستخدم اسمًا أو فعلًا بصيغة -ing."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا أجيد السباحة.»",
+   "answer_text": "I’m good at swimming.",
+   "accepted": [],
+   "explanation": "Part 2: I’m good at — أنا أجيد / جيد في. بعد at نستخدم اسمًا أو فعلًا بصيغة -ing."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا أجيد القيادة.»",
+   "answer_text": "I’m good at driving.",
+   "accepted": [],
+   "explanation": "Part 2: I’m good at — أنا أجيد / جيد في. بعد at نستخدم اسمًا أو فعلًا بصيغة -ing."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I’m good at reading.”؟",
+   "options": [
+    "أنا هاكل شوية كيك.",
+    "أنا هجيب عربية جديدة.",
+    "أنا أجيد القراءة.",
+    "أنا هروح الشغل."
+   ],
+   "answer": 2,
+   "explanation": "Part 2: I’m good at — أنا أجيد / جيد في. بعد at نستخدم اسمًا أو فعلًا بصيغة -ing."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا أجيد الكتابة.»",
+   "answer_text": "I’m good at writing.",
+   "accepted": [],
+   "explanation": "Part 2: I’m good at — أنا أجيد / جيد في. بعد at نستخدم اسمًا أو فعلًا بصيغة -ing."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا كويس في الرياضيات.»",
+   "answer_text": "I’m good at math.",
+   "accepted": [],
+   "explanation": "Part 2: I’m good at — أنا أجيد / جيد في. بعد at نستخدم اسمًا أو فعلًا بصيغة -ing."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I’m good at chess.”؟",
+   "options": [
+    "أنا أجيد الشطرنج.",
+    "أنا هشرب شوية قهوة.",
+    "كنت مشغول بتحضير العشاء.",
+    "أنا في المطار."
+   ],
+   "answer": 0,
+   "explanation": "Part 2: I’m good at — أنا أجيد / جيد في. بعد at نستخدم اسمًا أو فعلًا بصيغة -ing."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا بتحسّن.»",
+   "answer_text": "I’m getting better.",
+   "accepted": [],
+   "explanation": "Part 3: I’m getting — getting تعبر عن تغير الحالة أو الاستعداد أو بداية أعراض أو الحصول على شيء، حسب ما بعدها. getting better = أتحسّن الآن. getting good at reading = أصبح أفضل في القراءة تدريجيًا."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا بستعد للنوم.»",
+   "answer_text": "I’m getting ready for bed.",
+   "accepted": [],
+   "explanation": "Part 3: I’m getting — getting تعبر عن تغير الحالة أو الاستعداد أو بداية أعراض أو الحصول على شيء، حسب ما بعدها. getting better = أتحسّن الآن. getting good at reading = أصبح أفضل في القراءة تدريجيًا."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I’m getting a cold.”؟",
+   "options": [
+    "أنا في الحديقة.",
+    "أنا بحاول أفهم.",
+    "بدأ يجيني دور برد.",
+    "أنا هروح الشغل."
+   ],
+   "answer": 2,
+   "explanation": "Part 3: I’m getting — getting تعبر عن تغير الحالة أو الاستعداد أو بداية أعراض أو الحصول على شيء، حسب ما بعدها. getting better = أتحسّن الآن. getting good at reading = أصبح أفضل في القراءة تدريجيًا."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا بدأت أتعب.»",
+   "answer_text": "I’m getting tired.",
+   "accepted": [],
+   "explanation": "Part 3: I’m getting — getting تعبر عن تغير الحالة أو الاستعداد أو بداية أعراض أو الحصول على شيء، حسب ما بعدها. getting better = أتحسّن الآن. getting good at reading = أصبح أفضل في القراءة تدريجيًا."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا بتحسّن في القراءة وببقى كويس فيها.»",
+   "answer_text": "I’m getting good at reading.",
+   "accepted": [],
+   "explanation": "Part 3: I’m getting — getting تعبر عن تغير الحالة أو الاستعداد أو بداية أعراض أو الحصول على شيء، حسب ما بعدها. getting better = أتحسّن الآن. getting good at reading = أصبح أفضل في القراءة تدريجيًا."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I’m getting a new car.”؟",
+   "options": [
+    "أنا هروح الشغل.",
+    "أنا في عيادة الطبيب.",
+    "أنا هجيب عربية جديدة.",
+    "أنا هاكل شوية كيك."
+   ],
+   "answer": 2,
+   "explanation": "Part 3: I’m getting — getting تعبر عن تغير الحالة أو الاستعداد أو بداية أعراض أو الحصول على شيء، حسب ما بعدها. getting better = أتحسّن الآن. getting good at reading = أصبح أفضل في القراءة تدريجيًا."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا هحصل على وظيفة.»",
+   "answer_text": "I’m getting a job.",
+   "accepted": [],
+   "explanation": "Part 3: I’m getting — getting تعبر عن تغير الحالة أو الاستعداد أو بداية أعراض أو الحصول على شيء، حسب ما بعدها. getting better = أتحسّن الآن. getting good at reading = أصبح أفضل في القراءة تدريجيًا."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا بحاول أحصل على وظيفة.»",
+   "answer_text": "I’m trying to get a job.",
+   "accepted": [],
+   "explanation": "Part 4: I’m trying to + verb — أنا أحاول أن… بعد trying to يأتي الفعل في صورته الأساسية. I’m trying new food تعني تجربة طعام جديد؛ trying + اسم، دون to."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I’m trying to call my family.”؟",
+   "options": [
+    "أنا عايز أسمع الأغنية دي.",
+    "أنا بحاول أتصل بعيلتي.",
+    "أنا داخل مدرسة.",
+    "أنا هشرب شوية قهوة."
+   ],
+   "answer": 1,
+   "explanation": "Part 4: I’m trying to + verb — أنا أحاول أن… بعد trying to يأتي الفعل في صورته الأساسية. I’m trying new food تعني تجربة طعام جديد؛ trying + اسم، دون to."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا بحاول أستمتع بعشائي.»",
+   "answer_text": "I’m trying to enjoy my dinner.",
+   "accepted": [],
+   "explanation": "Part 4: I’m trying to + verb — أنا أحاول أن… بعد trying to يأتي الفعل في صورته الأساسية. I’m trying new food تعني تجربة طعام جديد؛ trying + اسم، دون to."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا بحاول أعلّم وأثقّف نفسي.»",
+   "answer_text": "I’m trying to educate myself.",
+   "accepted": [],
+   "explanation": "Part 4: I’m trying to + verb — أنا أحاول أن… بعد trying to يأتي الفعل في صورته الأساسية. I’m trying new food تعني تجربة طعام جديد؛ trying + اسم، دون to."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I’m trying to explain myself.”؟",
+   "options": [
+    "أنا بحاول أعلّم وأثقّف نفسي.",
+    "أنا بحاول أفهم.",
+    "أنا عايز أطلب أكل.",
+    "أنا بحاول أوضح قصدي / موقفي."
+   ],
+   "answer": 3,
+   "explanation": "Part 4: I’m trying to + verb — أنا أحاول أن… بعد trying to يأتي الفعل في صورته الأساسية. I’m trying new food تعني تجربة طعام جديد؛ trying + اسم، دون to."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا بجرّب أكل جديد.»",
+   "answer_text": "I’m trying new food.",
+   "accepted": [],
+   "explanation": "Part 4: I’m trying to + verb — أنا أحاول أن… بعد trying to يأتي الفعل في صورته الأساسية. I’m trying new food تعني تجربة طعام جديد؛ trying + اسم، دون to."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا بحاول آكل بطريقة صحية.»",
+   "answer_text": "I’m trying to eat healthily.",
+   "accepted": [],
+   "explanation": "Part 4: I’m trying to + verb — أنا أحاول أن… بعد trying to يأتي الفعل في صورته الأساسية. I’m trying new food تعني تجربة طعام جديد؛ trying + اسم، دون to."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I’m trying to understand.”؟",
+   "options": [
+    "أنا بحاول أفهم.",
+    "أنا هاكل شوية كيك.",
+    "أنا بواجه صعوبة في فهمك.",
+    "أنا بحاول أتصل بعيلتي."
+   ],
+   "answer": 0,
+   "explanation": "Part 4: I’m trying to + verb — أنا أحاول أن… بعد trying to يأتي الفعل في صورته الأساسية. I’m trying new food تعني تجربة طعام جديد؛ trying + اسم، دون to."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا هشرب شوية قهوة.»",
+   "answer_text": "I’m gonna have some coffee.",
+   "accepted": [],
+   "explanation": "Part 5: I’m gonna + verb — gonna صيغة غير رسمية لـ going to، شائعة في المحادثة. استخدم going to في الكتابة الرسمية. بعد gonna يأتي الفعل في صورته الأساسية. قد تعبر going to عن خطة أو نية أو توقع، وليس فقط المستقبل القريب."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا هروح الشغل.»",
+   "answer_text": "I’m gonna go to work.",
+   "accepted": [],
+   "explanation": "Part 5: I’m gonna + verb — gonna صيغة غير رسمية لـ going to، شائعة في المحادثة. استخدم going to في الكتابة الرسمية. بعد gonna يأتي الفعل في صورته الأساسية. قد تعبر going to عن خطة أو نية أو توقع، وليس فقط المستقبل القريب."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I’m gonna eat some cake.”؟",
+   "options": [
+    "أنا عايز أتجوزها.",
+    "أنا هاكل شوية كيك.",
+    "كنت على وشك أتصل بيك.",
+    "أنا بتكلم في التليفون."
+   ],
+   "answer": 1,
+   "explanation": "Part 5: I’m gonna + verb — gonna صيغة غير رسمية لـ going to، شائعة في المحادثة. استخدم going to في الكتابة الرسمية. بعد gonna يأتي الفعل في صورته الأساسية. قد تعبر going to عن خطة أو نية أو توقع، وليس فقط المستقبل القريب."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا هبعت سيرتي الذاتية.»",
+   "answer_text": "I’m gonna send out my resume.",
+   "accepted": [],
+   "explanation": "Part 5: I’m gonna + verb — gonna صيغة غير رسمية لـ going to، شائعة في المحادثة. استخدم going to في الكتابة الرسمية. بعد gonna يأتي الفعل في صورته الأساسية. قد تعبر going to عن خطة أو نية أو توقع، وليس فقط المستقبل القريب."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا هجري في ماراثون.»",
+   "answer_text": "I’m gonna run a marathon.",
+   "accepted": [],
+   "explanation": "Part 5: I’m gonna + verb — gonna صيغة غير رسمية لـ going to، شائعة في المحادثة. استخدم going to في الكتابة الرسمية. بعد gonna يأتي الفعل في صورته الأساسية. قد تعبر going to عن خطة أو نية أو توقع، وليس فقط المستقبل القريب."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I’m gonna stop smoking.”؟",
+   "options": [
+    "أنا بجرّب أكل جديد.",
+    "أنا بحاول أعلّم وأثقّف نفسي.",
+    "أنا هبطل التدخين.",
+    "كنت مشغول بتنظيف البيت."
+   ],
+   "answer": 2,
+   "explanation": "Part 5: I’m gonna + verb — gonna صيغة غير رسمية لـ going to، شائعة في المحادثة. استخدم going to في الكتابة الرسمية. بعد gonna يأتي الفعل في صورته الأساسية. قد تعبر going to عن خطة أو نية أو توقع، وليس فقط المستقبل القريب."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا عايز أتكلم.»",
+   "answer_text": "I wanna talk.",
+   "accepted": [],
+   "explanation": "Part 6: I wanna + verb — wanna صيغة غير رسمية لـ want to. بعدها فعل في صورته الأساسية. نقول I wanna، وليس I’m wanna. استخدم want to في الكتابة الرسمية."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا عايز أدور على وظيفة.»",
+   "answer_text": "I wanna search for a job.",
+   "accepted": [],
+   "explanation": "Part 6: I wanna + verb — wanna صيغة غير رسمية لـ want to. بعدها فعل في صورته الأساسية. نقول I wanna، وليس I’m wanna. استخدم want to في الكتابة الرسمية."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I wanna order some food.”؟",
+   "options": [
+    "أنا بواجه صعوبة في الموافقة على الشروط.",
+    "أنا هاكل شوية كيك.",
+    "أنا عايز أطلب أكل.",
+    "أنا أجيد الكتابة."
+   ],
+   "answer": 2,
+   "explanation": "Part 6: I wanna + verb — wanna صيغة غير رسمية لـ want to. بعدها فعل في صورته الأساسية. نقول I wanna، وليس I’m wanna. استخدم want to في الكتابة الرسمية."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا عايز أتجوزها.»",
+   "answer_text": "I wanna marry her.",
+   "accepted": [],
+   "explanation": "Part 6: I wanna + verb — wanna صيغة غير رسمية لـ want to. بعدها فعل في صورته الأساسية. نقول I wanna، وليس I’m wanna. استخدم want to في الكتابة الرسمية."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا عايز أسمع الأغنية دي.»",
+   "answer_text": "I wanna listen to that song.",
+   "accepted": [],
+   "explanation": "Part 6: I wanna + verb — wanna صيغة غير رسمية لـ want to. بعدها فعل في صورته الأساسية. نقول I wanna، وليس I’m wanna. استخدم want to في الكتابة الرسمية."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I was about to go out.”؟",
+   "options": [
+    "أنا داخل الحديقة.",
+    "أنا بتحسّن.",
+    "كنت على وشك الخروج.",
+    "كنت على وشك الذهاب للعمل."
+   ],
+   "answer": 2,
+   "explanation": "Part 10: I was about to + verb — كنت على وشك أن… فعل كان متوقعًا بعد لحظات في الماضي. بعد to يأتي الفعل في صورته الأساسية. قد يمنع حدث آخر تنفيذ الفعل كما في الحوار، لكن التركيب وحده لا يؤكد أنه لم يحدث. I’m about to: أنا على وشك الآن. I was about to: كنت على وشك في الماضي."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «كنت على وشك الذهاب للنوم.»",
+   "answer_text": "I was about to go to bed.",
+   "accepted": [],
+   "explanation": "Part 10: I was about to + verb — كنت على وشك أن… فعل كان متوقعًا بعد لحظات في الماضي. بعد to يأتي الفعل في صورته الأساسية. قد يمنع حدث آخر تنفيذ الفعل كما في الحوار، لكن التركيب وحده لا يؤكد أنه لم يحدث. I’m about to: أنا على وشك الآن. I was about to: كنت على وشك في الماضي."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «كنت على وشك الذهاب للعمل.»",
+   "answer_text": "I was about to go to work.",
+   "accepted": [],
+   "explanation": "Part 10: I was about to + verb — كنت على وشك أن… فعل كان متوقعًا بعد لحظات في الماضي. بعد to يأتي الفعل في صورته الأساسية. قد يمنع حدث آخر تنفيذ الفعل كما في الحوار، لكن التركيب وحده لا يؤكد أنه لم يحدث. I’m about to: أنا على وشك الآن. I was about to: كنت على وشك في الماضي."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I was about to say the same thing.”؟",
+   "options": [
+    "كنت على وشك أقول نفس الكلام.",
+    "أنا بواجه صعوبة في تحميل أغاني على موبايلي.",
+    "أنا عايز أتكلم.",
+    "أنا داخل سيارة."
+   ],
+   "answer": 0,
+   "explanation": "Part 10: I was about to + verb — كنت على وشك أن… فعل كان متوقعًا بعد لحظات في الماضي. بعد to يأتي الفعل في صورته الأساسية. قد يمنع حدث آخر تنفيذ الفعل كما في الحوار، لكن التركيب وحده لا يؤكد أنه لم يحدث. I’m about to: أنا على وشك الآن. I was about to: كنت على وشك في الماضي."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «كنت على وشك أتصل بيك.»",
+   "answer_text": "I was about to call you.",
+   "accepted": [],
+   "explanation": "Part 10: I was about to + verb — كنت على وشك أن… فعل كان متوقعًا بعد لحظات في الماضي. بعد to يأتي الفعل في صورته الأساسية. قد يمنع حدث آخر تنفيذ الفعل كما في الحوار، لكن التركيب وحده لا يؤكد أنه لم يحدث. I’m about to: أنا على وشك الآن. I was about to: كنت على وشك في الماضي."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «كنت على وشك أبعتلك إيميل.»",
+   "answer_text": "I was about to send you an email.",
+   "accepted": [],
+   "explanation": "Part 10: I was about to + verb — كنت على وشك أن… فعل كان متوقعًا بعد لحظات في الماضي. بعد to يأتي الفعل في صورته الأساسية. قد يمنع حدث آخر تنفيذ الفعل كما في الحوار، لكن التركيب وحده لا يؤكد أنه لم يحدث. I’m about to: أنا على وشك الآن. I was about to: كنت على وشك في الماضي."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I was busy thinking.”؟",
+   "options": [
+    "أنا بتحسّن.",
+    "أنا عايز أطلب أكل.",
+    "أنا بستعد للنوم.",
+    "كنت مشغول بالتفكير."
+   ],
+   "answer": 3,
+   "explanation": "Part 14: I was busy + verb-ing — كنت مشغولًا بـ… نستخدم busy ثم فعلًا بصيغة -ing لوصف النشاط في الماضي."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «كنت مشغول بالشغل.»",
+   "answer_text": "I was busy working.",
+   "accepted": [],
+   "explanation": "Part 14: I was busy + verb-ing — كنت مشغولًا بـ… نستخدم busy ثم فعلًا بصيغة -ing لوصف النشاط في الماضي."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «كنت مشغول بتحضير العشاء.»",
+   "answer_text": "I was busy cooking dinner.",
+   "accepted": [],
+   "explanation": "Part 14: I was busy + verb-ing — كنت مشغولًا بـ… نستخدم busy ثم فعلًا بصيغة -ing لوصف النشاط في الماضي."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I was busy talking on the phone.”؟",
+   "options": [
+    "كنت مشغول بالكلام في التليفون.",
+    "أنا داخل مدرسة.",
+    "كنت مشغول بالتفكير.",
+    "أنا في المركز التجاري."
+   ],
+   "answer": 0,
+   "explanation": "Part 14: I was busy + verb-ing — كنت مشغولًا بـ… نستخدم busy ثم فعلًا بصيغة -ing لوصف النشاط في الماضي."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «كنت مشغول بتنظيف البيت.»",
+   "answer_text": "I was busy cleaning the house.",
+   "accepted": [],
+   "explanation": "Part 14: I was busy + verb-ing — كنت مشغولًا بـ… نستخدم busy ثم فعلًا بصيغة -ing لوصف النشاط في الماضي."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «كنت مشغول بالمذاكرة لامتحاني.»",
+   "answer_text": "I was busy studying for my test.",
+   "accepted": [],
+   "explanation": "Part 14: I was busy + verb-ing — كنت مشغولًا بـ… نستخدم busy ثم فعلًا بصيغة -ing لوصف النشاط في الماضي."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I’m having a hard time writing.”؟",
+   "options": [
+    "أنا داخل منزل.",
+    "أنا عايز أسمع الأغنية دي.",
+    "أنا بواجه صعوبة في الكتابة.",
+    "أنا عايز أطلب أكل."
+   ],
+   "answer": 2,
+   "explanation": "Part 15: I’m having a hard time + verb-ing — أنا أواجه صعوبة في… بعد hard time يأتي الفعل بصيغة -ing. cell phone = هاتف محمول. ترجمة iPod في الصورة لا تطابق المثال الإنجليزي."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا بواجه صعوبة في فهمك.»",
+   "answer_text": "I’m having a hard time understanding you.",
+   "accepted": [],
+   "explanation": "Part 15: I’m having a hard time + verb-ing — أنا أواجه صعوبة في… بعد hard time يأتي الفعل بصيغة -ing. cell phone = هاتف محمول. ترجمة iPod في الصورة لا تطابق المثال الإنجليزي."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا بواجه صعوبة في الإجابة على سؤالك.»",
+   "answer_text": "I’m having a hard time answering your question.",
+   "accepted": [],
+   "explanation": "Part 15: I’m having a hard time + verb-ing — أنا أواجه صعوبة في… بعد hard time يأتي الفعل بصيغة -ing. cell phone = هاتف محمول. ترجمة iPod في الصورة لا تطابق المثال الإنجليزي."
+  },
+  {
+   "category": "combos",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I’m having a hard time downloading songs to my cell phone.”؟",
+   "options": [
+    "أنا بواجه صعوبة في تحميل أغاني على موبايلي.",
+    "أنا عايز أتجوزها.",
+    "أنا أجيد الكتابة.",
+    "أنا بدأت أتعب."
+   ],
+   "answer": 0,
+   "explanation": "Part 15: I’m having a hard time + verb-ing — أنا أواجه صعوبة في… بعد hard time يأتي الفعل بصيغة -ing. cell phone = هاتف محمول. ترجمة iPod في الصورة لا تطابق المثال الإنجليزي."
+  },
+  {
+   "category": "combos",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا بواجه صعوبة في الموافقة على الشروط.»",
+   "answer_text": "I’m having a hard time agreeing to the terms.",
+   "accepted": [],
+   "explanation": "Part 15: I’m having a hard time + verb-ing — أنا أواجه صعوبة في… بعد hard time يأتي الفعل بصيغة -ing. cell phone = هاتف محمول. ترجمة iPod في الصورة لا تطابق المثال الإنجليزي."
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا متأكد تمامًا.»",
+   "answer_text": "I’m absolutely sure.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا متأكد أن…»",
+   "answer_text": "I’m positive that",
+   "accepted": [],
+   "explanation": "positive هنا تعني متأكد، وليس إيجابي."
+  },
+  {
+   "category": "sentences",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I have no doubt that…”؟",
+   "options": [
+    "كانت خيبة أمل حقيقية.",
+    "ليس عندي شك أن…",
+    "احتمال حدوث ده مش كبير.",
+    "كنت هموت من الزهق."
+   ],
+   "answer": 1,
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا متأكد بنسبة مئة بالمئة.»",
+   "answer_text": "I’m a hundred percent certain.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا مقتنع تمامًا أن…»",
+   "answer_text": "I’m convinced that",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Chances are that…”؟",
+   "options": [
+    "غالبًا / من المحتمل أن…",
+    "ده شيّق / مدهش جدًا.",
+    "مش بيشدّني / مش بيعجبني.",
+    "هو تمتم بصوت واطي."
+   ],
+   "answer": 0,
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «غالبًا / من المحتمل أن…»",
+   "answer_text": "Odds are that",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا أشك في ده بشدة.»",
+   "answer_text": "I seriously doubt it.",
+   "accepted": [],
+   "explanation": "نبرة شك قوية."
+  },
+  {
+   "category": "sentences",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I don’t think so.”؟",
+   "options": [
+    "مالك؟ / إيه اللي حصل؟",
+    "غالبًا / من المحتمل أن…",
+    "مش أعتقد كده.",
+    "كل حاجة هتبقى كويسة."
+   ],
+   "answer": 2,
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «غالبًا لأ.»",
+   "answer_text": "Probably not.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «مش مرجّح أوي.»",
+   "answer_text": "It’s not very likely.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “There’s not much chance of that.”؟",
+   "options": [
+    "يا خسارة.",
+    "ماقدرتش أسيب الكتاب.",
+    "مش أعتقد كده.",
+    "احتمال حدوث ده مش كبير."
+   ],
+   "answer": 3,
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «هستغرب جدًا لو ده حصل.»",
+   "answer_text": "I’d be very surprised if that happened.",
+   "accepted": [],
+   "explanation": "توقع ضعيف."
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «مش هعوّل على حدوثه.»",
+   "answer_text": "I wouldn’t bet on it.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “That’ll never happen.”؟",
+   "options": [
+    "إنت بخير؟",
+    "كنت هموت من الزهق.",
+    "هو تمتم بكلام مش واضح.",
+    "ده مش هيحصل أبدًا."
+   ],
+   "answer": 3,
+   "explanation": "تأكيد قوي جدًا."
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ده شيّق / مدهش جدًا.»",
+   "answer_text": "It’s fascinating.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ده مثير للاهتمام والفضول.»",
+   "answer_text": "It’s intriguing.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I couldn’t tear myself away.”؟",
+   "options": [
+    "ماقدرتش أبعد عنه أو أسيبه.",
+    "غالبًا / من المحتمل أن…",
+    "غالبًا لأ.",
+    "احتمال حدوث ده مش كبير."
+   ],
+   "answer": 0,
+   "explanation": "كان جذابًا جدًا."
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ماقدرتش أسيب الكتاب.»",
+   "answer_text": "I couldn’t put it down.",
+   "accepted": [],
+   "explanation": "للحديث عن كتاب مشوّق."
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «اندمجت فيه لدرجة نسيت الوقت.»",
+   "answer_text": "I was so into it, I lost track of time.",
+   "accepted": [],
+   "explanation": "into it = مهتم أو مندمج فيه."
+  },
+  {
+   "category": "sentences",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “It does nothing for me.”؟",
+   "options": [
+    "أنا متأكد تمامًا.",
+    "يا خسارة / ده شيء مؤسف.",
+    "مش بيشدّني / مش بيعجبني.",
+    "كل حاجة هتبقى كويسة."
+   ],
+   "answer": 2,
+   "explanation": "رأي شخصي مباشر."
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «كنت زهقان جدًا.»",
+   "answer_text": "I was bored to tears.",
+   "accepted": [],
+   "explanation": "مبالغة."
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «كنت زهقان جدًا جدًا.»",
+   "answer_text": "I was bored to death.",
+   "accepted": [],
+   "explanation": "مبالغة."
+  },
+  {
+   "category": "sentences",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I was dying of boredom.”؟",
+   "options": [
+    "أنا متأكد تمامًا.",
+    "غالبًا لأ.",
+    "كنت هموت من الزهق.",
+    "إنت بخير؟"
+   ],
+   "answer": 2,
+   "explanation": "مبالغة."
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ممل جدًا، زي متابعة دهان وهو بينشف.»",
+   "answer_text": "It’s about as exciting as watching paint dry.",
+   "accepted": [],
+   "explanation": "سخرية؛ ليست مدحًا."
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «إيه المشكلة؟ / مالك؟»",
+   "answer_text": "What’s the matter?",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “What’s wrong?”؟",
+   "options": [
+    "مالك؟ / إيه اللي حصل؟",
+    "بص للجانب الإيجابي.",
+    "إحنا دردشنا.",
+    "مش أعتقد كده."
+   ],
+   "answer": 0,
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «إنت بخير؟»",
+   "answer_text": "Are you all right?",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «شكلك زعلان شوية.»",
+   "answer_text": "You look a bit down.",
+   "accepted": [],
+   "explanation": "down = حزين هنا."
+  },
+  {
+   "category": "sentences",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Is there anything I can do to help?”؟",
+   "options": [
+    "غالبًا / من المحتمل أن…",
+    "الموضوع مش بالسوء ده.",
+    "إيه المشكلة؟ / مالك؟",
+    "في حاجة أقدر أعملها عشان أساعد؟"
+   ],
+   "answer": 3,
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ارفع معنوياتك! / شد حيلك!»",
+   "answer_text": "Cheer up!",
+   "accepted": [
+    "Chin up!"
+   ],
+   "explanation": "قد تبدو مستخفّة بالمشاعر حسب الموقف."
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «الموضوع مش بالسوء ده.»",
+   "answer_text": "It’s not so bad.",
+   "accepted": [],
+   "explanation": "قد تقلّل من مشاعر الشخص حسب النبرة."
+  },
+  {
+   "category": "sentences",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Everything will be OK.”؟",
+   "options": [
+    "شكلك زعلان شوية.",
+    "كل حاجة هتبقى كويسة.",
+    "أنا مقتنع تمامًا أن…",
+    "مش هعوّل على حدوثه."
+   ],
+   "answer": 1,
+   "explanation": "لطمأنة الشخص."
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «بص للجانب الإيجابي.»",
+   "answer_text": "Look on the bright side.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «مش نهاية الدنيا.»",
+   "answer_text": "It’s not the end of the world.",
+   "accepted": [],
+   "explanation": "لمشكلة صغيرة نسبيًا."
+  },
+  {
+   "category": "sentences",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “What a pity!”؟",
+   "options": [
+    "أنا متأكد بنسبة مئة بالمئة.",
+    "يا خسارة! / يا للأسف!",
+    "غالبًا / من المحتمل أن…",
+    "يا خسارة / حاجة تضايق."
+   ],
+   "answer": 1,
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «يا خسارة.»",
+   "answer_text": "What a shame.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ده مخيّب للآمال.»",
+   "answer_text": "How disappointing.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “That’s too bad.”؟",
+   "options": [
+    "غالبًا / من المحتمل أن…",
+    "كنت هموت من الزهق.",
+    "يا خسارة / ده شيء مؤسف.",
+    "مش نهاية الدنيا."
+   ],
+   "answer": 2,
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «يا خسارة / حاجة تضايق.»",
+   "answer_text": "Bummer.",
+   "accepted": [],
+   "explanation": "غير رسمي."
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «كانت خيبة أمل حقيقية.»",
+   "answer_text": "It was a real letdown.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “It didn’t live up to my expectations.”؟",
+   "options": [
+    "يا خسارة / حاجة تضايق.",
+    "ماكانش قد توقعاتي.",
+    "ممل جدًا، زي متابعة دهان وهو بينشف.",
+    "غالبًا لأ."
+   ],
+   "answer": 1,
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «هو زعق / صاح.»",
+   "answer_text": "He yelled.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «هي صرخت.»",
+   "answer_text": "She screamed.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I whispered.”؟",
+   "options": [
+    "ارفع معنوياتك! / شد حيلك!",
+    "الموضوع مش بالسوء ده.",
+    "أنا أشك في ده بشدة.",
+    "أنا همست."
+   ],
+   "answer": 3,
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «إحنا دردشنا.»",
+   "answer_text": "We chatted.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «هو تمتم بكلام مش واضح.»",
+   "answer_text": "He mumbled.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “My kids whined.”؟",
+   "options": [
+    "أولادي اتذمّروا / زنّوا.",
+    "غالبًا / من المحتمل أن…",
+    "غالبًا لأ.",
+    "اندمجت فيه لدرجة نسيت الوقت."
+   ],
+   "answer": 0,
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «فضل يتكلم كتير / يسترسل.»",
+   "answer_text": "He rambled.",
+   "accepted": [
+    "He went on and on."
+   ],
+   "explanation": "ramble يضيف معنى عدم التنظيم أو الابتعاد عن الموضوع."
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «هي اتلعثمت.»",
+   "answer_text": "She stammered.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "sentences",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I snapped at my husband.”؟",
+   "options": [
+    "ردّيت على جوزي بعصبية.",
+    "أولادي اتذمّروا / زنّوا.",
+    "ارفع معنوياتك! / شد حيلك!",
+    "ده مثير للاهتمام والفضول."
+   ],
+   "answer": 0,
+   "explanation": "snapped at = تكلم بعصبية وبحدة، وليس ضرب."
+  },
+  {
+   "category": "sentences",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «هو تمتم بصوت واطي.»",
+   "answer_text": "He muttered.",
+   "accepted": [],
+   "explanation": "غالبًا تعليق سلبي أو شكوى."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «فك التكشيرة / بلاش الوش الحزين.»",
+   "answer_text": "Lose the long face.",
+   "accepted": [],
+   "explanation": "غير رسمي؛ قد يبدو آمرًا."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Catchy phrases.”؟",
+   "options": [
+    "عبارات جذابة وسهلة التذكر.",
+    "مستعجل ليه؟",
+    "كان لابس شيك جدًا في فرح امبارح.",
+    "إنت اتعدّيت الحدود."
+   ],
+   "answer": 0,
+   "explanation": "ليست مرادفًا دقيقًا لكلمة إفيهات في كل سياق."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «يا نعسان! / يا محب النوم!»",
+   "answer_text": "Sleepyhead!",
+   "accepted": [],
+   "explanation": "مزاح لطيف مع شخص تعرفه."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Don’t rub salt in the wound.”؟",
+   "options": [
+    "متزودش وجعي أو تضايقني أكتر.",
+    "إنت اتعدّيت الحدود.",
+    "ده أحسن كمان.",
+    "شبه بعض جدًا / فولة واتقسمت نصين."
+   ],
+   "answer": 0,
+   "explanation": "الصيغة المعتادة بدل التعبير في الصورة."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «إنت خوّفتنا / فزّعتنا.»",
+   "answer_text": "You have given us a fright.",
+   "accepted": [],
+   "explanation": "لا تعني كسرت مفاصلنا حرفيًا."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Only a stone’s throw.”؟",
+   "options": [
+    "قريب جدًا / على بُعد خطوات.",
+    "كان لابس شيك جدًا في فرح امبارح.",
+    "إنت اتعدّيت الحدود.",
+    "ساعدني وأنا أساعدك."
+   ],
+   "answer": 0,
+   "explanation": "تعبير عن قرب المسافة."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «استنى شوية / على مهلك.»",
+   "answer_text": "Hold your horses!",
+   "accepted": [],
+   "explanation": "غير رسمي."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I got you into a jam.”؟",
+   "options": [
+    "يتجاهل شخص عمدًا أو يعامله ببرود.",
+    "أنا ورّطتك / سببت لك مشكلة.",
+    "يفوّت الفرصة.",
+    "الحيطان لها ودان."
+   ],
+   "answer": 1,
+   "explanation": "jam هنا = مأزق."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا أستاهل اللي حصل لي.»",
+   "answer_text": "It serves me right.",
+   "accepted": [],
+   "explanation": "نتيجة خطأ ارتكبته أنا."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “You can bet your bottom dollar.”؟",
+   "options": [
+    "البساطة أحيانًا بتدي نتيجة أحسن.",
+    "تقدر تكون متأكد جدًا.",
+    "الحيطان لها ودان.",
+    "الكلام سهل؛ العبرة بالفعل."
+   ],
+   "answer": 1,
+   "explanation": "مجاز عن اليقين، وليس تعليمات للمراهنة."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «إنت جيت في الوقت المناسب.»",
+   "answer_text": "You have come at the right time.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “You scratch my back and I’ll scratch yours.”؟",
+   "options": [
+    "ساعدني وأنا أساعدك.",
+    "عبارات جذابة وسهلة التذكر.",
+    "الممارسة بتخلّيك تتحسن وتتقن.",
+    "لابس بأناقة شديدة."
+   ],
+   "answer": 0,
+   "explanation": "تبادل مصالح أو خدمات؛ قد توحي بمحاباة حسب الموقف."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «شخص مدمن شغل.»",
+   "answer_text": "Workaholic.",
+   "accepted": [],
+   "explanation": "لا تعني حمارًا حرفيًا."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “What a start to the day!”؟",
+   "options": [
+    "في دايمًا فرصة تانية.",
+    "يا لها من بداية لليوم!",
+    "شخص مدمن شغل.",
+    "كلي آذان صاغية / سامعك باهتمام."
+   ],
+   "answer": 1,
+   "explanation": "قد تقال بسخرية أو فرح حسب الموقف."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «مستعجل ليه؟»",
+   "answer_text": "What’s the rush?",
+   "accepted": [],
+   "explanation": "صحّحنا what is إلى الاختصار الطبيعي What’s، والمعنى كما هو."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Walls have ears.”؟",
+   "options": [
+    "مستعجل ليه؟",
+    "قريب جدًا / على بُعد خطوات.",
+    "الحيطان لها ودان.",
+    "كان لابس شيك جدًا في فرح امبارح."
+   ],
+   "answer": 2,
+   "explanation": "قد يسمع كلامك أشخاص آخرون."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «يضيع وقته في كلام بلا نتيجة.»",
+   "answer_text": "Waste one’s breath.",
+   "accepted": [],
+   "explanation": "one’s تتغير إلى my / your / his حسب الشخص."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “There is always a next time.”؟",
+   "options": [
+    "استعجل / يلا أسرع.",
+    "شخص مدمن شغل.",
+    "يا لها من بداية لليوم!",
+    "في دايمًا فرصة تانية."
+   ],
+   "answer": 3,
+   "explanation": null
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «في دايمًا طريقة / حل.»",
+   "answer_text": "There is always a way.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “The sooner, the better.”؟",
+   "options": [
+    "يدور في الاتجاه الغلط / يتهم الشخص الغلط.",
+    "كل ما يكون بدري، يكون أحسن.",
+    "لابس بأناقة شديدة.",
+    "لا أكثر ولا أقل."
+   ],
+   "answer": 1,
+   "explanation": null
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ده أحسن كمان.»",
+   "answer_text": "So much the better.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Give me a break.”؟",
+   "options": [
+    "هفكر فيه وأرد بعد ما آخد وقتي.",
+    "لما القط يغيب، الفيران تلعب.",
+    "بلاش كده / اديني فرصة / سيبني شوية.",
+    "الخلاصة / أهم نقطة هي…"
+   ],
+   "answer": 2,
+   "explanation": "قد تعني عدم التصديق أو الضيق أو طلب راحة حسب النبرة."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «استعجل / يلا أسرع.»",
+   "answer_text": "Shake a leg!",
+   "accepted": [],
+   "explanation": "غير رسمي؛ لا تعني تشارك رجلًا."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Dressed to the nines.”؟",
+   "options": [
+    "لابس بأناقة شديدة.",
+    "الخلاصة / أهم نقطة هي…",
+    "متحكمش على حد أو حاجة من المظهر.",
+    "يفوّت الفرصة."
+   ],
+   "answer": 0,
+   "explanation": null
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «كان لابس شيك جدًا في فرح امبارح.»",
+   "answer_text": "He was dressed to the nines at yesterday’s wedding.",
+   "accepted": [],
+   "explanation": "مثال على dressed to the nines."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “When the cat is away, the mice play.”؟",
+   "options": [
+    "ده مجرد كلام فارغ.",
+    "لما القط يغيب، الفيران تلعب.",
+    "البساطة أحيانًا بتدي نتيجة أحسن.",
+    "الكلام أسهل من التنفيذ."
+   ],
+   "answer": 1,
+   "explanation": "غياب الرقابة يجعل الآخرين يتصرفون بحرية."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ده مجرد كلام فارغ.»",
+   "answer_text": "This is just hot air.",
+   "accepted": [],
+   "explanation": "تعبير نقدي مباشر."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “A blessing in disguise.”؟",
+   "options": [
+    "إنت جيت في الوقت المناسب.",
+    "حاجة بدت سيئة وبعدين طلعت خير.",
+    "عبارات جذابة وسهلة التذكر.",
+    "أنا أستاهل اللي حصل لي."
+   ],
+   "answer": 1,
+   "explanation": "ليست نعمة تبدو كأنها نعمة؛ العكس هو المقصود."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «متحكمش على حد أو حاجة من المظهر.»",
+   "answer_text": "Don’t judge a book by its cover.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Don’t cry over spilled milk.”؟",
+   "options": [
+    "الكلام سهل؛ العبرة بالفعل.",
+    "يدور في الاتجاه الغلط / يتهم الشخص الغلط.",
+    "تقدر تكون متأكد جدًا.",
+    "متزعلش على حاجة حصلت ومش هتتغيّر."
+   ],
+   "answer": 3,
+   "explanation": "spilled أمريكية؛ spilt شائعة في البريطانية. قد تبدو تقليلًا من المشاعر."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «الكلام أسهل من التنفيذ.»",
+   "answer_text": "Easier said than done.",
+   "accepted": [],
+   "explanation": null
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Nothing more, and nothing less.”؟",
+   "options": [
+    "خفّ عليّا / اتساهل معايا شوية.",
+    "أنا أستاهل اللي حصل لي.",
+    "لا أكثر ولا أقل.",
+    "تقدر تكون متأكد جدًا."
+   ],
+   "answer": 2,
+   "explanation": null
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «شايف نفسه أوي / مغرور.»",
+   "answer_text": "He’s full of himself.",
+   "accepted": [],
+   "explanation": "انتقاد مباشر لشخص."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Don’t cross the line.”؟",
+   "options": [
+    "البساطة أحيانًا بتدي نتيجة أحسن.",
+    "أنا أستاهل اللي حصل لي.",
+    "إنت اتعدّيت الحدود.",
+    "متتعدّاش الحدود."
+   ],
+   "answer": 3,
+   "explanation": "وضع حدود مقبولة للسلوك."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «إنت اتعدّيت الحدود.»",
+   "answer_text": "You’ve crossed the line.",
+   "accepted": [],
+   "explanation": "اعتراض مباشر على السلوك."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I rest my case.”؟",
+   "options": [
+    "يضيع وقته في كلام بلا نتيجة.",
+    "عبارات جذابة وسهلة التذكر.",
+    "وده يثبت كلامي / مش محتاج أضيف أكتر.",
+    "يا لها من بداية لليوم!"
+   ],
+   "answer": 2,
+   "explanation": "جزء 3: تقال لما تعتقد إن حجتك ثبتت، أحيانًا بسخرية. مش مجرد قلت اللي عندي. مثال: He was late again. I rest my case. اتأخر تاني، وده يثبت كلامي."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «خفّ عليّا / اتساهل معايا شوية.»",
+   "answer_text": "Cut me some slack.",
+   "accepted": [],
+   "explanation": "جزء 3: طلب تقليل النقد أو التوقعات، مش طلب راحة جسدية حرفيًا. مثال: Cut me some slack. It’s my first week. خفّ عليّا، ده أول أسبوع ليّا."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “What’s done is done.”؟",
+   "options": [
+    "شبه بعض جدًا / فولة واتقسمت نصين.",
+    "إحنا نعرف بعض من زمان أوي.",
+    "اللي حصل حصل.",
+    "ده أحسن كمان."
+   ],
+   "answer": 2,
+   "explanation": "جزء 3 و4: اتكررت فاتضافت مرة واحدة. قبول إن الماضي مش هيتغيّر؛ قد تبدو تقليلًا من المشاعر. مثال: What’s done is done. Let’s focus on the next step. اللي حصل حصل، خلّينا نركز على الخطوة الجاية."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «إحنا نعرف بعض من زمان أوي.»",
+   "answer_text": "We go way back.",
+   "accepted": [],
+   "explanation": "جزء 3: علاقة أو معرفة قديمة. مثال: We go way back. We met at school. نعرف بعض من زمان، اتقابلنا في المدرسة."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Speak of the devil!”؟",
+   "options": [
+    "أنا أستاهل اللي حصل لي.",
+    "لسه كنا بنتكلم عنك!",
+    "متزودش وجعي أو تضايقني أكتر.",
+    "البساطة أحيانًا بتدي نتيجة أحسن."
+   ],
+   "answer": 1,
+   "explanation": "جزء 3: تقال عند ظهور شخص كنا بنتكلم عنه؛ مش اسم لأي شيء بيظهر، ولا شتيمة حرفية. مزاح بين المعارف. مثال: Speak of the devil! We were just talking about you. لسه كنا بنتكلم عنك، أهو إنت جيت!"
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «يتجاهل شخص عمدًا أو يعامله ببرود.»",
+   "answer_text": "Give someone the cold shoulder.",
+   "accepted": [],
+   "explanation": "جزء 3: someone تتبدّل بالشخص؛ التجاهل مقصود. مثال: She gave me the cold shoulder after our argument. عاملتني ببرود بعد خناقتنا."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Miss the boat.”؟",
+   "options": [
+    "يفوّت الفرصة.",
+    "شايف نفسه أوي / مغرور.",
+    "إنت اتعدّيت الحدود.",
+    "أنا أستاهل اللي حصل لي."
+   ],
+   "answer": 0,
+   "explanation": "جزء 3: فرصة لم تستغل في وقتها؛ مش شرط قارب حقيقي. مثال: Apply today so you don’t miss the boat. قدّم النهارده عشان متفوّتش الفرصة."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «يدور في الاتجاه الغلط / يتهم الشخص الغلط.»",
+   "answer_text": "Bark up the wrong tree.",
+   "accepted": [],
+   "explanation": "جزء 3: أوسع من طلب حاجة من الشخص الغلط؛ خطأ في الظن أو الحل أو الاتهام. مثال: If you think I took your phone, you’re barking up the wrong tree. لو فاكر إني أخدت تليفونك، إنت بتتهم الشخص الغلط."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Add insult to injury.”؟",
+   "options": [
+    "هو نسخة طبق الأصل من…",
+    "ساعدني وأنا أساعدك.",
+    "يزوّد الطين بلّة.",
+    "متحكمش على حد أو حاجة من المظهر."
+   ],
+   "answer": 2,
+   "explanation": "جزء 3: يضيف إساءة أو ضررًا لموقف سيئ بالفعل. مثال: The order was late, and to add insult to injury, it was damaged. الطلب اتأخر، وفوق ده وصل متضرر."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «افتكر كلامي.»",
+   "answer_text": "Mark my words.",
+   "accepted": [],
+   "explanation": "جزء 3: تصحيح word إلى words. تأكيد قوي لتوقع أو تحذير؛ قد يبدو حادًا. مثال: Mark my words: this will take longer than you think. افتكر كلامي: ده هياخد وقت أطول مما تتصور."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I’m all ears.”؟",
+   "options": [
+    "الكلام أسهل من التنفيذ.",
+    "كلي آذان صاغية / سامعك باهتمام.",
+    "لسه كنا بنتكلم عنك!",
+    "تقدر تكون متأكد جدًا."
+   ],
+   "answer": 1,
+   "explanation": "جزء 4: I’m listening صحيحة؛ التعبير يضيف اهتمامًا واستعدادًا للسماع. مثال: Tell me your idea. I’m all ears. احكي لي فكرتك، سامعك باهتمام."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «هفكر فيه وأرد بعد ما آخد وقتي.»",
+   "answer_text": "I’ll sleep on it.",
+   "accepted": [],
+   "explanation": "جزء 4: تأجيل القرار غالبًا لليوم التالي؛ أخص من I’ll think about it. مثال: It’s a big decision. I’ll sleep on it. ده قرار كبير، هفكر فيه لحد بكرة."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Practice makes perfect.”؟",
+   "options": [
+    "يزوّد الطين بلّة.",
+    "متتعدّاش الحدود.",
+    "ده أحسن كمان.",
+    "الممارسة بتخلّيك تتحسن وتتقن."
+   ],
+   "answer": 3,
+   "explanation": "جزء 4: مثل للتشجيع على التدريب؛ مش ضمان للكمال الحرفي. مثال: Keep practicing your English. Practice makes perfect. كمّل تدريب على الإنجليزي، الممارسة بتحسّن مستواك."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «البساطة أحيانًا بتدي نتيجة أحسن.»",
+   "answer_text": "Less is more.",
+   "accepted": [],
+   "explanation": "جزء 4: القليل المختار بعناية قد يكون أكثر تأثيرًا؛ مش قاعدة إن الأقل دائمًا أفضل. مثال: Use fewer colors in the design. Less is more. استخدم ألوان أقل في التصميم، البساطة أحسن هنا."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Two peas in a pod.”؟",
+   "options": [
+    "في دايمًا فرصة تانية.",
+    "شخص مدمن شغل.",
+    "شبه بعض جدًا / فولة واتقسمت نصين.",
+    "الحيطان لها ودان."
+   ],
+   "answer": 2,
+   "explanation": "جزء 4: لتشابه شخصين في الشكل أو الطباع؛ مش نصفين حرفيين. مثال: Those two friends are like two peas in a pod. الصاحبين دول شبه بعض جدًا."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «هو نسخة طبق الأصل من…»",
+   "answer_text": "He’s a carbon copy of",
+   "accepted": [],
+   "explanation": "جزء 4: لازم نكمل of بالشخص أو الشيء؛ تشابه شديد، مش شرط بين اتنين بس. مثال: He’s a carbon copy of his father. هو نسخة طبق الأصل من أبوه."
+  },
+  {
+   "category": "idioms",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “The bottom line is…”؟",
+   "options": [
+    "الخلاصة / أهم نقطة هي…",
+    "البساطة أحيانًا بتدي نتيجة أحسن.",
+    "عبارات جذابة وسهلة التذكر.",
+    "وده يثبت كلامي / مش محتاج أضيف أكتر."
+   ],
+   "answer": 0,
+   "explanation": "جزء 4: صيغة طبيعية لتلخيص النتيجة. مثال المصدر بنبرة مطالبة حادة، مش لازم تحفظه. مثال: The bottom line is that we need more time. الخلاصة إننا محتاجين وقت أكتر."
+  },
+  {
+   "category": "idioms",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «الكلام سهل؛ العبرة بالفعل.»",
+   "answer_text": "Talk is cheap.",
+   "accepted": [],
+   "explanation": "جزء 4: انتقاد للوعود من غير تنفيذ، مش مجرد وصف إن الكلام سهل. مثال: Talk is cheap. Show me what you can do. الكلام سهل، وريني تقدر تعمل إيه."
+  },
+  {
+   "category": "saynot",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «فاهمك.»",
+   "answer_text": "I understand you.",
+   "accepted": [
+    "I got you."
+   ],
+   "explanation": "الاتنين صحيحين. I got you غير رسمية ومعناها حسب السياق: فهمتك أو هساعدك؛ I get it واضحة للفهم. مثال: I understand you. You need more time. فاهمك، إنت محتاج وقت أكتر."
+  },
+  {
+   "category": "saynot",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «هات لي قهوة لو سمحت.»",
+   "answer_text": "Bring me a coffee.",
+   "accepted": [
+    "Get me a coffee, please."
+   ],
+   "explanation": "الاتنين صحيحين؛ bring تركيزها الإحضار وget قد تكون إحضار أو شراء. Could you…? ألطف من الأمر. مثال: Could you get me a coffee, please? ممكن تجيب لي قهوة لو سمحت؟"
+  },
+  {
+   "category": "saynot",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «هو حزن / بدأ يزعل.»",
+   "answer_text": "He became sad.",
+   "accepted": [
+    "He got sad."
+   ],
+   "explanation": "الاتنين صحيحين؛ got أكثر محادثة. get + صفة = يصبح في حالة معينة. مثال: He got sad when he heard the news. زعل لما سمع الخبر."
+  },
+  {
+   "category": "saynot",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «وصلت البيت.»",
+   "answer_text": "I arrived home.",
+   "accepted": [
+    "I got home."
+   ],
+   "explanation": "الاتنين صحيحين؛ got شائعة في الكلام. home هنا من غير to. مثال: I got home at nine. وصلت البيت الساعة تسعة."
+  },
+  {
+   "category": "saynot",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «جميل جدًا / رائع الجمال.»",
+   "answer_text": "Very beautiful.",
+   "accepted": [
+    "Gorgeous."
+   ],
+   "explanation": "very beautiful صحيحة؛ gorgeous صفة قوية وليست إلزامية. مثال: The view is gorgeous. المنظر جميل جدًا."
+  },
+  {
+   "category": "saynot",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «سيئ جدًا / فظيع.»",
+   "answer_text": "Very bad.",
+   "accepted": [
+    "Awful."
+   ],
+   "explanation": "الاتنين صحيحين؛ awful تصف تجربة أو جودة سيئة جدًا حسب السياق. مثال: The traffic was awful this morning. الزحمة كانت فظيعة الصبح."
+  },
+  {
+   "category": "saynot",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «واضح جدًا / شفاف.»",
+   "answer_text": "Very clear.",
+   "accepted": [
+    "Transparent."
+   ],
+   "explanation": "مش بدائل في كل سياق. transparent للشفافية المادية أو الوضوح والصراحة؛ شرح مفهوم: very clear أو crystal clear. مثال: Your explanation is very clear. The glass is transparent. شرحك واضح جدًا، والزجاج شفاف."
+  },
+  {
+   "category": "saynot",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «غضبان جدًا / في قمة الغضب.»",
+   "answer_text": "Very angry.",
+   "accepted": [
+    "Furious."
+   ],
+   "explanation": "الاتنين صحيحين؛ furious أقوى. furious with someone / about something. مثال: She was furious about the delay. كانت غضبانة جدًا بسبب التأخير."
+  },
+  {
+   "category": "saynot",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ممتاز / رائع.»",
+   "answer_text": "Very good.",
+   "accepted": [
+    "Superb."
+   ],
+   "explanation": "الاتنين صحيحين؛ superb مدح قوي، مش لازم نستبدل بيها كل very good. مثال: You did a superb job. عملت شغل ممتاز."
+  },
+  {
+   "category": "saynot",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «مضحك جدًا.»",
+   "answer_text": "Very funny.",
+   "accepted": [
+    "Hilarious."
+   ],
+   "explanation": "الاتنين صحيحين؛ hilarious لما الشيء يضحّك جدًا، مش funny بمعنى غريب. مثال: That video was hilarious. الفيديو ده كان مضحك جدًا."
+  },
+  {
+   "category": "saynot",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «مش عارف / معنديش أي فكرة.»",
+   "answer_text": "I don’t know.",
+   "accepted": [
+    "I have no idea."
+   ],
+   "explanation": "الاتنين صحيحين؛ no idea بتؤكد عدم المعرفة. مثال: Where is he? I have no idea. هو فين؟ معنديش أي فكرة."
+  },
+  {
+   "category": "saynot",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «تقدر تثق فيّا / تعتمد عليّا.»",
+   "answer_text": "You can trust me.",
+   "accepted": [
+    "You can count on me."
+   ],
+   "explanation": "trust = يثق في الصدق أو الأمانة؛ count on = يعتمد على الدعم أو تنفيذ شيء. المعنى مش متطابق دائمًا. مثال: You can count on me to finish the work. تقدر تعتمد عليّا إني أخلّص الشغل."
+  },
+  {
+   "category": "saynot",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «جرّبها / ادّيها فرصة.»",
+   "answer_text": "Give it a try.",
+   "accepted": [
+    "Give it a shot."
+   ],
+   "explanation": "الاتنين صحيحين وبمعنى قريب؛ shot هنا محاولة وغير رسمية. مثال: I’ve never tried it, but I’ll give it a shot. مجرّبتهاش قبل كده، بس هجرّب."
+  },
+  {
+   "category": "saynot",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا معجب بيك.»",
+   "answer_text": "I like you.",
+   "accepted": [
+    "I’m into you."
+   ],
+   "explanation": "I like you قد تكون ودية؛ I’m into you غالبًا إعجاب عاطفي أو انجذاب، مش بديل عام. مثال: I’m into you, and I’d like to get to know you better. أنا معجب بيك وحابب أعرفك أكتر."
+  },
+  {
+   "category": "saynot",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا فرحان جدًا / طاير من الفرحة.»",
+   "answer_text": "I’m very happy.",
+   "accepted": [
+    "I’m over the moon."
+   ],
+   "explanation": "الاتنين صحيحين؛ over the moon تعبير مجازي عن فرحة شديدة. مثال: I got the job! I’m over the moon. اتقبلت في الشغل، أنا طاير من الفرحة!"
+  },
+  {
+   "category": "saynot",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ممكن تساعدني لو سمحت؟»",
+   "answer_text": "Can you help me?",
+   "accepted": [
+    "Excuse me, could you give me a hand, please?"
+   ],
+   "explanation": "الاتنين صحيحين؛ الصيغة الأطول ألطف. give someone a hand = يساعده في السياق ده. مثال: Could you give me a hand with these bags? ممكن تساعدني في الشنط دي؟"
+  },
+  {
+   "category": "saynot",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنا هدفع / الحساب عليّا.»",
+   "answer_text": "I’ll pay for it.",
+   "accepted": [
+    "It’s on me."
+   ],
+   "explanation": "الاتنين صحيحين؛ It’s on me في الدفع غالبًا دعوة على حسابك، وقد تعني المسؤولية في سياق آخر. مثال: Let’s get some coffee. It’s on me. تعالى نشرب قهوة، الحساب عليّا."
+  },
+  {
+   "category": "saynot",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «اتفضّل اقعد.»",
+   "answer_text": "Sit down.",
+   "accepted": [
+    "Have a seat.",
+    "Take a seat."
+   ],
+   "explanation": "كلهم صحيح؛ Sit down أمر مباشر وقد يكون مناسبًا حسب النبرة. Have a seat دعوة ألطف. مثال: Please have a seat. I’ll be with you shortly. اتفضّل اقعد، هكون معاك بعد شوية."
+  },
+  {
+   "category": "saynot",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «يشتري / حصلت على كتاب.»",
+   "answer_text": "Buy",
+   "accepted": [
+    "I bought a book.",
+    "Get",
+    "I got a book."
+   ],
+   "explanation": "get أوسع: يشتري أو يحصل على هدية مثلًا؛ مش بديل دائمًا. I bought يحدد إنك اشتريت. اتدمج صف get مع مثاله لتجنّب التكرار. مثال: I got a book for my birthday. I bought another one. جالي كتاب هدية عيد ميلادي، واشتريت واحد تاني."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «متضحكش عليّا.»",
+   "answer_text": "Don’t laugh at me.",
+   "accepted": [],
+   "explanation": "laugh at someone = يضحك عليه أو يسخر منه؛ النبرة تحدد المقصود. مثال: Don’t laugh at me. I’m still learning. متضحكش عليّا، أنا لسه بتعلم."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «نومي خفيف.»",
+   "answer_text": "I’m a light sleeper.",
+   "accepted": [],
+   "explanation": "الشخص اللي بيصحى بسهولة بسبب صوت أو حركة. مثال: Please keep your voice down. I’m a light sleeper. وطّي صوتك لو سمحت؛ نومي خفيف."
+  },
+  {
+   "category": "daily",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Don’t threaten me.”؟",
+   "options": [
+    "خلّيها بسيطة.",
+    "متهددنيش.",
+    "ده شخصي / موضوع خاص / أفضل أحتفظ بالمعلومة لنفسي.",
+    "ده كلام منقول وغير مؤكد."
+   ],
+   "answer": 1,
+   "explanation": "اعتراض مباشر على التهديد؛ مش طلب عادي. مثال: Don’t threaten me. Let’s talk calmly. متهددنيش، خلّينا نتكلم بهدوء."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «إنت مفيش زيك / شخص مميز.»",
+   "answer_text": "You’re one of a kind.",
+   "accepted": [],
+   "explanation": "تصحيح المصدر: one of a kind، ولازم a. غالبًا مجاملة. مثال: You’re one of a kind. Thank you for your help. إنت مفيش زيك، شكرًا لمساعدتك."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «لسه هنشوف / الأمر لسه مش محسوم.»",
+   "answer_text": "That remains to be seen.",
+   "accepted": [],
+   "explanation": "لما نتيجة أو ادعاء لسه محتاج وقت عشان يتأكد. مثال: Will the plan work? That remains to be seen. هل الخطة هتنجح؟ لسه هنشوف."
+  },
+  {
+   "category": "daily",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “A pep talk.”؟",
+   "options": [
+    "ده كلام منقول وغير مؤكد.",
+    "متهور / مهمل / أناني.",
+    "عملتها بإتقان! / جبتها صح!",
+    "كلام تشجيعي يرفع المعنويات."
+   ],
+   "answer": 3,
+   "explanation": "اسم معدود؛ give someone a pep talk = يشجعه بكلام. مثال: My friend gave me a pep talk before the interview. صاحبي شجّعني قبل المقابلة."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «حاسس إن فيه حاجة مش مظبوطة.»",
+   "answer_text": "I smell a rat.",
+   "accepted": [],
+   "explanation": "تعبير مجازي عن الشك في خداع أو تصرف مريب، مش أي شك عام. مثال: The offer looks too good. I smell a rat. العرض مغري بزيادة، حاسس إن فيه حاجة مش مظبوطة."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «مش لاقي كلام / عاجز عن التعبير.»",
+   "answer_text": "I’m speechless.",
+   "accepted": [],
+   "explanation": "من فرحة أو صدمة أو مفاجأة؛ مش معناها بالضرورة زعلان. مثال: You did all this for me? I’m speechless. عملت كل ده عشاني؟ مش لاقي كلام."
+  },
+  {
+   "category": "daily",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Your reputation precedes you.”؟",
+   "options": [
+    "دي لفتة جميلة.",
+    "عندي خبر ممكن تلاقيه مثير للاهتمام.",
+    "سمعتك سبقاك.",
+    "مش من موقعي إني أحكم أو أتدخل."
+   ],
+   "answer": 2,
+   "explanation": "سمعنا عنك قبل ما نقابلك؛ قد تكون مدحًا أو نقدًا حسب السياق. رسمية نسبيًا. مثال: I’ve heard about your work. Your reputation precedes you. سمعت عن شغلك، سمعتك سبقاك."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ده أمر مفروغ منه.»",
+   "answer_text": "That’s a given.",
+   "accepted": [],
+   "explanation": "حاجة محسومة أو متفق عليها، مش محتاجة إثبات جديد. مثال: We need to meet the deadline. That’s a given. لازم نسلّم في الموعد، ده أمر مفروغ منه."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «اتساهل معاه / خفّ عليه.»",
+   "answer_text": "Go easy on him.",
+   "accepted": [],
+   "explanation": "طلب إن النقد أو المعاملة ما يكونوش قاسيين. مثال: Go easy on him. It’s his first day. خفّ عليه، ده أول يوم ليه."
+  },
+  {
+   "category": "daily",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Water under the bridge.”؟",
+   "options": [
+    "متترددش إنك…",
+    "أظن / غالبًا…",
+    "مش لاقي كلام / عاجز عن التعبير.",
+    "حاجة حصلت وعدّت."
+   ],
+   "answer": 3,
+   "explanation": "لمشكلة قديمة لم تعد مهمة أو انتهى الخلاف عليها. مثال: Don’t worry about our argument. It’s water under the bridge. متشغلش بالك بخناقتنا، خلاص عدّت."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «مزيف تمامًا / غير صادق بالمرة.»",
+   "answer_text": "Totally phony.",
+   "accepted": [],
+   "explanation": "phony = غير حقيقي أو متصنّع؛ مش ترجمة عامة لكاذب جدًا. مثال: That smile looks totally phony. الابتسامة دي باينة متصنّعة تمامًا."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ما قلتش كده من الأول ليه؟»",
+   "answer_text": "Why didn’t you say so?",
+   "accepted": [],
+   "explanation": "رد بعد معلومة جديدة؛ النبرة قد تكون مستغربة أو ودودة. مثال: You need a ride? Why didn’t you say so? محتاج توصيلة؟ ما قلتش من الأول ليه؟"
+  },
+  {
+   "category": "daily",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “It’s a bargain.”؟",
+   "options": [
+    "إيه المطلوب مني أعمله؟",
+    "سعداء بوجودك معانا.",
+    "سعره لقطة / صفقة بسعر ممتاز.",
+    "اسمح لي أشاركك بنصيحة."
+   ],
+   "answer": 2,
+   "explanation": "معناها سعر مناسب جدًا لقيمة الشيء؛ مش لازم عرض لفترة محدودة. مثال: This jacket was only 50 dirhams. It’s a bargain. الجاكيت ده بخمسين درهم بس، سعره لقطة."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «خلّيني أقولك التفاصيل / أفهّمك الموضوع.»",
+   "answer_text": "Let me clue you in.",
+   "accepted": [],
+   "explanation": "غير رسمي؛ clue someone in on something. قد يبدو متعاليًا حسب النبرة. مثال: Let me clue you in on the plan. خلّيني أقولك تفاصيل الخطة."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «سعداء بوجودك معانا.»",
+   "answer_text": "Delighted to have you.",
+   "accepted": [],
+   "explanation": "ترحيب بضيف أو عضو جديد؛ مش مرادف مباشر لسعدت بلقائك: Delighted to meet you. مثال: We’re delighted to have you on the team. إحنا سعداء بانضمامك للفريق."
+  },
+  {
+   "category": "daily",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “It’s a nice gesture.”؟",
+   "options": [
+    "دي لفتة جميلة.",
+    "ده أمر مفروغ منه.",
+    "مش لاقي كلام / عاجز عن التعبير.",
+    "مسموح / ممنوع."
+   ],
+   "answer": 0,
+   "explanation": "جزء 2: gesture هنا تصرف لطيف أو رمزي، مش مجرد حركة إيد. مثال: Sending her flowers was a nice gesture. إنك تبعت لها ورد كان لفتة جميلة."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «شبعت جدًا / بطني مليانة.»",
+   "answer_text": "I’m stuffed.",
+   "accepted": [],
+   "explanation": "جزء 2: غير رسمي بعد الأكل؛ مش تعبير رسمي عن الشبع. مثال: No dessert for me, thanks. I’m stuffed. مش هاخد حلو، شكرًا. أنا شبعت جدًا."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «الأمور بدأت تتحسن.»",
+   "answer_text": "Things are looking up.",
+   "accepted": [],
+   "explanation": "جزء 2: looking up هنا التحسن، مش النظر لفوق. مثال: I found a new job. Things are looking up. لقيت شغل جديد، والأمور بدأت تتحسن."
+  },
+  {
+   "category": "daily",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Don’t generalize.”؟",
+   "options": [
+    "متعمّمش.",
+    "سعره لقطة / صفقة بسعر ممتاز.",
+    "خليك متواضع.",
+    "سمعتك سبقاك."
+   ],
+   "answer": 0,
+   "explanation": "جزء 2: اعتراض على حكم عام مبني على حالات قليلة؛ قد تبدو مباشرة. مثال: One bad experience doesn’t mean everyone is the same. Don’t generalize. تجربة وحشة واحدة مش معناها إن كل الناس زي بعض، متعمّمش."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «يا لها من فوضى! / إيه اللخبطة دي!»",
+   "answer_text": "What a mess!",
+   "accepted": [],
+   "explanation": "جزء 2: لمكان غير مرتب أو موقف ملخبط. مثال: Look at this room. What a mess! بص على الأوضة، إيه الفوضى دي!"
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «خد وقتك / براحتك.»",
+   "answer_text": "Take your time.",
+   "accepted": [],
+   "explanation": "جزء 2: مفيش استعجال؛ مش معناها إضاعة الوقت. مثال: Take your time. There’s no rush. خد وقتك، مفيش استعجال."
+  },
+  {
+   "category": "daily",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “You deserve it.”؟",
+   "options": [
+    "اتساهل معاه / خفّ عليه.",
+    "إنت تستاهل ده.",
+    "سعره لقطة / صفقة بسعر ممتاز.",
+    "اسمح لي أشاركك بنصيحة."
+   ],
+   "answer": 1,
+   "explanation": "جزء 2: مدح أو نتيجة سلبية حسب السياق والنبرة. مثال: Congratulations on your promotion. You deserve it. مبروك الترقية، إنت تستاهلها."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أكيد / اتفضل طبعًا.»",
+   "answer_text": "By all means.",
+   "accepted": [],
+   "explanation": "جزء 2: موافقة على طلب أو إذن؛ مش بديل أكيد في كل سياق. مثال: May I use this chair? — By all means. ممكن أستخدم الكرسي ده؟ — أكيد اتفضل."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «بالمناسبة / على فكرة…»",
+   "answer_text": "By the way,",
+   "accepted": [],
+   "explanation": "جزء 2: لإضافة معلومة جانبية أو تغيير الموضوع. مثال: By the way, the meeting starts at ten. على فكرة، الاجتماع بيبدأ الساعة عشرة."
+  },
+  {
+   "category": "daily",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Don’t hesitate to…”؟",
+   "options": [
+    "يا لها من فوضى! / إيه اللخبطة دي!",
+    "بالمناسبة / على فكرة…",
+    "ده كلام منقول وغير مؤكد.",
+    "متترددش إنك…"
+   ],
+   "answer": 3,
+   "explanation": "جزء 2: بعد hesitate نستخدم to + فعل. المصدر Don’t hesitate صحيح لو المقصود معروف. مثال: Don’t hesitate to ask for help. متترددش تطلب مساعدة."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أظن / غالبًا…»",
+   "answer_text": "I guess",
+   "accepted": [],
+   "explanation": "جزء 2: رأي أو تخمين غير مؤكد، مش توقع مستقبلي بالضرورة. مثال: I guess he’s busy. أظن إنه مشغول."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «إيه المطلوب مني أعمله؟»",
+   "answer_text": "What am I expected to do?",
+   "accepted": [],
+   "explanation": "جزء 2: تصحيح المصدر بإضافة I بعد am. طلب توضيح المطلوب؛ قد تعبر عن إحباط بالنبرة. مثال: What am I expected to do before the meeting? إيه المطلوب مني أعمله قبل الاجتماع؟"
+  },
+  {
+   "category": "daily",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Reckless / Negligent / Selfish”؟",
+   "options": [
+    "متهور / مهمل / أناني.",
+    "إنت تستاهل ده.",
+    "كلام تشجيعي يرفع المعنويات.",
+    "متعمّمش."
+   ],
+   "answer": 0,
+   "explanation": "جزء 2: كلمات مختلفة مش مترادفات: reckless لا يبالي بالمخاطر؛ negligent يهمل واجب العناية؛ selfish يركز على نفسه. مثال: Reckless driving is dangerous. Don’t be negligent or selfish. السواقة المتهورة خطرة. متبقاش مهمل أو أناني."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «خليك متواضع.»",
+   "answer_text": "Be humble.",
+   "accepted": [],
+   "explanation": "جزء 3: humble = متواضع، مش ضعيف الثقة؛ قد يبدو أمرًا مباشرًا. مثال: Be proud of your work, but stay humble. افتخر بشغلك، بس خليك متواضع."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «عشان خاطري / من أجلي.»",
+   "answer_text": "For my sake.",
+   "accepted": [],
+   "explanation": "جزء 3: my = خاطري؛ your = خاطرك. for someone’s sake. مثال: Please be careful, for my sake. خلي بالك من نفسك، عشان خاطري."
+  },
+  {
+   "category": "daily",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “It’s up to you.”؟",
+   "options": [
+    "إيه المطلوب مني أعمله؟",
+    "نومي خفيف.",
+    "القرار راجع لك.",
+    "أكيد / اتفضل طبعًا."
+   ],
+   "answer": 2,
+   "explanation": "جزء 3: بتسيب الاختيار للشخص؛ مش بالضرورة عدم اهتمام. مثال: We can go today or tomorrow. It’s up to you. ممكن نروح النهارده أو بكرة، القرار راجع لك."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ده كلام منقول وغير مؤكد.»",
+   "answer_text": "That’s hearsay.",
+   "accepted": [],
+   "explanation": "جزء 3: معلومات سمعتها من الآخرين، مش معرفة مباشرة؛ مش كل hearsay كذبة أو إشاعة مختلقة. مثال: I haven’t seen any evidence. That’s just hearsay. مشفتش أي دليل، ده مجرد كلام منقول."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «مش من موقعي إني أحكم أو أتدخل.»",
+   "answer_text": "It’s not my place to say.",
+   "accepted": [],
+   "explanation": "جزء 3: لعدم امتلاك الحق أو الدور المناسب لإبداء الرأي؛ مش عدم القدرة على الكلام. مثال: It’s not my place to say how you should live. مش من حقي أقولك تعيش إزاي."
+  },
+  {
+   "category": "daily",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Nailed it!”؟",
+   "options": [
+    "عملتها بإتقان! / جبتها صح!",
+    "مش لاقي كلام / عاجز عن التعبير.",
+    "القرار راجع لك.",
+    "لسه هنشوف / الأمر لسه مش محسوم."
+   ],
+   "answer": 0,
+   "explanation": "جزء 3: غير رسمي بعد نجاح في مهمة أو إجابة؛ مش مدح عام في كل موقف. مثال: You nailed that presentation! قدمت العرض ده بإتقان!"
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «مبادئ / مدير أو رئيسي.»",
+   "answer_text": "Principles",
+   "accepted": [
+    "Principal"
+   ],
+   "explanation": "جزء 3: principle = مبدأ، جمعها principles. principal اسم لمدير مدرسة أو صفة بمعنى رئيسي؛ كلمتان مختلفتان. مثال: The principal explained the school’s principles. مدير المدرسة شرح مبادئ المدرسة."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ده مذهل / صعب يتصدق!»",
+   "answer_text": "This is incredible!",
+   "accepted": [],
+   "explanation": "جزء 3: قد تكون للدهشة الإيجابية أو عدم التصديق حسب السياق. مثال: You finished it in one day? That’s incredible! خلصته في يوم واحد؟ ده مذهل!"
+  },
+  {
+   "category": "daily",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “What’s the use?”؟",
+   "options": [
+    "متهددنيش.",
+    "سعداء بوجودك معانا.",
+    "إيه الفايدة؟",
+    "دي لفتة جميلة."
+   ],
+   "answer": 2,
+   "explanation": "جزء 3: غالبًا سؤال يعبر عن إحباط أو عدم جدوى. What’s the use of + ing. مثال: What’s the use of arguing now? إيه فايدة الجدال دلوقتي؟"
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ده شخصي / موضوع خاص / أفضل أحتفظ بالمعلومة لنفسي.»",
+   "answer_text": "That’s personal.",
+   "accepted": [
+    "It’s a private matter.",
+    "I’d rather keep that information to myself."
+   ],
+   "explanation": "جزء 4: اتجمعت الصيغ المتقاربة في مكان واحد. آخر صيغة ألطف لتحديد الخصوصية؛ info غير رسمية، information أنسب رسميًا. مثال: I’d rather keep that information to myself. أفضل أحتفظ بالمعلومة دي لنفسي."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «خلّيها بسيطة.»",
+   "answer_text": "Keep it simple.",
+   "accepted": [],
+   "explanation": "جزء 4: تجنّب التعقيد غير الضروري، مش حذف معلومات أساسية. مثال: Keep the design simple. خلّي التصميم بسيط."
+  },
+  {
+   "category": "daily",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I can’t place you.”؟",
+   "options": [
+    "سعداء بوجودك معانا.",
+    "هي شاركت بمعلومة مهمة أثناء الاجتماع.",
+    "أظن / غالبًا…",
+    "حاسس إني أعرفك بس مش فاكر منين."
+   ],
+   "answer": 3,
+   "explanation": "جزء 4: عدم تذكر هوية الشخص أو المكان اللي قابلته فيه. مثال: You look familiar, but I can’t place you. شكلك مألوف، بس مش فاكر أعرفك منين."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «مسموح / ممنوع.»",
+   "answer_text": "Permissible",
+   "accepted": [
+    "Prohibited"
+   ],
+   "explanation": "جزء 4: وصف عام للقواعد وليس دينيًا فقط؛ halal وharam أو permissible/prohibited in Islam لو المقصود الحكم الديني تحديدًا. مثال: Parking here is prohibited. Is this food halal? الركن هنا ممنوع. هل الأكل ده حلال؟"
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «اسمح لي أشاركك بنصيحة.»",
+   "answer_text": "Let me share a piece of advice with you.",
+   "accepted": [],
+   "explanation": "جزء 4: ترتيب طبيعي للجملة الواردة. Lemme كتابة غير رسمية لـ let me؛ advice غير معدودة: a piece of advice، مش an advice. مثال: Let me share a piece of advice with you: start small. اسمح لي أشاركك بنصيحة: ابدأ بحاجة صغيرة."
+  },
+  {
+   "category": "daily",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “She shared an important piece of information during the meeting.”؟",
+   "options": [
+    "متعمّمش.",
+    "هي شاركت بمعلومة مهمة أثناء الاجتماع.",
+    "عندي خبر ممكن تلاقيه مثير للاهتمام.",
+    "كلام تشجيعي يرفع المعنويات."
+   ],
+   "answer": 1,
+   "explanation": "جزء 4: information غير معدودة؛ a piece of information، مش an information. info اختصار غير رسمي. مثال: She shared an important piece of information during the meeting. شاركت بمعلومة مهمة أثناء الاجتماع."
+  },
+  {
+   "category": "daily",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «عندي خبر ممكن تلاقيه مثير للاهتمام.»",
+   "answer_text": "I have a piece of news that you might find interesting.",
+   "accepted": [],
+   "explanation": "جزء 4: حذف it الزيادة من المصدر؛ news غير معدودة. that هنا مفعول find فلا نكرره بـ it. مثال: I have a piece of news that you might find interesting. عندي خبر ممكن يهمك."
+  },
+  {
+   "category": "work",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «بقدّر أفكارك وملاحظاتك. هنتكلم قريب.»",
+   "answer_text": "I appreciate your insights. Talk to you soon.",
+   "accepted": [],
+   "explanation": "جزء 2: insights = أفكار أو فهم عميق، مش رؤيتك بالعين. أطول وأخص من See you؛ الاتنين صحيحين. مثال: I appreciate your insights on the project. Talk to you soon. بقدّر ملاحظاتك عن المشروع، هنتكلم قريب."
+  },
+  {
+   "category": "work",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «اتشرفت بمعرفتك. هنتكلم قريب.»",
+   "answer_text": "It was a pleasure meeting you. Talk to you soon.",
+   "accepted": [],
+   "explanation": "جزء 2: تصحيح meeting بإضافة you. المصدر كاتب Buy والمقصود غالبًا Bye = مع السلامة؛ مش buy = يشتري. مثال: It was a pleasure meeting you today. اتشرفت بمعرفتك النهارده."
+  },
+  {
+   "category": "work",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I look forward to our next discussion.”؟",
+   "options": [
+    "اتشرفت بمعرفتك. هنتكلم قريب.",
+    "متطلع لنقاشنا الجاي.",
+    "فاهم وجهة نظرك، لكن…",
+    "خلّينا نفكر في طريقة تانية."
+   ],
+   "answer": 1,
+   "explanation": "جزء 2: look forward to + اسم أو فعل ing. مش مرادف That’s it = كده خلصنا / هذا كل شيء. مثال: I look forward to discussing the plan with you. متطلع إني أناقش الخطة معاك."
+  },
+  {
+   "category": "work",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «هتابع معاك بخصوص الموضوع ده.»",
+   "answer_text": "I will follow up with you on this.",
+   "accepted": [],
+   "explanation": "جزء 2: متابعة تقدم أو رد؛ Let’s discuss it later صحيحة لكن معناها نناقشه لاحقًا، مش وعد بالمتابعة. مثال: I’ll follow up with you on the order tomorrow. هتابع معاك بخصوص الطلب بكرة."
+  },
+  {
+   "category": "work",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «المكالمة اتقطعت.»",
+   "answer_text": "The call was dropped.",
+   "accepted": [],
+   "explanation": "جزء 2: انقطاع مكالمة، مش بالضرورة فقد الشبكة تمامًا. طبيعي كمان: We got cut off. مثال: Sorry, the call was dropped. Can you hear me now? آسف، المكالمة اتقطعت. سامعني دلوقتي؟"
+  },
+  {
+   "category": "work",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I see your point, but…”؟",
+   "options": [
+    "عندي بعض المخاوف من الطريقة دي.",
+    "فاهم وجهة نظرك، لكن…",
+    "المكالمة اتقطعت.",
+    "اتشرفت بمعرفتك. هنتكلم قريب."
+   ],
+   "answer": 1,
+   "explanation": "جزء 2: تصحيح Is see إلى I see. اعتراف بفكرة الآخر قبل الاعتراض. I disagree صحيحة ومباشرة. مثال: I see your point, but we need more time. فاهم وجهة نظرك، لكن محتاجين وقت أكتر."
+  },
+  {
+   "category": "work",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «عندي وجهة نظر مختلفة.»",
+   "answer_text": "I have a different perspective.",
+   "accepted": [],
+   "explanation": "جزء 2: اختلاف رأي بهدوء؛ مش تأكيد إن الآخر غلط زي You are wrong. مثال: I have a different perspective on this issue. عندي وجهة نظر مختلفة بخصوص الموضوع ده."
+  },
+  {
+   "category": "work",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «خلّينا نفكر في طريقة تانية.»",
+   "answer_text": "Let’s consider another approach.",
+   "accepted": [],
+   "explanation": "جزء 2: consider + اسم أو فعل ing. That’s not right اعتراض، مش نفس اقتراح طريقة جديدة. مثال: Let’s consider another approach to the problem. خلّينا نفكر في طريقة تانية لحل المشكلة."
+  },
+  {
+   "category": "work",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I have some reservations about this.”؟",
+   "options": [
+    "اتشرفت بمعرفتك. هنتكلم قريب.",
+    "خلّينا نفكر في طريقة تانية.",
+    "عندي بعض التحفظات على ده.",
+    "بقدّر أفكارك وملاحظاتك. هنتكلم قريب."
+   ],
+   "answer": 2,
+   "explanation": "جزء 2: تصحيح reservation إلى reservations. تحفظ أو تردد، مش رفض نهائي زي I can’t accept that. مثال: I have some reservations about the cost. عندي بعض التحفظات على التكلفة."
+  },
+  {
+   "category": "work",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ممكن أضيف نقطة؟»",
+   "answer_text": "May I add a point?",
+   "accepted": [],
+   "explanation": "جزء 2: صيغة مهذبة في النقاش. Can I say something? صحيحة وأعم؛ مش كل كلام إضافة نقطة. مثال: May I add a point about the deadline? ممكن أضيف نقطة بخصوص موعد التسليم؟"
+  },
+  {
+   "category": "work",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «عندي بعض المخاوف من الطريقة دي.»",
+   "answer_text": "I have some concerns about this approach.",
+   "accepted": [],
+   "explanation": "جزء 2: concerns about أوضح هنا من with. ألطف وأدق من That’s a bad idea لما تناقش مشكلة محددة. مثال: I have some concerns about this approach. It may take too long. عندي مخاوف من الطريقة دي، ممكن تاخد وقت طويل."
+  },
+  {
+   "category": "work",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “In my opinion,… / I think…”؟",
+   "options": [
+    "ممكن أضيف نقطة؟",
+    "في رأيي… / أعتقد…",
+    "متطلع لنقاشنا الجاي.",
+    "المكالمة اتقطعت."
+   ],
+   "answer": 1,
+   "explanation": "جزء 2: الاتنين صحيحين. In my opinion تتبعها جملة، وI think فعل يتبعه رأيك؛ مش لازم تجمعهم. مثال: In my opinion, we should start now. في رأيي، المفروض نبدأ دلوقتي."
+  },
+  {
+   "category": "work",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ممكن تشرح بتفصيل أكتر؟»",
+   "answer_text": "Can you elaborate?",
+   "accepted": [],
+   "explanation": "جزء 3: طلب تفاصيل إضافية. elaborate on + الموضوع؛ مش مجرد تكرار نفس الكلام. مثال: Could you elaborate on your proposal? ممكن تشرح اقتراحك بتفصيل أكتر؟"
+  },
+  {
+   "category": "situations",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ممكن أقعد هنا؟ / فيه حد قاعد هنا؟ / الكرسي ده محجوز؟»",
+   "answer_text": "Can I sit here?",
+   "accepted": [
+    "Is anyone sitting here?",
+    "Is this seat taken?"
+   ],
+   "explanation": "صيغ طبيعية؛ sitting بحرفَي t. مستويات A1–C1 في الملف مش تصنيف موثوق لكل جملة، فاتشالت. مثال: Excuse me, is this seat taken? بعد إذنك، فيه حد قاعد هنا؟"
+  },
+  {
+   "category": "situations",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «هل المقعد ده مشغول؟»",
+   "answer_text": "Is this seat occupied?",
+   "accepted": [],
+   "explanation": "صحيحة لكنها رسمية نسبيًا؛ Is this seat taken? أبسط في المطعم. مثال: Is this seat occupied, or may I sit here? هل المقعد ده مشغول، ولا ممكن أقعد هنا؟"
+  },
+  {
+   "category": "situations",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “I believe… / I reckon… / It seems to me that…”؟",
+   "options": [
+    "بالنسبة لي / من وجهة نظري…",
+    "وأنا سعيد بمعرفتك كمان.",
+    "أعتقد… / أظن… / يبدو لي أن…",
+    "من وجهة نظري…"
+   ],
+   "answer": 2,
+   "explanation": "صيغ إبداء رأي؛ reckon غير رسمية وشائعة في البريطانية. I think وIn my opinion موجودين في «الشغل والنقاش». مثال: It seems to me that we need more time. يبدو لي إننا محتاجين وقت أكتر."
+  },
+  {
+   "category": "situations",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «بالنسبة لي / من وجهة نظري…»",
+   "answer_text": "As far as I’m concerned,",
+   "accepted": [],
+   "explanation": "تصحيح ترجمة المصدر: مش «كنت مهتم». تحدد موقفك الشخصي وقد تبدو حاسمة. مثال: As far as I’m concerned, the matter is settled. بالنسبة لي، الموضوع محسوم."
+  },
+  {
+   "category": "situations",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «من وجهة نظري…»",
+   "answer_text": "From my perspective,",
+   "accepted": [],
+   "explanation": "صيغة رأي؛ مش شرط مستوى C2. perspective = زاوية النظر للأمر. مثال: From my perspective, this is a useful change. من وجهة نظري، ده تغيير مفيد."
+  },
+  {
+   "category": "situations",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Nice to meet you too. / You too. / Likewise.”؟",
+   "options": [
+    "العيش بايت ومش طازة.",
+    "من وجهة نظري…",
+    "وأنا سعيد بمعرفتك كمان.",
+    "تاريخ صلاحيته عدى."
+   ],
+   "answer": 2,
+   "explanation": "ردود طبيعية على Nice to meet you. You too اختصار للرد الكامل؛ Likewise أكثر رسمية نسبيًا. Me too مفهومة لكنها أقل دقة هنا. مثال: Nice to meet you. — Nice to meet you too. سعيد بمعرفتك. — وأنا كمان."
+  },
+  {
+   "category": "situations",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «الشرف لي / أنا الأسعد بمعرفتك.»",
+   "answer_text": "The pleasure is mine.",
+   "accepted": [],
+   "explanation": "رد مهذب على التعارف. My pleasure أكثر شيوعًا ردًا على الشكر؛ الرد الكامل أوضح عند التعارف. مثال: It’s a pleasure to meet you. — The pleasure is mine. اتشرفت بمعرفتك. — الشرف لي."
+  },
+  {
+   "category": "situations",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «الجبنة عليها عفن.»",
+   "answer_text": "The cheese is moldy.",
+   "accepted": [],
+   "explanation": "moldy أمريكية؛ mouldy بريطانية. تصف وجود عفن، مش كل طعام قديم. مثال: Don’t use this cheese. It’s moldy. متستخدمش الجبنة دي، عليها عفن."
+  },
+  {
+   "category": "situations",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “The apple is rotten.”؟",
+   "options": [
+    "كأن…",
+    "التفاحة معفنة / فاسدة.",
+    "من وجهة نظري…",
+    "وأنا سعيد بمعرفتك كمان."
+   ],
+   "answer": 1,
+   "explanation": "rotten = متحلل أو فاسد؛ مش مجرد غير طازج. مثال: This apple is rotten inside. التفاحة دي فاسدة من جوّه."
+  },
+  {
+   "category": "situations",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «اللبن فاسد / بايظ.»",
+   "answer_text": "The milk is spoiled.",
+   "accepted": [],
+   "explanation": "spoiled تصف فساد الطعام؛ في الكلام كمان The milk has gone bad. مثال: The milk smells strange. I think it’s spoiled. ريحة اللبن غريبة، أظن إنه فسد."
+  },
+  {
+   "category": "situations",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «العيش بايت ومش طازة.»",
+   "answer_text": "The bread is stale.",
+   "accepted": [],
+   "explanation": "stale لا تعني بالضرورة متعفن؛ فقد الطزاجة وقد يكون ناشفًا. مثال: The bread is stale, but it isn’t moldy. العيش بايت، بس مفيهوش عفن."
+  },
+  {
+   "category": "situations",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “It’s past its expiration date.”؟",
+   "options": [
+    "ممكن أقعد هنا؟ / فيه حد قاعد هنا؟ / الكرسي ده محجوز؟",
+    "تاريخ صلاحيته عدى.",
+    "لو محتاج أي حاجة، قولي.",
+    "كأن…"
+   ],
+   "answer": 1,
+   "explanation": "بديل أوضح للمصدر The can is expired؛ المقصود المنتج أو محتوى العلبة. تاريخ الصلاحية ووصف الفساد معنيان مختلفان. مثال: This can of soup is past its expiration date. علبة الشوربة دي تاريخ صلاحيتها عدى."
+  },
+  {
+   "category": "situations",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «لو محتاج أي حاجة، قولي.»",
+   "answer_text": "If you need anything, let me know.",
+   "accepted": [],
+   "explanation": "عرض مساعدة؛ lemme كتابة عامية لـ let me، والأفضل let me في الكتابة العادية. مثال: If you need anything during the course, let me know. لو محتاج أي حاجة أثناء الكورس، قولي."
+  },
+  {
+   "category": "situations",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «فيه حاجة أقدر أعملها لك؟»",
+   "answer_text": "Is there anything I can do for you?",
+   "accepted": [],
+   "explanation": "anything كلمة واحدة. عرض مساعدة عام؛ قريبة من الجملة الموجودة بصفحة «جمل مختلفة»، وليست تكرارًا حرفيًا. مثال: Is there anything I can do for you before I leave? فيه حاجة أقدر أعملها لك قبل ما أمشي؟"
+  },
+  {
+   "category": "situations",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Do you need any assistance?”؟",
+   "options": [
+    "هل محتاج أي مساعدة؟",
+    "بسرعة جدًا / في وقت قصير جدًا.",
+    "كأن…",
+    "الجبنة عليها عفن."
+   ],
+   "answer": 0,
+   "explanation": "صيغة رسمية نسبيًا. some assistance صحيحة أيضًا؛ any شائعة في السؤال العام. مثال: Do you need any assistance with your booking? هل محتاج مساعدة بخصوص حجزك؟"
+  },
+  {
+   "category": "situations",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «بسرعة جدًا / في وقت قصير جدًا.»",
+   "answer_text": "In no time.",
+   "accepted": [],
+   "explanation": "تعبير مستخرج من حوار الحصان؛ مفيد بعيدًا عن سياق النكتة. مثال: You’ll finish this task in no time. هتخلص المهمة دي بسرعة جدًا."
+  },
+  {
+   "category": "situations",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «كأن…»",
+   "answer_text": "As if",
+   "accepted": [],
+   "explanation": "للتشبيه أو وصف الانطباع. الزمن يتحدد بالمعنى؛ الأصل Something fell from it ترجمتها الحرفية «وقع منه شيء» ولا تثبت ما حدث. مثال: He looks as if he’s lost something. شكله كأنه ضيّع حاجة."
+  },
+  {
+   "category": "chat",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «مفيش مشكلة.»",
+   "answer_text": "np = no problem",
+   "accepted": [],
+   "explanation": "اختصار غير رسمي في الشات، لا يستخدم في رسالة عمل رسمية. مثال: Thanks! — np شكرًا! — مفيش مشكلة."
+  },
+  {
+   "category": "chat",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «مش عارف.»",
+   "answer_text": "idk = I don’t know",
+   "accepted": [],
+   "explanation": "اختصار دردشة؛ اكتب الجملة كاملة في العمل الرسمي. مثال: idk what time he’ll arrive. مش عارف هيوصل إمتى."
+  },
+  {
+   "category": "chat",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “btw = by the way”؟",
+   "options": [
+    "للعلم / لمعلوماتك.",
+    "رسالة خاصة.",
+    "بالمناسبة / على فكرة.",
+    "راجع حالًا."
+   ],
+   "answer": 2,
+   "explanation": "التعبير الكامل موجود بالفعل؛ الجديد هنا الاختصار فقط. مثال: btw, I sent you the file. على فكرة، بعت لك الملف."
+  },
+  {
+   "category": "chat",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «راجع حالًا.»",
+   "answer_text": "brb = be right back",
+   "accepted": [],
+   "explanation": "لما تسيب المحادثة لحظات وترجع. مثال: brb, someone’s at the door. راجع حالًا، فيه حد على الباب."
+  },
+  {
+   "category": "chat",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «رسالة خاصة.»",
+   "answer_text": "PM = private message",
+   "accepted": [],
+   "explanation": "اسم وقد تستخدم فعلًا في الشات. مش معناها هنا مساءً؛ السياق يحدد. مثال: Send me a PM. ابعت لي رسالة خاصة."
+  },
+  {
+   "category": "chat",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “FYI = for your information”؟",
+   "options": [
+    "مش عارف.",
+    "مفيش مشكلة.",
+    "للعلم / لمعلوماتك.",
+    "بالمناسبة / على فكرة."
+   ],
+   "answer": 2,
+   "explanation": "تصحيح التوسيع من info إلى information. شائعة أيضًا في رسائل العمل؛ قد تبدو مقتضبة حسب السياق. مثال: FYI, the meeting has moved to Monday. للعلم، الاجتماع اتنقل ليوم الاثنين."
+  },
+  {
+   "category": "over",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «يكون انتهى.»",
+   "answer_text": "Be over.",
+   "accepted": [],
+   "explanation": "over هنا صفة بمعنى منتهٍ. The game is over تحتاج the مع game. لانتهاء وقت محدد: Time is up. مثال: The game is over. Time is up. اللعبة خلصت. الوقت انتهى."
+  },
+  {
+   "category": "over",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «يتجادل / يتخانق / يتطلق بسبب شيء.»",
+   "answer_text": "Argue",
+   "accepted": [
+    "fight",
+    "get divorced over something."
+   ],
+   "explanation": "over هنا بخصوص خلاف أو بسببه، مش بديل لكل because of. مثال: They got divorced over a stupid fight. اتطلقوا بسبب خناقة سخيفة."
+  },
+  {
+   "category": "over",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Over dinner.”؟",
+   "options": [
+    "أثناء العشاء.",
+    "يتجادل / يتخانق / يتطلق بسبب شيء.",
+    "يضع شيئًا فوق شيء أو ليغطيه.",
+    "يكون انتهى."
+   ],
+   "answer": 0,
+   "explanation": "لعمل شيء خلال وجبة أو نشاط؛ مش شرط فوق سطح العشاء. مثال: Let’s talk over dinner. خلّينا نتكلم أثناء العشاء."
+  },
+  {
+   "category": "over",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أكثر من عدد معيّن.»",
+   "answer_text": "Over + number.",
+   "accepted": [],
+   "explanation": "المصدر over two times مفهوم؛ more than twice أبسط. مثال: I called you more than twice. The trip took over two hours. اتصلت بيك أكتر من مرتين. الرحلة أخدت أكتر من ساعتين."
+  },
+  {
+   "category": "over",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «يفضّل أ على ب.»",
+   "answer_text": "Prefer A over B.",
+   "accepted": [],
+   "explanation": "صيغة مستخدمة، وكمان prefer A to B. لا نخلطها بـ prefer A than B. مثال: I prefer white over black. / I prefer white to black. بفضّل الأبيض على الأسود."
+  },
+  {
+   "category": "over",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Put something over something.”؟",
+   "options": [
+    "يضع شيئًا فوق شيء أو ليغطيه.",
+    "يتجادل / يتخانق / يتطلق بسبب شيء.",
+    "يكون انتهى.",
+    "أكثر من عدد معيّن."
+   ],
+   "answer": 0,
+   "explanation": "السياق يحدد التغطية أو الموضع؛ put في الماضي بنفس الشكل. مثال: I put my hands over my ears. حطّيت إيدي على وداني."
+  },
+  {
+   "category": "encourage",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «خصص وقت لنفسك وخد فواصل.»",
+   "answer_text": "Make time for yourself and take breaks.",
+   "accepted": [],
+   "explanation": "من قائمة المصدر 7 things: make time for = يخصص وقتًا لـ. مثال: Make time for yourself, even on busy days. خصص وقت لنفسك حتى في الأيام المزدحمة."
+  },
+  {
+   "category": "encourage",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «عادي يكون فيه أيام صعبة أو إنتاجيتها قليلة.»",
+   "answer_text": "It’s okay to have bad or unproductive days.",
+   "accepted": [],
+   "explanation": "اقتباس دعم للنفس، مش دعوة لإهمال المسؤوليات. مثال: Some days are less productive, and that’s okay. بعض الأيام إنتاجيتها أقل، وده عادي."
+  },
+  {
+   "category": "encourage",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “You deserve love, care, and support.”؟",
+   "options": [
+    "متحكمش على قصتي من الجزء اللي حضرتك شفته بس.",
+    "إنت تستحق الحب والاهتمام والدعم.",
+    "اسمح لنفسك تحس بمشاعرك.",
+    "بعض الأيام، مجرد إنك تعدّي اليوم كفاية."
+   ],
+   "answer": 1,
+   "explanation": "deserve + اسم، أو deserve to + فعل. مثال: You deserve care and support. إنت تستحق الاهتمام والدعم."
+  },
+  {
+   "category": "encourage",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «اسمح لنفسك تحس بمشاعرك.»",
+   "answer_text": "Allow yourself to feel your emotions.",
+   "accepted": [],
+   "explanation": "منقحة من feel / hear and accept them؛ accept your feelings = يتقبل مشاعره. مثال: Don’t ignore your feelings. Try to understand them. متتجاهلش مشاعرك، حاول تفهمها."
+  },
+  {
+   "category": "encourage",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «الخير اللي بتشوفه في الناس موجود جواك كمان.»",
+   "answer_text": "The good you see in others is within you too.",
+   "accepted": [],
+   "explanation": "عبارة تشجيعية من المصدر، وليست حقيقة قابلة للقياس عن كل صفة. مثال: Look for the good in yourself as well as in others. شوف الخير في نفسك زي ما بتشوفه في الناس."
+  },
+  {
+   "category": "encourage",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Some days, just getting through is enough.”؟",
+   "options": [
+    "خصص وقت لنفسك وخد فواصل.",
+    "عادي يكون فيه أيام صعبة أو إنتاجيتها قليلة.",
+    "بعض الأيام، مجرد إنك تعدّي اليوم كفاية.",
+    "اسمح لنفسك تحس بمشاعرك."
+   ],
+   "answer": 2,
+   "explanation": "صياغة لمعنى days where the only thing you do is survive؛ مناسبة للدعم في يوم صعب. مثال: You had a difficult day. Just getting through it was enough. كان يومك صعب، ومجرد إنك عديته كان كفاية."
+  },
+  {
+   "category": "encourage",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «عامل نفسك بلطف، إنت تستاهل.»",
+   "answer_text": "Be kind to yourself. You deserve it.",
+   "accepted": [],
+   "explanation": "صياغة لمعنى love yourself you deserve that. You deserve it موجودة كمان في التعبيرات اليومية. مثال: Be kind to yourself when you make a mistake. عامل نفسك بلطف لما تغلط."
+  },
+  {
+   "category": "encourage",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «متحكمش على قصتي من الجزء اللي حضرتك شفته بس.»",
+   "answer_text": "Don’t judge my story by the chapter you walked in on.",
+   "accepted": [],
+   "explanation": "اقتباس مجازي عن معرفة جزء من حياة شخص. ده استخدام مختلف عن Don’t judge a book by its cover الموجودة؛ للفهم لا للحفظ كجملة أساسية. مثال: You’ve only seen part of my story. إنت شفت جزء من قصتي بس."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «يلا نكمل من مكان ما وقفنا.»",
+   "answer_text": "Let’s pick up where we left off.",
+   "accepted": [],
+   "explanation": "استكمال الشغل: pick up here = يستأنف، مش يلتقط حرفيًا."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «يلا نرجع للي كنا بنعمله.»",
+   "answer_text": "Let’s get back to what we were working on.",
+   "accepted": [],
+   "explanation": "استكمال الشغل: get back to = يرجع لنشاط. Let’s get back to it أقصر لو السياق واضح."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «يلا نشتغل على الصفحة دي.»",
+   "answer_text": "Let’s work on this page.",
+   "accepted": [],
+   "explanation": "استكمال الشغل: Let’s للعمل سوا. I’d like you to work on this page = عايزك إنت تشتغل عليها."
+  },
+  {
+   "category": "requests",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Send me the next part.”؟",
+   "options": [
+    "يلا نكمل من مكان ما وقفنا.",
+    "صحّح إجاباتي واشرح أخطائي.",
+    "ابعت لي الجزء اللي بعده.",
+    "انقل الجمل الأقل أولوية لصفحة مستقلة."
+   ],
+   "answer": 2,
+   "explanation": "استكمال الشغل: next part = الجزء التالي."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «اعمل نفس الكلام مع دول.»",
+   "answer_text": "Do the same with these.",
+   "accepted": [],
+   "explanation": "استكمال الشغل: these لأكتر من عنصر؛ this لواحد."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «خلّينا نمشي جزء جزء.»",
+   "answer_text": "Let’s go through it one section at a time.",
+   "accepted": [],
+   "explanation": "استكمال الشغل: go through = يراجع أو يتناول بالتفصيل."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «اشرح لي الجزء ده ببساطة.»",
+   "answer_text": "Explain this section in simple terms.",
+   "accepted": [],
+   "explanation": "الشرح: in simple terms = بكلام سهل."
+  },
+  {
+   "category": "requests",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “What does this sentence mean?”؟",
+   "options": [
+    "اعمل صفحة مستقلة لكل فصل.",
+    "ابعت لي كل الأسئلة مرة واحدة.",
+    "الجملة دي معناها إيه؟",
+    "يلا نشتغل على الصفحة دي."
+   ],
+   "answer": 2,
+   "explanation": "الشرح: does + الفعل الأساسي mean."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «بنستخدم التعبير ده إمتى؟»",
+   "answer_text": "When do we use this expression?",
+   "accepted": [],
+   "explanation": "الشرح: expression = تعبير."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «إيه الفرق بين التعبيرين دول؟»",
+   "answer_text": "What’s the difference between these two expressions?",
+   "accepted": [],
+   "explanation": "الشرح: between للمقارنة بين الاتنين."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «اديني أمثلة من الحياة اليومية.»",
+   "answer_text": "Give me some everyday examples.",
+   "accepted": [],
+   "explanation": "الشرح: everyday صفة بمعنى يومي."
+  },
+  {
+   "category": "requests",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Does this sentence sound natural?”؟",
+   "options": [
+    "الجملة دي طبيعية في الكلام؟",
+    "خلّي التنسيق بسيط وسهل للمذاكرة.",
+    "احذف أي تكرار.",
+    "يلا نكمل من مكان ما وقفنا."
+   ],
+   "answer": 0,
+   "explanation": "الشرح: sound natural = تبدو مألوفة وطبيعية."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «أنهي تعبير أنسب في الموقف ده؟»",
+   "answer_text": "Which expression works best in this situation?",
+   "accepted": [],
+   "explanation": "الشرح: works best = يناسب أكتر."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «يلا نتدرّب على الجزء ده.»",
+   "answer_text": "Let’s practice this section.",
+   "accepted": [],
+   "explanation": "التدريب: practice فعل هنا."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ابعت لي الأسئلة بالإجابات عشان أتدرّب.»",
+   "answer_text": "Send me the questions with answers so I can practice.",
+   "accepted": [],
+   "explanation": "التدريب: so I can = عشان أقدر."
+  },
+  {
+   "category": "requests",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Quiz me without showing me the answers.”؟",
+   "options": [
+    "يلا نكمل من مكان ما وقفنا.",
+    "اختبرني من غير ما توريني الإجابات.",
+    "ابعت لي كل الأسئلة مرة واحدة.",
+    "أنهي تعبير أنسب في الموقف ده؟"
+   ],
+   "answer": 1,
+   "explanation": "التدريب: without + ing."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ابعت لي كل الأسئلة مرة واحدة.»",
+   "answer_text": "Send me all the questions at once.",
+   "accepted": [],
+   "explanation": "التدريب: at once هنا = مع بعض."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «صحّح إجاباتي واشرح أخطائي.»",
+   "answer_text": "Correct my answers and explain my mistakes.",
+   "accepted": [],
+   "explanation": "التدريب: correct فعل بمعنى يصحح."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «خلّي أسئلة كل جزء لوحدها.»",
+   "answer_text": "Keep the questions for each section separate.",
+   "accepted": [],
+   "explanation": "التدريب: keep + المفعول + صفة."
+  },
+  {
+   "category": "requests",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Add this to the Excel workbook.”؟",
+   "options": [
+    "يلا نشتغل على الصفحة دي.",
+    "ابعت لي أحدث نسخة من الملف.",
+    "إيه الفرق بين التعبيرين دول؟",
+    "ضيف ده لملف الإكسل."
+   ],
+   "answer": 3,
+   "explanation": "الإكسل: workbook = الملف كله؛ sheet = صفحة داخله."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «اعمل صفحة مستقلة لكل فصل.»",
+   "answer_text": "Create a separate sheet for each chapter.",
+   "accepted": [],
+   "explanation": "الإكسل: separate = منفصل."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «حطه في القسم المناسب.»",
+   "answer_text": "Put it in the appropriate section.",
+   "accepted": [],
+   "explanation": "الإكسل: appropriate = مناسب."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «احذف أي تكرار.»",
+   "answer_text": "Remove any duplicates.",
+   "accepted": [],
+   "explanation": "الإكسل: duplicates = عناصر مكررة."
+  },
+  {
+   "category": "requests",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Make sure to include the explanations and examples.”؟",
+   "options": [
+    "ضيف ده لملف الإكسل.",
+    "متنساش الشرح والأمثلة.",
+    "خلّينا نمشي جزء جزء.",
+    "ابعت لي الأسئلة بالإجابات عشان أتدرّب."
+   ],
+   "answer": 1,
+   "explanation": "الإكسل: make sure to + فعل."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «انقل الجمل الأقل أولوية لصفحة مستقلة.»",
+   "answer_text": "Move the lower-priority phrases to a separate sheet.",
+   "accepted": [],
+   "explanation": "الإكسل: lower-priority لا تعني غلط أو غير مستخدم تمامًا."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «خلّي التنسيق بسيط وسهل للمذاكرة.»",
+   "answer_text": "Keep the layout simple and easy to study.",
+   "accepted": [],
+   "explanation": "الإكسل: layout = ترتيب وعرض المحتوى."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «ابعت لي أحدث نسخة من الملف.»",
+   "answer_text": "Send me the latest version of the file.",
+   "accepted": [],
+   "explanation": "الإكسل: latest = الأحدث."
+  },
+  {
+   "category": "requests",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Turn this list into a professional presentation slide.”؟",
+   "options": [
+    "خلّيه أقصر وأوضح.",
+    "اعمل صفحة مستقلة لكل فصل.",
+    "حوّل القائمة دي لشريحة احترافية.",
+    "إيه الفرق بين التعبيرين دول؟"
+   ],
+   "answer": 2,
+   "explanation": "التصميم: turn A into B = يحوّل أ إلى ب."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «استخدم طابع عصري لتعلّم الإنجليزي.»",
+   "answer_text": "Use a modern English-learning theme.",
+   "accepted": [],
+   "explanation": "التصميم: theme = طابع أو هوية بصرية."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «التزم بمقاس 1920 × 1080 بكسل بالضبط.»",
+   "answer_text": "Keep the dimensions exactly 1920 × 1080 pixels.",
+   "accepted": [],
+   "explanation": "التصميم: dimensions = الأبعاد؛ ده مثال طلب، مش تغيير مقاس الإكسل نفسه."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «حافظ على نفس الألوان والتنسيق.»",
+   "answer_text": "Keep the same colors and formatting.",
+   "accepted": [],
+   "explanation": "التصميم: formatting = التنسيق."
+  },
+  {
+   "category": "requests",
+   "type": "mcq",
+   "lang": "en",
+   "text": "إيه معنى: “Review this and tell me if anything needs changing.”؟",
+   "options": [
+    "حوّل القائمة دي لشريحة احترافية.",
+    "راجع ده وقولي لو فيه حاجة محتاجة تعديل.",
+    "بنستخدم التعبير ده إمتى؟",
+    "يلا نشتغل على الصفحة دي."
+   ],
+   "answer": 1,
+   "explanation": "المراجعة: needs changing = يحتاج تعديلًا."
+  },
+  {
+   "category": "requests",
+   "type": "text",
+   "lang": "en",
+   "text": "اكتب بالإنجليزي: «خلّيه أقصر وأوضح.»",
+   "answer_text": "Make it shorter and clearer.",
+   "accepted": [],
+   "explanation": "المراجعة: shorter وclearer صفات مقارنة."
+  }
+ ]
+}

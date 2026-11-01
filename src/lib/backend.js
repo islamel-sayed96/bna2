@@ -10,7 +10,7 @@ const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY
 export const isCloud = Boolean(SUPABASE_URL && SUPABASE_KEY)
 export const allowSignup = import.meta.env.VITE_ALLOW_SIGNUP !== 'false'
 
-const TABLES = ['habits', 'habit_logs', 'events', 'questions', 'quiz_attempts']
+const TABLES = ['habits', 'habit_logs', 'events', 'questions', 'quiz_attempts', 'skill_categories']
 
 /* ------------------------------ Supabase ------------------------------ */
 
@@ -54,11 +54,19 @@ function cloudBackend() {
     async insert(table, row) {
       return check(await sb.from(table).insert(row).select().single())
     },
+    async insertMany(table, rows) {
+      const out = []
+      for (let i = 0; i < rows.length; i += 200) out.push(...check(await sb.from(table).insert(rows.slice(i, i + 200)).select()))
+      return out
+    },
     async update(table, id, patch) {
       return check(await sb.from(table).update(patch).eq('id', id).select().single())
     },
     async remove(table, id) {
       check(await sb.from(table).delete().eq('id', id))
+    },
+    async removeMany(table, ids) {
+      for (let i = 0; i < ids.length; i += 200) check(await sb.from(table).delete().in('id', ids.slice(i, i + 200)))
     },
   }
 }
@@ -158,6 +166,12 @@ function localBackend() {
       write(key(table), [...read(key(table), []), full])
       return full
     },
+    async insertMany(table, rows) {
+      const now = new Date().toISOString()
+      const full = rows.map((row) => ({ id: crypto.randomUUID(), created_at: now, ...row }))
+      write(key(table), [...read(key(table), []), ...full])
+      return full
+    },
     async update(table, id, patch) {
       let updated = null
       write(
@@ -166,6 +180,10 @@ function localBackend() {
       )
       return updated
     },
+    async removeMany(table, ids) {
+      const set = new Set(ids)
+      write(key(table), read(key(table), []).filter((r) => !set.has(r.id)))
+    },
     async remove(table, id) {
       const rows = read(key(table), []).filter((r) => r.id !== id)
       write(key(table), rows)
@@ -173,6 +191,11 @@ function localBackend() {
       if (table === 'habits') {
         const lk = key('habit_logs')
         write(lk, read(lk, []).filter((l) => l.habit_id !== id))
+      }
+      if (table === 'skill_categories') {
+        // children categories go too; their questions are removed by the caller
+        const ck = key('skill_categories')
+        write(ck, read(ck, []).filter((c) => c.parent_id !== id))
       }
     },
   }
