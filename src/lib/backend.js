@@ -2,6 +2,7 @@
 //  - Supabase (real accounts + cloud database) when VITE_SUPABASE_URL / KEY are set
 //  - Local demo mode (everything stays in this browser) otherwise
 import { createClient } from '@supabase/supabase-js'
+import { storage } from './storage'
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
 const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY
@@ -80,12 +81,12 @@ function localBackend() {
   const listeners = new Set()
   const read = (k, fallback) => {
     try {
-      return JSON.parse(localStorage.getItem(k)) ?? fallback
+      return JSON.parse(storage.getItem(k)) ?? fallback
     } catch {
       return fallback
     }
   }
-  const write = (k, v) => localStorage.setItem(k, JSON.stringify(v))
+  const write = (k, v) => storage.setItem(k, JSON.stringify(v))
   const emit = (user) => listeners.forEach((cb) => cb(user))
   const currentUser = () => {
     const id = read(SESSION, null)
@@ -140,7 +141,7 @@ function localBackend() {
       return { user }
     },
     async signOut() {
-      localStorage.removeItem(SESSION)
+      storage.removeItem(SESSION)
       emit(null)
     },
     async updatePassword(password) {
