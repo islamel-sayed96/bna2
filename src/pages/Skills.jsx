@@ -56,7 +56,6 @@ export default function Skills() {
   const totalCorrect = attempts.rows.reduce((s, a) => s + a.correct, 0)
   const recent = [...attempts.rows].sort((a, b) => b.created_at.localeCompare(a.created_at)).slice(0, 6)
   const mine = rootsOf(sk.userCats)
-  const builtins = rootsOf(cats).filter((c) => c.builtin)
 
   return (
     <>
@@ -117,7 +116,7 @@ export default function Skills() {
           <div className="flex h-16 w-16 shrink-0 rotate-[-4deg] items-center justify-center rounded-2xl bg-note text-3xl shadow-note">📂</div>
           <div className="flex-1">
             <h3 className="text-lg font-bold text-ink dark:text-white">اعمل مجالاتك بنفسك</h3>
-            <p className="mt-1 text-sm text-ink-soft">مثلًا: الإنجليزي ← (إنترفيو، جمل، جرامر) · ديني ← (أحاديث، آيات) · تقني ← (HTML، CSS). أو ابدأ بحزمة الإنجليزي الجاهزة.</p>
+            <p className="mt-1 text-sm text-ink-soft">مثلًا: الإنجليزي ← (إنترفيو، جمل، جرامر) · ديني ← (أحاديث، آيات) · تقني ← (HTML، CSS). أو ابدأ بحزمة جاهزة: "مجالات عامة" أو "الإنجليزي".</p>
           </div>
           <div className="flex gap-2">
             <button className="btn-outline" onClick={() => setPacks(true)}><Package size={16} /> حزمة جاهزة</button>
@@ -129,11 +128,6 @@ export default function Skills() {
           {mine.map((cat) => <CategoryCard key={cat.id} cat={cat} cats={cats} all={all} stats={stats} />)}
         </div>
       )}
-
-      <h2 className="mb-4 text-2xl font-bold text-ink dark:text-white">✨ مجالات عامة جاهزة</h2>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {builtins.map((cat) => <CategoryCard key={cat.id} cat={cat} cats={cats} all={all} stats={stats} />)}
-      </div>
 
       {recent.length > 0 && (
         <>

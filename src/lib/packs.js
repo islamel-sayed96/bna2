@@ -1,8 +1,25 @@
 // Question packs: a JSON file with categories (+ sub-topics) and questions.
-// Importing merges categories by name, so packs can extend each other.
+// When importing you choose where it goes: as-is, into a new subject, or into one you already have.
 import { backend } from './backend'
 
+const generalPack = () =>
+  import('../data/questions').then(({ CATEGORIES, BUILTIN_QUESTIONS }) => ({
+    name: 'مجالات عامة',
+    categories: CATEGORIES.map((c) => ({ key: c.id, name: c.name, icon: c.icon, color: c.color, parent: null })),
+    questions: BUILTIN_QUESTIONS.map((q) => ({
+      category: q.category, type: 'mcq', lang: q.category === 'english' ? 'en' : 'ar',
+      text: q.text, options: q.options, answer: q.answer, explanation: q.explanation,
+    })),
+  }))
+
 export const PUBLIC_PACKS = [
+  {
+    id: 'general',
+    name: 'مجالات عامة',
+    icon: '🌍',
+    desc: '7 مجالات: تفكير منطقي، إنتاجية، تواصل، إنجليزي، ثقافة مالية، برمجة، ثقافة عامة — 63 سؤال اختيارات.',
+    load: generalPack,
+  },
   {
     id: 'english-phrases',
     name: 'الإنجليزي — تعبيرات وجمل',
@@ -17,26 +34,54 @@ export function validatePack(pack) {
   return pack
 }
 
-// existingCats: current skill_categories rows. Returns { categories, questions } counts.
-export async function importPack(pack, existingCats) {
+/**
+ * target:
+ *   { mode: 'pack' }                  keep the pack's own subjects
+ *   { mode: 'new', name, icon }       put everything inside a new subject
+ *   { mode: 'existing', id }          put everything inside one of your subjects
+ * Subjects are found by name before creating, so importing into the same place merges.
+ */
+export async function importPack(pack, existingCats, target = { mode: 'pack' }) {
   validatePack(pack)
-  const idByKey = {}
   const cats = [...existingCats]
   let newCats = 0
-  // Parents first.
-  const ordered = [...pack.categories].sort((a, b) => (a.parent ? 1 : 0) - (b.parent ? 1 : 0))
-  for (const c of ordered) {
-    const parentId = c.parent ? idByKey[c.parent] : null
-    const found = cats.find((x) => x.name === c.name && (x.parent_id ?? null) === (parentId ?? null))
-    if (found) {
-      idByKey[c.key] = found.id
-      continue
-    }
-    const saved = await backend.insert('skill_categories', { name: c.name, icon: c.icon || '📘', color: c.color || 'violet', parent_id: parentId })
+  const findOrCreate = async (name, icon, color, parentId) => {
+    const found = cats.find((x) => x.name === name && (x.parent_id ?? null) === (parentId ?? null))
+    if (found) return found.id
+    const saved = await backend.insert('skill_categories', { name, icon: icon || '📘', color: color || 'violet', parent_id: parentId ?? null })
     cats.push(saved)
-    idByKey[c.key] = saved.id
     newCats++
+    return saved.id
   }
+
+  const roots = pack.categories.filter((c) => !c.parent)
+  const childrenOf = (key) => pack.categories.filter((c) => c.parent === key)
+  const idByKey = {}
+
+  if (target.mode === 'pack') {
+    for (const r of roots) {
+      idByKey[r.key] = await findOrCreate(r.name, r.icon, r.color, null)
+      for (const c of childrenOf(r.key)) idByKey[c.key] = await findOrCreate(c.name, c.icon, c.color, idByKey[r.key])
+    }
+  } else {
+    const first = roots[0] ?? {}
+    const rootId =
+      target.mode === 'existing'
+        ? target.id
+        : await findOrCreate(target.name?.trim() || pack.name || first.name || 'حزمة جديدة', target.icon || first.icon, first.color, null)
+    for (const r of roots) {
+      const kids = childrenOf(r.key)
+      if (kids.length || roots.length === 1) {
+        // The pack's main subject becomes your chosen subject; its topics become topics there.
+        idByKey[r.key] = rootId
+        for (const c of kids) idByKey[c.key] = await findOrCreate(c.name, c.icon, c.color, rootId)
+      } else {
+        // Several flat subjects (like "مجالات عامة") become topics inside your subject.
+        idByKey[r.key] = await findOrCreate(r.name, r.icon, r.color, rootId)
+      }
+    }
+  }
+
   const rows = pack.questions
     .filter((q) => idByKey[q.category])
     .map((q) => ({

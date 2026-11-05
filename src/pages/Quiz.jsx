@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
-import { ArrowRight, ArrowLeft, Check, X, Lightbulb, RotateCcw, Mic, Square, Volume2, Eye, SkipForward, RefreshCw } from 'lucide-react'
+import { ArrowRight, ArrowLeft, Check, X, Lightbulb, RotateCcw, Mic, Square, Volume2, Eye, RefreshCw } from 'lucide-react'
 import { useSkills } from '../lib/useSkills'
 import { categoryById, categoryPath, dailyQuestions, MODE_LABELS, mistakeQuestions, shuffle, withChildren } from '../lib/quiz'
 import { gradeText, keywordCheck, wordCount, wordDiff } from '../lib/grading'
@@ -177,6 +177,48 @@ function Choices({ q, result, onAnswer }) {
   )
 }
 
+/* ───────────── Answer box with the mic beside it (not on top of the text) ───────────── */
+
+function AnswerField({ value, onChange, lang, multiline = false, rows = 'min-h-24', disabled = false, placeholder, onSubmit, autoFocus = true }) {
+  const speech = useSpeechInput(lang, onChange)
+  const Field = multiline ? 'textarea' : 'input'
+  return (
+    <div>
+      <div className="flex items-stretch gap-2">
+        <Field
+          className={`input flex-1 text-base ${multiline ? `${rows} leading-relaxed` : 'py-3'} ${disabled ? 'opacity-70' : ''}`}
+          dir="auto"
+          autoFocus={autoFocus}
+          disabled={disabled}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          onKeyDown={(e) => {
+            if (onSubmit && e.key === 'Enter' && (!multiline || e.ctrlKey || e.metaKey) && value.trim()) {
+              e.preventDefault()
+              onSubmit()
+            }
+          }}
+          placeholder={placeholder}
+          autoComplete="off"
+          autoCorrect="off"
+          spellCheck={false}
+        />
+        {speech.supported && !disabled && (
+          <button
+            type="button"
+            onClick={speech.listening ? speech.stop : speech.start}
+            className={`flex w-12 shrink-0 items-center justify-center rounded-xl transition ${speech.listening ? 'animate-pulse bg-rose-500 text-white' : 'bg-[#f3f0fb] text-ink hover:bg-brand-100 dark:bg-white/10 dark:text-white'}`}
+            title={speech.listening ? 'إيقاف' : 'جاوب بصوتك'}
+          >
+            {speech.listening ? <Square size={18} /> : <Mic size={18} />}
+          </button>
+        )}
+      </div>
+      {speech.error && <p className="mt-1 text-xs text-rose-600">{speech.error}</p>}
+    </div>
+  )
+}
+
 /* ───────────── Short typed answer (and listening) ───────────── */
 
 function TypedAnswer({ q, result, onAnswer }) {
@@ -187,34 +229,21 @@ function TypedAnswer({ q, result, onAnswer }) {
     onAnswer({ correct: g.correct, given, level: g.level, grade: g })
   }
   const long = (q.answer_text ?? '').length > 60
-  const Field = long ? 'textarea' : 'input'
   return (
     <div className="mt-6">
-      <div className="relative">
-        <Field
-          className={`input pe-12 text-base ${long ? 'min-h-24' : 'py-3'} ${revealed ? 'opacity-70' : ''}`}
-          dir="auto"
-          autoFocus
-          disabled={revealed}
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' && (!long || e.ctrlKey || e.metaKey) && value.trim()) {
-              e.preventDefault()
-              check()
-            }
-          }}
-          placeholder={q.type === 'listening' ? 'اكتب اللي سمعته…' : q.lang === 'en' ? 'Type your answer…' : 'اكتب إجابتك…'}
-          autoComplete="off"
-          autoCorrect="off"
-          spellCheck={false}
-        />
-        {!revealed && <MicButton lang={q.lang} onText={setValue} className="absolute end-2 top-2" />}
-      </div>
+      <AnswerField
+        value={value}
+        onChange={setValue}
+        lang={q.lang}
+        multiline={long}
+        disabled={revealed}
+        onSubmit={() => check()}
+        placeholder={q.type === 'listening' ? 'اكتب اللي سمعته…' : q.lang === 'en' ? 'Type your answer…' : 'اكتب إجابتك…'}
+      />
       {!revealed && (
         <div className="mt-3 flex gap-2">
           <button className="btn-primary flex-1 py-3" disabled={!value.trim()} onClick={() => check()}><Check size={18} /> تحقّق</button>
-          <button className="btn-outline" onClick={() => check('')} title="مش عارف — وريني الإجابة"><SkipForward size={16} /> مش عارف</button>
+          <button className="btn-outline" onClick={() => check('')} title="هتشوف الإجابة وتتدرب عليها"><Eye size={16} /> مش عارف — وريني</button>
         </div>
       )}
       {revealed && <TypedFeedback q={q} result={result} />}
@@ -224,25 +253,74 @@ function TypedAnswer({ q, result, onAnswer }) {
 
 function TypedFeedback({ q, result }) {
   const g = result.grade
-  const tone = g.level === 'exact' ? 'emerald' : g.level === 'close' ? 'amber' : 'rose'
-  const head = { exact: 'صح! 🎉', close: 'قريب جدًا! فيه غلطة صغيرة 👀', wrong: 'مش مظبوط — ركّز في الفرق 👇', empty: 'الإجابة الصح 👇' }[g.level]
+  const tone = g.level === 'exact' ? 'emerald' : g.level === 'close' ? 'amber' : g.level === 'empty' ? 'sky' : 'rose'
+  const head = {
+    exact: 'صح! 🎉',
+    close: 'قريب جدًا! فيه غلطة صغيرة 👀',
+    wrong: 'مش مظبوط — ركّز في الفرق 👇',
+    empty: 'ولا يهمك — دي الإجابة، اتدرب عليها تحت 👇',
+  }[g.level]
   const box = {
     emerald: 'bg-emerald-50 text-emerald-900 dark:bg-emerald-500/10 dark:text-emerald-100',
     amber: 'bg-amber-50 text-amber-900 dark:bg-amber-500/10 dark:text-amber-100',
     rose: 'bg-rose-50 text-rose-900 dark:bg-rose-500/10 dark:text-rose-100',
+    sky: 'bg-sky-50 text-sky-900 dark:bg-sky-500/10 dark:text-sky-100',
   }[tone]
   return (
-    <div className={`mt-4 rounded-2xl p-4 ${box}`}>
-      <div className="font-bold">{head}</div>
-      {g.level !== 'exact' && g.level !== 'empty' && (
-        <>
-          <div className="mt-3 text-xs font-semibold opacity-70">مقارنة إجابتك بالصح:</div>
-          <DiffView parts={g.diff.parts} />
-        </>
-      )}
-      <AnswerLine text={g.target ?? q.answer_text} lang={q.lang} />
-      {q.accepted?.length > 0 && <div className="mt-1 text-xs opacity-70" dir="auto">مقبول كمان: {q.accepted.join(' · ')}</div>}
-      {q.lang === 'en' && <Recorder />}
+    <>
+      <div className={`mt-4 rounded-2xl p-4 ${box}`}>
+        <div className="font-bold">{head}</div>
+        {g.level !== 'exact' && g.level !== 'empty' && (
+          <>
+            <div className="mt-3 text-xs font-semibold opacity-70">مقارنة إجابتك بالصح:</div>
+            <DiffView parts={g.diff.parts} />
+          </>
+        )}
+        <AnswerLine text={g.target ?? q.answer_text} lang={q.lang} />
+        {q.accepted?.length > 0 && <div className="mt-1 text-xs opacity-70" dir="auto">مقبول كمان: {q.accepted.join(' · ')}</div>}
+        {q.lang === 'en' && <Recorder />}
+      </div>
+      {g.level !== 'exact' && <PracticeBox q={q} />}
+    </>
+  )
+}
+
+// Practise the right answer until you can type it — the goal is learning, not just a score.
+function PracticeBox({ q }) {
+  const [value, setValue] = useState('')
+  const [hide, setHide] = useState(false)
+  const [res, setRes] = useState(null)
+  const [wins, setWins] = useState(0)
+  const check = () => {
+    const g = gradeText(q, value)
+    setRes(g)
+    if (g.correct) setWins((w) => w + 1)
+  }
+  const again = () => {
+    setValue('')
+    setRes(null)
+    setHide(true)
+  }
+  return (
+    <div className="mt-4 rounded-2xl border-2 border-dashed border-brand-200 bg-white/70 p-4 dark:border-white/15 dark:bg-white/5">
+      <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+        <div className="text-sm font-bold text-ink dark:text-white">✍️ اتدرب عليها {wins > 0 && <span className="chip ms-1 bg-emerald-100 text-emerald-700">✓ {wins}</span>}</div>
+        <label className="flex cursor-pointer items-center gap-1.5 text-xs font-medium text-ink-soft">
+          <input type="checkbox" className="accent-brand-600" checked={hide} onChange={(e) => setHide(e.target.checked)} /> اكتبها من الذاكرة (اخفي الإجابة)
+        </label>
+      </div>
+      {!hide && <p className="mb-2 text-sm text-ink-soft" dir="auto">اكتب: <b className="text-ink dark:text-white">{q.answer_text}</b></p>}
+      <AnswerField value={value} onChange={(v) => { setValue(v); setRes(null) }} lang={q.lang} multiline={(q.answer_text ?? '').length > 60} onSubmit={check} autoFocus={false} placeholder="اكتب الإجابة الصح هنا…" />
+      <div className="mt-2 flex gap-2">
+        <button className="btn-outline flex-1" disabled={!value.trim()} onClick={check}><Check size={16} /> تحقّق</button>
+        {res?.correct && <button className="btn-ghost" onClick={again}><RotateCcw size={15} /> مرة كمان من الذاكرة</button>}
+      </div>
+      {res && (res.correct ? (
+        <p className="mt-2 text-sm font-semibold text-emerald-600">ممتاز! كتبتها صح ✓ {wins >= 2 ? '— كده ثبتت 💪' : ''}</p>
+      ) : (
+        <DiffView parts={res.diff.parts} />
+      ))}
+      <p className="mt-2 text-[11px] text-ink-soft">السؤال ده هيظهرلك تاني في "راجع أخطاءك" لحد ما تجاوبه صح من أول مرة.</p>
     </div>
   )
 }
@@ -252,50 +330,65 @@ function TypedFeedback({ q, result }) {
 function Writing({ q, result, onAnswer }) {
   const [value, setValue] = useState('')
   const [shown, setShown] = useState(false)
+  const [hideModel, setHideModel] = useState(false)
   const kw = keywordCheck(q.keywords, value)
   const diff = useMemo(() => (shown ? wordDiff(q.answer_text ?? '', value) : null), [shown, q.answer_text, value])
   const grade = (self) => onAnswer({ correct: self !== 'wrong', self, given: value })
 
   return (
     <div className="mt-6">
-      <div className="relative">
-        <textarea className="input min-h-44 pe-12 text-base leading-relaxed" dir="auto" autoFocus disabled={shown} value={value} onChange={(e) => setValue(e.target.value)} placeholder={q.lang === 'en' ? 'Write your answer here…' : 'اكتب إجابتك هنا…'} spellCheck={false} />
-        {!shown && <MicButton lang={q.lang} onText={(t) => setValue(t)} className="absolute end-2 top-2" />}
-      </div>
+      <AnswerField value={value} onChange={setValue} lang={q.lang} multiline rows="min-h-44" placeholder={q.lang === 'en' ? 'Write your answer here…' : 'اكتب إجابتك هنا…'} />
       <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-ink-soft">
         <span>{wordCount(value)} كلمة</span>
         {kw.map(({ k, ok }) => (
           <span key={k} className={`chip ${ok ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300' : 'bg-[#f3f0fb] text-ink-soft dark:bg-white/10'}`} dir="ltr">{ok ? '✓' : '○'} {k}</span>
         ))}
+        {shown && value && <button className="ms-auto text-xs font-semibold text-brand-600 hover:underline" onClick={() => setValue('')}>امسح وابدأ تاني</button>}
       </div>
 
       {!shown ? (
         <div className="mt-3 flex gap-2">
-          <button className="btn-primary flex-1 py-3" onClick={() => setShown(true)}><Eye size={18} /> خلصت — قارن بالإجابة النموذجية</button>
+          {value.trim() ? (
+            <button className="btn-primary flex-1 py-3" onClick={() => setShown(true)}><Eye size={18} /> خلصت — قارن بالإجابة النموذجية</button>
+          ) : (
+            <button className="btn-outline flex-1 py-3" onClick={() => setShown(true)}><Eye size={18} /> نسيت — وريني الإجابة النموذجية وأتدرب عليها</button>
+          )}
         </div>
       ) : (
         <div className="mt-4 rounded-2xl bg-[#f3f0fb] p-4 dark:bg-white/5">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="text-sm font-bold text-ink dark:text-white">📖 الإجابة النموذجية</div>
-            {value.trim() && <span className="text-xs font-semibold text-ink-soft">تشابه مع إجابتك: {Math.round((diff?.ratio ?? 0) * 100)}%</span>}
+            <div className="flex items-center gap-3">
+              {value.trim() && <span className="text-xs font-semibold text-ink-soft">تشابه: {Math.round((diff?.ratio ?? 0) * 100)}%</span>}
+              <button className="text-xs font-semibold text-brand-600 hover:underline" onClick={() => setHideModel((h) => !h)}>{hideModel ? 'اظهر النموذج' : 'اخفي النموذج واكتب من الذاكرة'}</button>
+            </div>
           </div>
-          <AnswerLine text={q.answer_text} lang={q.lang} plain />
-          {value.trim() && (
+          {hideModel ? (
+            <p className="mt-3 rounded-xl bg-white/70 p-3 text-sm text-ink-soft dark:bg-black/20">🙈 النموذج مخفي — اكتب من الذاكرة فوق، وبعدين اظهره وقارن.</p>
+          ) : (
             <>
-              <div className="mt-4 text-xs font-semibold text-ink-soft">الكلمات اللي في النموذج ومش في إجابتك <span className="rounded bg-emerald-200/70 px-1 text-emerald-900">كده</span>، واللي زيادة عندك <span className="rounded bg-rose-200/70 px-1 text-rose-900 line-through">كده</span>:</div>
-              <DiffView parts={diff.parts} />
+              <AnswerLine text={q.answer_text} lang={q.lang} plain />
+              {value.trim() && (
+                <>
+                  <div className="mt-4 text-xs font-semibold text-ink-soft">الكلمات اللي في النموذج ومش في إجابتك <span className="rounded bg-emerald-200/70 px-1 text-emerald-900">كده</span>، واللي زيادة عندك <span className="rounded bg-rose-200/70 px-1 text-rose-900 line-through">كده</span>:</div>
+                  <DiffView parts={diff.parts} />
+                </>
+              )}
             </>
           )}
+          <p className="mt-3 text-[11px] text-ink-soft">تقدر تفضل تعدّل في إجابتك فوق وتتدرب — المقارنة بتتحدث وانت بتكتب.</p>
           {q.lang === 'en' && <Recorder />}
-          {!result && (
+          {!result ? (
             <div className="mt-4">
-              <div className="mb-2 text-sm font-semibold text-ink dark:text-white">قيّم نفسك بأمانة:</div>
+              <div className="mb-2 text-sm font-semibold text-ink dark:text-white">لما تخلص، قيّم نفسك بأمانة:</div>
               <div className="grid grid-cols-3 gap-2">
                 <button className="btn bg-emerald-500 text-white hover:bg-emerald-600" onClick={() => grade('right')}>✅ صح</button>
                 <button className="btn bg-amber-400 text-amber-950 hover:bg-amber-500" onClick={() => grade('close')}>🟡 قريب</button>
                 <button className="btn bg-rose-500 text-white hover:bg-rose-600" onClick={() => grade('wrong')}>❌ أراجعه</button>
               </div>
             </div>
+          ) : (
+            <p className="mt-3 text-xs font-semibold text-ink-soft">قيّمت نفسك: {result.self === 'right' ? '✅ صح' : result.self === 'close' ? '🟡 قريب' : '❌ أراجعه'} — تقدر تكمّل تدريب قبل ما تروح للسؤال التالي.</p>
           )}
         </div>
       )}
@@ -327,24 +420,6 @@ function AnswerLine({ text, lang, plain = false }) {
         </button>
       )}
     </div>
-  )
-}
-
-function MicButton({ lang, onText, className = '' }) {
-  const { listening, start, stop, error, supported } = useSpeechInput(lang, onText)
-  if (!supported) return null
-  return (
-    <>
-      <button
-        type="button"
-        onClick={listening ? stop : start}
-        className={`${className} rounded-xl p-2 transition ${listening ? 'animate-pulse bg-rose-500 text-white' : 'bg-[#f3f0fb] text-ink hover:bg-brand-100 dark:bg-white/10 dark:text-white'}`}
-        title={listening ? 'إيقاف' : 'جاوب بصوتك'}
-      >
-        {listening ? <Square size={16} /> : <Mic size={16} />}
-      </button>
-      {error && <p className="mt-1 text-xs text-rose-600">{error}</p>}
-    </>
   )
 }
 

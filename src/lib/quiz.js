@@ -1,16 +1,15 @@
-import { BUILTIN_QUESTIONS, CATEGORIES } from '../data/questions'
 import { addDaysKey, todayKey } from './dates'
 
-/* ───────────── Categories (built-in + your own, with sub-topics) ───────────── */
-
-export const BUILTIN_CATS = CATEGORIES.map((c) => ({ ...c, parent_id: null, builtin: true }))
+/* ───────────── Categories (your own subjects, with sub-topics) ─────────────
+   Everything lives in your account, so every subject can be edited or deleted.
+   The old built-in subjects are now the "مجالات عامة" pack. */
 
 export function allCategories(userCats = []) {
-  return [...userCats.map((c) => ({ ...c, desc: c.desc ?? '' })), ...BUILTIN_CATS]
+  return userCats.map((c) => ({ ...c, desc: c.desc ?? '' }))
 }
 
 const FALLBACK = { id: '?', name: 'بدون تصنيف', icon: '📝', color: 'slate', parent_id: null }
-export const categoryById = (id, cats = BUILTIN_CATS) => cats.find((c) => c.id === id) ?? { ...FALLBACK, id }
+export const categoryById = (id, cats = []) => cats.find((c) => c.id === id) ?? { ...FALLBACK, id }
 export const rootsOf = (cats) => cats.filter((c) => !c.parent_id)
 export const childrenOf = (cats, id) => cats.filter((c) => c.parent_id === id)
 // The category itself plus all its sub-topics.
@@ -60,7 +59,7 @@ export function normalizeQuestion(q) {
 }
 
 export function allQuestions(custom = []) {
-  return [...BUILTIN_QUESTIONS.map(normalizeQuestion), ...custom.map(normalizeQuestion)]
+  return custom.map(normalizeQuestion)
 }
 
 // Deterministic PRNG so the daily challenge is the same all day.

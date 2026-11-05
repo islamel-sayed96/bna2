@@ -9,8 +9,13 @@ import { CategoryForm, QuestionForm } from '../components/SkillForms'
 
 const COUNTS = [10, 20, 30, 0] // 0 = all
 
-export default function CategoryPage() {
+// Fresh state (open dialogs, filters) for each subject page.
+export default function CategoryPageRoute() {
   const { id } = useParams()
+  return <CategoryPage key={id} id={id} />
+}
+
+function CategoryPage({ id }) {
   const navigate = useNavigate()
   const sk = useSkills()
   const [count, setCount] = useState(10)
@@ -30,7 +35,7 @@ export default function CategoryPage() {
   const stats = categoryStats(attempts.rows, all)
   const mistakes = mistakeQuestions(questions, attempts.rows)
   const c = color(cat.color)
-  const own = !cat.builtin
+  const own = true
   const shown = questions.filter((q) => filter === 'all' || q.category === filter)
   const start = (cid) => navigate(`/skills/quiz?mode=category&cat=${cid}&n=${count}`)
 
@@ -127,6 +132,7 @@ export default function CategoryPage() {
           setCatForm(null)
         }}
         onDelete={async () => {
+          setCatForm(null)
           await sk.deleteCategory(cat.id)
           navigate(parent ? `/skills/c/${parent.id}` : '/skills')
         }}
@@ -135,7 +141,7 @@ export default function CategoryPage() {
         key={`q-${qForm?.id ?? qForm}`}
         open={qForm !== null}
         question={qForm === 'new' ? null : qForm}
-        cats={cats.filter((x) => !x.builtin)}
+        cats={cats}
         defaultCategory={filter !== 'all' ? filter : cat.id}
         onClose={() => setQForm(null)}
         onSave={async (row) => {
@@ -169,7 +175,7 @@ export function QuestionList({ questions, cats, onEdit, limit = 60 }) {
                 {q.type === 'mcq' || q.type === 'truefalse' ? q.options[q.answer] : q.answer_text}
               </p>
             </div>
-            {onEdit && !q.builtin && <button onClick={() => onEdit(q)} className="rounded-lg p-1.5 text-ink-soft hover:bg-brand-50" aria-label="تعديل"><Pencil size={15} /></button>}
+            {onEdit && <button onClick={() => onEdit(q)} className="rounded-lg p-1.5 text-ink-soft hover:bg-brand-50" aria-label="تعديل"><Pencil size={15} /></button>}
           </div>
         )
       })}

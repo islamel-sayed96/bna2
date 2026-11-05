@@ -251,14 +251,19 @@ export function QuestionForm({ open, question, cats, defaultCategory, onClose, o
 export function PacksModal({ open, onClose, userCats, questions, onImported }) {
   const [busy, setBusy] = useState(null)
   const [msg, setMsg] = useState(null)
+  const [dest, setDest] = useState('pack') // 'pack' | 'new' | <subject id>
+  const [newName, setNewName] = useState('')
   const file = useRef(null)
+  const roots = rootsOf(userCats)
+
+  const target = () => (dest === 'pack' ? { mode: 'pack' } : dest === 'new' ? { mode: 'new', name: newName } : { mode: 'existing', id: dest })
 
   async function run(id, getPack) {
     setBusy(id)
     setMsg(null)
     try {
       const pack = await getPack()
-      const res = await importPack(pack, userCats)
+      const res = await importPack(pack, userCats, target())
       setMsg({ ok: true, text: `تم ✓ أضفنا ${res.questions} سؤال${res.categories ? ` و ${res.categories} مجال/موضوع` : ''}.` })
       onImported()
     } catch (e) {
@@ -279,6 +284,23 @@ export function PacksModal({ open, onClose, userCats, questions, onImported }) {
   return (
     <Modal open={open} onClose={onClose} title="📦 حزم الأسئلة" wide>
       <div className="space-y-3">
+        <div className="rounded-2xl bg-note/60 p-4 dark:bg-white/5">
+          <label className="label">📍 الحزمة هتتضاف فين؟</label>
+          <select className="input" value={dest} onChange={(e) => setDest(e.target.value)}>
+            <option value="pack">زي ما هي (بمجالات الحزمة نفسها)</option>
+            <option value="new">➕ في مجال جديد…</option>
+            {roots.length > 0 && (
+              <optgroup label="جوه مجال عندك">
+                {roots.map((c) => <option key={c.id} value={c.id}>{c.icon} {c.name}</option>)}
+              </optgroup>
+            )}
+          </select>
+          {dest === 'new' && <input className="input mt-2" value={newName} onChange={(e) => setNewName(e.target.value)} placeholder="اسم المجال الجديد (لو سبته فاضي هياخد اسم الحزمة)" />}
+          <p className="mt-1.5 text-xs text-ink-soft">
+            {dest === 'pack' ? 'مثلًا حزمة الإنجليزي هتتضاف في مجال "الإنجليزي" بمواضيعها.' : 'مواضيع الحزمة هتبقى مواضيع فرعية جوه المجال اللي اخترته.'}
+          </p>
+        </div>
+
         {PUBLIC_PACKS.map((p) => (
           <div key={p.id} className="flex items-center gap-4 rounded-2xl bg-[#f3f0fb] p-4 dark:bg-white/5">
             <div className="text-3xl">{p.icon}</div>
@@ -310,6 +332,7 @@ export function PacksModal({ open, onClose, userCats, questions, onImported }) {
           </div>
         </div>
         {msg && <p className={`text-sm font-medium ${msg.ok ? 'text-emerald-600' : 'text-rose-600'}`}>{msg.text}</p>}
+        <p className="text-[11px] text-ink-soft">استورد كل حزمة مرة واحدة في نفس المكان عشان الأسئلة ماتتكررش.</p>
       </div>
     </Modal>
   )

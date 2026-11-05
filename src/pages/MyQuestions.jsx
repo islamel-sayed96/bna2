@@ -16,8 +16,8 @@ export default function MyQuestions() {
   const [q, setQ] = useState('')
 
   if (sk.loading) return <PageLoader />
-  const userCats = sk.cats.filter((c) => !c.builtin)
-  const mine = sk.all.filter((x) => !x.builtin)
+  const userCats = sk.cats
+  const mine = sk.all
   const ids = cat === 'all' ? null : withChildren(sk.cats, cat)
   const nq = normalize(q)
   const list = mine.filter(
