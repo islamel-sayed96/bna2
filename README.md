@@ -48,6 +48,19 @@ npm run dev
 
 ## النشر (مجانًا)
 
+### على GitHub Pages (الأسهل)
+
+الريبو فيه خطوة تلقائية (`.github/workflows/deploy.yml`) بتبني الموقع وتنشره مع كل push على `main`. مرة واحدة بس:
+
+1. من الريبو على GitHub: **Settings → Pages**.
+2. في **Build and deployment → Source** اختار **GitHub Actions**.
+3. استنى دقيقتين، والموقع هيبقى على: `https://<username>.github.io/<repo>/`
+
+> GitHub Pages ببلاش للريبوهات **العامة (Public)**. لو الريبو Private ومحتاجه يفضل كده، استخدم Vercel بدلها.
+> لو هتربط Supabase: ضيف `VITE_SUPABASE_URL` و `VITE_SUPABASE_ANON_KEY` (و `VITE_ALLOW_SIGNUP`) في **Settings → Secrets and variables → Actions → Variables**.
+
+### على Vercel / Netlify
+
 الموقع static بالكامل، فينفع على **Vercel** أو **Netlify** أو **Cloudflare Pages**:
 
 - Build command: `npm run build`
